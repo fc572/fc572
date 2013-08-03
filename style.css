@@ -1,23 +1,18 @@
 #marginTop{
-margin-top:100px;
-border-bottom: 1px solid green;
-}
-
-.header { /*copied not applied*/
-    width: 300px;
-    height: 25px;
-    background-color: #5A68A5;
-    border-radius: 10px;
+	height: 100px;
+	background-image: url(./images/fc572_Logo.png);
+	background-repeat:no-repeat;
 }
 
 #leftColumn {
-    height: 300px;
+	
+    	height: 300px;
 	width: 20%;
-	/*Add your CSS here!*/
 	float:left;
 }
 
 #centre{
+
 	height:300px;
 	width:60%;
 	float:left;
@@ -27,7 +22,6 @@ border-bottom: 1px solid green;
 	
 	height: 300px;
 	width: 10%;
-	/*Add your CSS here!*/
 	float:right;
 }
 
@@ -36,6 +30,7 @@ body{
 	font-family: verdana, sans-serif;
 	font-size: 18px;
 	line-height:25px;
+	background-color:#f7f7f7;
 	clear:both;
 }	
 
@@ -46,7 +41,7 @@ body{
 
 #footer{
 	bottom:0;
-    position:absolute;	
+    	position:absolute;	
 	margin-bottom:90px;	
 	padding-bottom:90px;
 	clear: both;
@@ -54,25 +49,26 @@ body{
 
 
 .chapter {
-font-size: 100%;
-margin: 0px;
-padding: 0px;
-width: 100%;
-height: 20px;
+	font-size: 100%;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 20px;
 }
 
 .prev {
-width: 30%;
-float: left;
-text-align: left;
+	width: 30%;
+	float: left;
+	text-align: left;
 }
 
 .next {
-width: 30%;
-float: right;
-text-align: right;
+	width: 30%;
+	float: right;
+	text-align: right;
 }
 
-.FindMeByClassName{
-	font-size: 20px;
+code {
+	background-color:#f1f1f1;
 }
+
