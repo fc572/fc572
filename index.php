@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta name="decription" content="My experience with webDriver">
+		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
+		<meta name="author" content="Francesco"/>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="style.css" rel="stylesheet" type="text/css" >
+		<title> Home page </title>
+	</head>
+	
+	<body id="container">
+	<div id="marginTop"><?php include "menuIndex.php";?></div>
+	<div id="leftColumn"></div>
+	<div id="centre">
+		<strong> Every time I didn't understand something, I wrote a book about it.<br/> 
+		<cite><a href="http://www.geraldmweinberg.com/"> Jerry Weinberg </a></strong></cite>
+		<p>
+		This is one of the sentences that stuck in my head after having attended the PSL course in April 2013.<br/>
+		And it took me a while to understand what he meant. I though that you cannot write about something that you don't understand.
+		But I never stop and considered that if you want to write about something, you force yourself to master the subject you want 
+		to write about.
+		So here I am, this is my attempt to understand testing automation. I have so far scrapped the surface. I have tried to
+		understand BDD, TDD, .net, page object model, key driven, data driven and what else out there. 
+		I have been reading books, I understand the examples and I think I understand the theory, but the practise is always 1000s times more 
+		difficult. One of my favourite quotes summarize this well: "In theory there is no difference between theory and practise. In practise, there is!".<br/>
+		So I am starting my journey and I publish it so to force myself to do the best I can. Also I will be 
+		open to public scrutiny, and the power of all brain out there is infinite times greater then my only brain this side of the computer. </br>
+		My idea is simple.<br/>
+		Put up a website where I can shape the pages in order to learn Selenium web driver. Possibly I can use each page as an example, discussing why 
+		I am taking that step and what I am trying to achieve. Then once I am famiiliar with Selenium Features, I will dwelve into frameworks and the likes.
+		For now, anyway there is only the website, that I am writing with notepad++ so that I am forced to review my knowledge of HTML, javascript, CSS and 
+		whatever other thing takes my fancy in that moment in time.</br>
+		</p>
+		<div class="chapter"> <div class="next"> <a href="secondIndex.php"> Next </a> </div></div>
+	</div>
+	<div id="rightColumn"></div>
+	<div id="footer"></div>
+	</body>
+</html>
