@@ -1,11 +1,35 @@
 #marginTop{
 	height: 100px;
-	background-image: url(./images/fc572_Logo.png);
-	background-repeat:no-repeat;
+}
+#marginTop ul
+{
+list-style: none;
+padding: 0;
+margin-left: 2em;;
+}
+
+#marginTop li
+{
+float: left;
+margin: 0 0.15em;
+}
+
+#marginTop li a
+{
+height: 2em;
+line-height: 2em;
+float: left;
+width: 11em;
+display: block;
+border: 0.1em solid #dcdce9;
+color: #0d2474;
+text-decoration: none;
+text-align: center;
 }
 
 #leftColumn {
-	
+		background-image: url(./images/fc572_Logo.png);
+	background-repeat:no-repeat;
     	height: 300px;
 	width: 20%;
 	float:left;
