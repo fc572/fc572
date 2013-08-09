@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-	<div id="marginTop"></div>
+	<div id="marginTop"><?php include "../menu.php";?></div>
 	<div id="leftColumn"></div>
 	<div id="centre">
 		<strong> PHP </strong>
@@ -43,9 +43,21 @@ echo("<br/><br/>");
 		to see it into your browser you need to http://localhost/yourFileName.php"
 		?>
 		<br/><br/>
+		<?php>
+		echo"We are now moving to variable scope. A scope is the area of the program where the variable is valid. So a local scope variable will be valid only on 
+		the piece of code where it has been declared, ie in a for loop, while the global scope variables are valid all over the program. they can be useful but 
+		properly because these span the all program and can be changed everywher you use them, then if a bug occurs it is difficult to track. 
+		To decalare a global scope variable inside your php program you need to prefix the decalration with the global keyword so that the decalration will
+		look something like global $x=1; "
+		?> </br></br>
+		<?php>
+		echo"There are also a type of vaiables called" ?> <a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables"<a/> 
+		<?php>
+		echo""
+		?>
 		
 </p>
-<div class="chapter"> <div class="prev"> <a href="../index.html"> Previous </a> </div> <div class="next"> <a href=""> Next </a> </div></div>
+<div class="chapter"> <div class="prev"> <a href="../index.php"> Previous </a> </div> <div class="next"> <a href=""> Next </a> </div></div>
 	</div>
 	<div id="rightColumn"></div>
 	<div id="footer"></div>
