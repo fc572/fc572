@@ -65,7 +65,7 @@
 		<strong> Note that this code does barely what it is supposed to do. There is no error handling, no abstraction for common functions,
 		and none of the other code practises. Also it is not formatted correctly as I am learning how to style the code properly</strong>
 		<br/><br/>
-		<code>
+		<pre><code>
 			using System;<br/>
 			using System.Collections.Generic;<br/>
 			using System.Linq;<br/>
@@ -170,7 +170,7 @@
 					}<br/>
 				}<br/>
 			}<br/>
-		</code>
+		</pre></pre></code>
 		
 		<br/>
 		<br/>

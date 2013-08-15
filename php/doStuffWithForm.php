@@ -17,7 +17,7 @@ if(validateInput($_POST['name']))
 					$email = $_POST['email'];
 					$comment = $_POST['comment'];
 					
-					if(connectToCommentsDb($name,$surname,$your_key,$email,$comment))
+					if(connectAndAddToComments($name,$surname,$your_key,$email,$comment))
 					{
 						echo "The records have been inserted";
 					}
@@ -80,36 +80,30 @@ function validateField($validateMe)
 	}
 }
 
-function connectToCommentsDb($name,$surname,$your_key,$email,$comment)
+function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
 {
-	$link = mysql_connect("localhost", "root", "");
+	$link = mysqli_connect("localhost", "fc572", "Zarathustra1111", "comments");
 	if($link)
 		{
-			if(mysql_select_db("comments",$link))
+			mysqli_query($link,"INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
+				
+			$insertedValueCount = mysqli_affected_rows($link);
+			echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
+			
+			mysqli_close($link);
+			if($insertedValueCount >= 1)
 			{
-				mysql_query("INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
-				
-				$insertedValueCount = mysql_affected_rows();
-				echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
-				
-				mysql_close();
-				if($insertedValueCount >= 1)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				return true;
 			}
 			else
 			{
 				return false;
-			}	
+			}
+			
 		}
 		else
 		{
-			die("The connection to CommentsDB has failed");
+			echo "Can't connect to localhost. Error: %s\n", mysqli_connect_error();
 		}
 }
 

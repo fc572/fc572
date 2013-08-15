@@ -34,7 +34,7 @@ if(validateInput($_POST['name']))
 					$email = $_POST['email'];
 					$comment = $_POST['comment'];
 					
-					if(connectToCommentsDb($name,$surname,$your_key,$email,$comment))
+					if(connectAndAddToComments($name,$surname,$your_key,$email,$comment))
 					{
 						echo "The records have been inserted";
 					}
@@ -97,46 +97,52 @@ function validateField($validateMe)
 	}
 }
 
-function connectToCommentsDb($name,$surname,$your_key,$email,$comment)
+function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
 {
-	$link = mysql_connect("localhost", "*******", "*******");
+	$link = mysqli_connect("localhost", "******", "******", "comments");
 	if($link)
 		{
-			if(mysql_select_db("comments",$link))
+			mysqli_query($link,"INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
+				
+			$insertedValueCount = mysqli_affected_rows($link);
+			echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
+			
+			mysqli_close($link);
+			if($insertedValueCount >= 1)
 			{
-				mysql_query("INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
-				
-				$insertedValueCount = mysql_affected_rows();
-				echo "The total amount of rows affected was " .$insertedValueCount ."&lt;br/&gt;";
-				
-				mysql_close();
-				if($insertedValueCount >= 1)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				return true;
 			}
 			else
 			{
 				return false;
-			}	
+			}
+			
 		}
 		else
 		{
-			die("The connection to CommentsDB has failed");
+			echo "Can't connect to localhost. Error: %s\n", mysqli_connect_error();
 		}
 }
+
 
 ?&gt;
 </pre>
 </code>
+<br/>
+So what is this script doing? It starts by validating that there is content and that there are no nasty special chars in the value inserted into the form
+with the statement if(validateInput($_POST['name'])) where the $_POST is retrieving the value for us; Then if there are no surprises, the retrieved values get
+assigned to a new variable so that it can be passed to the connectAndAddToComments function. This function also return True if has been successful, false otherwise.
+A very unhelpful message 'FAILURE' is displayed but for the time being I am happy with that. <br/>
+Inside connectAndAddToComments the magic happens. First you have to connect to the database so I use predefined functions from PHP library called mysqli_connect()
+Once the connection is active, we are connected to the database itself. Again a function from the PHP library, comes handy
+and I use mysqli_query() (guess where is this function from??) and I use sql syntax INSERT INTO to create a new record with the values that are coming from the web form.
+Then I need to close the connection to the db and to finish off I return the number of affected rows for displaying.<br/>
+Now let's move to writing the API that will retrieve the comments from the database.
 		</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="pageTwoPhp.php"> Previous </a> </div> <div class="next"> <a href=".php"> Next </a> </div></div>
+		<div class="chapter"> <div class="prev"> <a href="pageTwoPhp.php"> Previous </a> </div> <div class="next"> <a href="pageFourPhp.php"> Next </a> </div></div>
 	</div>
+	
 	<div id="rightColumn"></div>
 	<div id="footer"></div>
 	</body>

@@ -32,7 +32,7 @@
 		For now, anyway there is only the website, that I am writing with notepad++ so that I am forced to review my knowledge of HTML, javascript, CSS and 
 		whatever other thing takes my fancy in that moment in time.</br>
 		</p>
-		<div class="chapter"> <div class="next"> <a href="secondIndex.php"> Next </a> </div></div>
+		<div class="chapter"> <div class="next"> <a href="secondIndex.html"> Next </a> </div></div>
 	</div>
 	<div id="rightColumn"></div>
 	<div id="footer"></div>
