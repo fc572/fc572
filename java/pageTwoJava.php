@@ -61,7 +61,7 @@
 			In order to use this method everywhere, without having to instanciate a class every time, I am declaring the method static, so that I have
 			to call the class name and the method. But a problem arises here. The WebDriver instance that I want to use in the NavigateToSite class is 
 			not the same one that I am using in the LocatingDomOnPage. So what happens here is that one driver is navigating to the right website, and 				the other one is just left in the dark about where to go. This is the faulty code and you'll see why.<br/>
-<code>
+<pre><code>
 public class NavigateToSite {<br/>
 
     @Test<br/>
@@ -93,7 +93,7 @@ public class LocatingDomOnPage {<br/>
 }<br/>
 
 
-</code>
+</pre></pre></code>
 At this point in order to use the same driver I have to declare it somewhere else and then make all the classes to use it.<br/>
 How do I do that? <br/>
 So I have my navigate method and my locateElements methods and I want them to work together. In order to do so, I cannot instantiate for each class

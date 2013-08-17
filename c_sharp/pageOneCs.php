@@ -43,7 +43,7 @@
 		What are those? Test Fixture (in my head) is like saying to the machine "hey! This is going to be a test, so better run this code as it is", otherwise
 		the pc goes all clever and wants a main method somewhere. The TestFixtureSetUp, Test and TestFixtureTearDown are what is says on the tin. Set up, Test and 
 		destroy the test to free memory and kill all that is left hanging from this test before this machine mis-behave.<br/>
-		<code>
+		<pre><code>
 		using System;<br/>
 using System.Collections.Generic;<br/>
 using System.Linq;<br/>
@@ -92,7 +92,7 @@ namespace mySeleniumDisaster<br/>
             driver.Quit();<br/>
         }<br/>
     }<br/>
-}</code><br/>
+}</pre></pre></code><br/>
 
 		Another part that to me was quite obscure is the use of XPath and find element to search for text on the page. So I went and found out that 
 		<cite> // Selects nodes in the document from the current node that match the selection no matter where they are </cite> taken from <a href="http://www.w3schools.com/xpath/xpath_syntax.asp">here,

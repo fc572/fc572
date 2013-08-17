@@ -14,8 +14,8 @@
 
 		<p>
 		So I have at the top of this file declared that the source for the javascript is a file called script.js (I know
-		I have imagination). The syntax is as follows: <code><br/>&lt;script type="text/javascript" src="myScript.js"&gt;&lt;/script&gt;
-		</code><br/>
+		I have imagination). The syntax is as follows: <pre><code><br/>&lt;script type="text/javascript" src="myScript.js"&gt;&lt;/script&gt;
+		</pre></pre></code><br/>
 		So from now on all the js that you'll see on this page will come from an external file <br/><br/>
 		
 			<button id="buttonJsToPress" onclick="externalFunc()">Press me to call content from another file</button>
@@ -26,11 +26,12 @@
 			&lt;div id="insertJsHere"&gt; This text will change &lt;/div&gt;<br/>
 			
 			This code will be acted upon with the following C# <br/>
-			<code>
-				using System;<br/>
-				using System.Collections.Generic;<br/>
-				using System.Linq;<br/>
-				using System.Web;<br/>
+			<pre>
+			<pre><code>
+using System;<br/>
+using System.Collections.Generic;<br/>
+using System.Linq;<br/>
+using System.Web;<br/>
 				using OpenQA.Selenium.Firefox;<br/>
 				using OpenQA.Selenium;<br/>
 				using NUnit.Framework;<br/>
@@ -76,7 +77,8 @@
 						}<br/>
 					}<br/>
 				}<br/>
-			</code>
+			</pre></pre></code>
+			</pre>
 			It is a very simple test that it finds the page, verify it is the right one and then verifies the text of the div element before 
 			and after the button has beenn clicked.<br/>
 		</p>

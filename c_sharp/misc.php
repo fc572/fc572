@@ -22,7 +22,7 @@
 			the property name in order to retrieve the value set.<br/>
 			In order to use the app.config file, I have inserted a new XML file in the root directory of my project (could/should be in a newly created 
 			app setting folder but for now it is ok like this) and then I have changed the code slighly.
-			This is how the app.config file looks like;<code><br/>
+			This is how the app.config file looks like;<pre><code><br/>
 			&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br/>
 
 			&lt;configuration&gt;<br/>
@@ -31,13 +31,13 @@
 				&lt;!--add name="environment" connectionString="http://www.fc572.me" /--&gt;<br/>
 			  &lt;/connectionStrings&gt;<br/>
 			&lt;/configuration&gt;<br/>
-			</code><br/>
+			</pre></pre></code><br/>
 			And this is how the code from within the app looks like <br/>
-			<code>
+			<pre><code>
 				System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["environment"];
 			<br/>
             driver.Navigate().GoToUrl(connectionString + "/c_sharp/pageTwoCs.php");<br/>
-			</code>
+			</pre></pre></code>
 			<br/>
 			Now all I have to do is to comment/uncomment the environment that I want to use and this change will reflect all over the place.
 		</p>

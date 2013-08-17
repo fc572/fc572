@@ -34,9 +34,9 @@
 			I have also set a project in gitHub so that I can transfer the website code from my virtual machine to my real machine using a
 			method that is overengeneered for my needs, but it mirrors what happens in real life<br/>
 			The configuration file gets added to the root of the project and it is read into the application using this code
-			<code>
+			<pre><code>
 				
-			</code>
+			</pre></pre></code>
 			Now that I have the env set up, I can start with locating the DOM elements on the page using Java and webDriver.
 			</p>
 		

@@ -51,6 +51,7 @@ text-align: center;
 
 
 body{
+	/*background-image: url(./images/obk.png);*/
 	font-family: verdana, sans-serif;
 	font-size: 18px;
 	line-height:25px;
@@ -93,6 +94,40 @@ body{
 }
 
 code {
-	background-color:#f1f1f1;
+	background-color: #e1e1e1;
+	padding :0px;
 }
+
+form{
+	background-color: #d1d1d1;
+	border-style:ridge;
+	border-width:2px;
+}
+
+input{
+	border-style: solid;
+	color: #0000FF;
+	border: 1px solid #781351
+
+}
+label{
+	width: 4px;
+	float: left;
+	text-align: right;
+	margin-right: 111px;
+	margin-left: 15px;
+	display: block
+}
+textarea{
+	color: #0000FF;
+	border: 1px solid #781351
+}
+
+#submit
+{
+	color:#000000;
+	background: #ffa20f;
+	border: 2px outset #d7b9c9;
+	margin-left: 15px;
+} 
 
