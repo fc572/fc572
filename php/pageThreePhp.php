@@ -99,7 +99,7 @@ function validateField($validateMe)
 
 function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
 {
-	$link = mysqli_connect("localhost", "******", "******", "comments");
+	$link = mysqli_connect("localhost", "userName", "password", "databaseName");
 	if($link)
 		{
 			mysqli_query($link,"INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
