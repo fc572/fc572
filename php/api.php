@@ -93,15 +93,15 @@
 				$query = "SELECT * FROM usercomments WHERE your_key = '" .$key ."'";
 				
 				$results = mysqli_query($link,$query);
-				
-				foreach($results as $result)
-				{
-					$name = $result['name'];
-					$surname = $result['surname'];
-					$your_key =  $result['your_key'];
-					$email = $result['email'];
-					$comment = $result['comment'];
-				}
+			
+				$item = mysqli_fetch_assoc($results); //before that I tried with a foreach statement but it did not work as the db was returning
+				//only one result, which does not allow foreach to iterate therefore the foreach was not working.
+                
+				    $name = $item['name'];
+					$surname = $item['surname'];
+					$your_key =  $item['your_key'];
+					$email = $item['email'];
+					$comment = $item['comment'];
 
 				if(((string)($your_key)) == ((string)($key)))
 				{
