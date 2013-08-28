@@ -19,25 +19,31 @@
 			I have not installed JUnit as it can be added to the project using maven.
 			There is one thing to know about maven and it is the POM.xml file. This file will hold all the references to the 
 			dependencies of your project. So for JUnit it will be something like ...<br/>
-			&lt;dependencies&gt;<br/>
-				&lt;dependency&gt;<br/>
-					&lt;groupId&gt;junit&lt;/groupId&gt;<br/>
-					&lt;artifactId&gt;junit&lt;/artifactId&gt;<br/>
-					&lt;version&gt;4.8.1&lt;/version&gt;<br/>
-					&lt;scope&gt;test&lt;/scope&gt;<br/>
-				&lt;/dependency&gt;<br/>
-			&lt;/dependencies&gt; <br/>
+			<pre>
+			<code>
+&lt;dependencies&gt;<br/>
+	&lt;dependency&gt;<br/>
+		&lt;groupId&gt;junit&lt;/groupId&gt;<br/>
+		&lt;artifactId&gt;junit&lt;/artifactId&gt;<br/>
+		&lt;version&gt;4.8.1&lt;/version&gt;<br/>
+		&lt;scope&gt;test&lt;/scope&gt;<br/>
+	&lt;/dependency&gt;<br/>
+&lt;/dependencies&gt;</code>
+			</pre>
 			Once I am done with the set up and I have my first running test, I straight away know that I need to set up a test environment
 			and I need a config file to switch between envs as I have done in C#.<br/>
 			So I have download XAMPP from <a href="http://www.apachefriends.org/en/xampp-linux.php">here</a> and installed on my Linux machine.
 			I have then set up a configuration file in my project so that I can switch environment at will.
 			I have also set a project in gitHub so that I can transfer the website code from my virtual machine to my real machine using a
-			method that is overengeneered for my needs, but it mirrors what happens in real life<br/>
+			method that is over-engineered for my needs, but it mirrors what happens in real life<br/>
 			The configuration file gets added to the root of the project and it is read into the application using this code
-			<pre><code>
+			<pre>
+				<code>
 				
-			</pre></pre></code>
-			Now that I have the env set up, I can start with locating the DOM elements on the page using Java and webDriver.
+				
+				</code>
+			</pre>
+			Now that I have the environment set up, I can start with locating the DOM elements on the page using Java and webDriver.
 			</p>
 		
 		<div class="chapter"> <div class="prev"> <a href="../index.php"> Previous </a> </div> <div class="next"> <a href="pageTwoJava.php"> Next </a> </div></div>

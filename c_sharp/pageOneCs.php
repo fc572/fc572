@@ -92,7 +92,7 @@ namespace mySeleniumDisaster<br/>
             driver.Quit();<br/>
         }<br/>
     }<br/>
-}</pre></pre></code><br/>
+}</code></pre><br/>
 
 		Another part that to me was quite obscure is the use of XPath and find element to search for text on the page. So I went and found out that 
 		<cite> // Selects nodes in the document from the current node that match the selection no matter where they are </cite> taken from <a href="http://www.w3schools.com/xpath/xpath_syntax.asp">here,

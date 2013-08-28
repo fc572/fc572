@@ -93,7 +93,7 @@ public class LocatingDomOnPage {<br/>
 }<br/>
 
 
-</pre></pre></code>
+</code></pre>
 At this point in order to use the same driver I have to declare it somewhere else and then make all the classes to use it.<br/>
 How do I do that? <br/>
 So I have my navigate method and my locateElements methods and I want them to work together. In order to do so, I cannot instantiate for each class
