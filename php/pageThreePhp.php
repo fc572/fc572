@@ -5,17 +5,18 @@
 		<title> PHP MySQL </title>
 	</head>
 
-	<body>
-		<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> MySQL in PHP </strong>
 		<p>
 		I have create a MySQL database and now I need to connect to it in order for the form to save the form details.
 		In doing so I have had to change the code written in the previous page as it was not good when wanting to pass the values to the db.
 		So here it is the new code<br/>
-<pre>
-<code>
+</br>
+<textarea readonly rows=20 cols=95>
 &lt;?php
 
 if(validateInput($_POST['name']))
@@ -126,8 +127,7 @@ function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
 
 
 ?&gt;
-</pre>
-</code>
+</textarea>
 <br/>
 So what is this script doing? It starts by validating that there is content and that there are no nasty special chars in the value inserted into the form
 with the statement if(validateInput($_POST['name'])) where the $_POST is retrieving the value for us; Then if there are no surprises, the retrieved values get
@@ -140,10 +140,12 @@ Then I need to close the connection to the db and to finish off I return the num
 Now let's move to writing the API that will retrieve the comments from the database.
 		</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="pageTwoPhp.php"> Previous </a> </div> <div class="next"> <a href="pageFourPhp.php"> Next </a> </div></div>
+		<div class="chapter"> 
+			<div class="prev"> <a href="pageTwoPhp.php"> Previous </a> </div> 
+			<div class="next"> <a href="pageFourPhp.php"> Next </a> </div>
+		</div>
 	</div>
-	
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	</div>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>

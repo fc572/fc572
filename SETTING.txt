@@ -1,3 +1,0 @@
-In order not to deploy and then test the code, I need to set up a setting file
-that holds the production URL and the TEST URL (localhost) so that I can test the code locally at the 
-touch of a botton

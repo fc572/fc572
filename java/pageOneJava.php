@@ -5,10 +5,11 @@
 		<title> Experiencing webDriver in Java</title>
 	</head>
 
-	<body>
-	<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> Let's get set up in an open source environment. </strong>
 			<p>
 			So the first thing I did to set open source is to download this <a href="https://www.virtualbox.org/wiki/Downloads"> virtualBox </a>
@@ -19,17 +20,15 @@
 			I have not installed JUnit as it can be added to the project using maven.
 			There is one thing to know about maven and it is the POM.xml file. This file will hold all the references to the 
 			dependencies of your project. So for JUnit it will be something like ...<br/>
-			<pre>
-			<code>
-&lt;dependencies&gt;<br/>
-	&lt;dependency&gt;<br/>
-		&lt;groupId&gt;junit&lt;/groupId&gt;<br/>
-		&lt;artifactId&gt;junit&lt;/artifactId&gt;<br/>
-		&lt;version&gt;4.8.1&lt;/version&gt;<br/>
-		&lt;scope&gt;test&lt;/scope&gt;<br/>
-	&lt;/dependency&gt;<br/>
-&lt;/dependencies&gt;</code>
-			</pre>
+			<textarea readonly rows=10 cols=95>
+&lt;dependencies&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;junit&lt;/groupId&gt;
+		&lt;artifactId&gt;junit&lt;/artifactId&gt;
+		&lt;version&gt;4.8.1&lt;/version&gt;
+		&lt;scope&gt;test&lt;/scope&gt;
+	&lt;/dependency&gt;
+&lt;/dependencies&gt;</textarea><br/>
 			Once I am done with the set up and I have my first running test, I straight away know that I need to set up a test environment
 			and I need a config file to switch between envs as I have done in C#.<br/>
 			So I have download XAMPP from <a href="http://www.apachefriends.org/en/xampp-linux.php">here</a> and installed on my Linux machine.
@@ -37,18 +36,16 @@
 			I have also set a project in gitHub so that I can transfer the website code from my virtual machine to my real machine using a
 			method that is over-engineered for my needs, but it mirrors what happens in real life<br/>
 			The configuration file gets added to the root of the project and it is read into the application using this code
-			<pre>
-				<code>
-				
-				
-				</code>
-			</pre>
+			<textarea readonly rows=10 cols=95>
+			MISSING CODE
+			</textarea><br/>
 			Now that I have the environment set up, I can start with locating the DOM elements on the page using Java and webDriver.
 			</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="../index.php"> Previous </a> </div> <div class="next"> <a href="pageTwoJava.php"> Next </a> </div></div>
+		<div class="chapter"> 
+			<div class="prev"> <a href="../index.php"> Previous </a> </div> 
+			<div class="next"> <a href="pageTwoJava.php"> Next </a> </div>
+		</div>
 	</div>
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
-	</body>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>	</body>
 </html>

@@ -5,10 +5,11 @@
 		<title> Learning Javascript </title>
 	</head>
 
-	<body>
-	<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> Javascript </strong>
 		<p>
 		<script type="text/javascript">
@@ -23,9 +24,11 @@
 			document.write("problem is that you do not want js and HTML in the same file. So from next page I'll split the two");
 		</script>
 		<p/>		
-		<div class="chapter"> <div class="prev"> <a href="../index.php"> Previous </a> </div> <div class="next"> <a href="pageTwoJs.php"> Next </a> </div></div>
+		<div class="chapter"> 
+			<div class="prev"> <a href="../index.php"> Previous </a> </div> 
+			<div class="next"> <a href="pageTwoJs.php"> Next </a> </div>
+		</div>
 	</div>
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>

@@ -5,10 +5,11 @@
 		<title> I Know Nothing </title>
 	</head>
 
-	<body>
-	<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> Configuration File </strong>
 		
 		<p>
@@ -23,28 +24,31 @@
 			In order to use the app.config file, I have inserted a new XML file in the root directory of my project (could/should be in a newly created 
 			app setting folder but for now it is ok like this) and then I have changed the code slighly.
 			This is how the app.config file looks like;
-			<pre><code><br/>
-&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br/>
-&lt;configuration&gt;<br/>
-&lt;connectionStrings&gt;<br/>
-	&lt;add name="environment" connectionString="http://localhost/fc572" /&gt;<br/>
-	&lt;!--add name="environment" connectionString="http://www.fc572.me" /--&gt;<br/>
-	&lt;/connectionStrings&gt;<br/>
-	&lt;/configuration&gt;<br/></code>
-	</pre>
+			<textarea readonly rows=10 cols=95><br/>
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;configuration&gt;
+&lt;connectionStrings&gt;
+	&lt;add name="environment" connectionString="http://localhost/fc572" /&gt;
+	&lt;!--add name="environment" connectionString="http://www.fc572.me" /--&gt;
+	&lt;/connectionStrings&gt;
+	&lt;/configuration&gt;
+	</textarea>
 	<br/>
 			And this is how the code from within the app looks like <br/>
-			<pre><code>
-	System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["environment"];<br/>
-		driver.Navigate().GoToUrl(connectionString + "/c_sharp/pageTwoCs.php");<br/></code>
-			</pre>
+			<textarea readonly rows=5 cols=95>
+	System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["environment"];
+		driver.Navigate().GoToUrl(connectionString + "/c_sharp/pageTwoCs.php");
+			</textarea>
 			<br/>
 			Now all I have to do is to comment/uncomment the environment that I want to use and this change will reflect all over the place.
 		</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="../index.php"> Previous </a> </div> <div class="next"> <a href="pageOneCs.php"> Next </a> </div></div>
+		<div class="chapter"> 
+			<div class="prev"> <a href="../index.php"> Previous </a> </div> 
+			<div class="next"> <a href="pageOneCs.php"> Next </a> </div>
+		</div>
 	</div>
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>

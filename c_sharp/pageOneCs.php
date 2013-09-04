@@ -4,11 +4,11 @@
 		<link href="../style.css" rel="stylesheet" type="text/css" >
 		<title> WebDriver in C# </title>
 	</head>
-
-	<body>
-	<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> So here I am. Let's start with installing and running IDE of choice </a></strong>
 		<p>
 		Well I want to be able to do this in both c# and java, so I am going to do everything twice.<br/>
@@ -43,56 +43,56 @@
 		What are those? Test Fixture (in my head) is like saying to the machine "hey! This is going to be a test, so better run this code as it is", otherwise
 		the pc goes all clever and wants a main method somewhere. The TestFixtureSetUp, Test and TestFixtureTearDown are what is says on the tin. Set up, Test and 
 		destroy the test to free memory and kill all that is left hanging from this test before this machine mis-behave.<br/>
-		<pre><code>
-		using System;<br/>
-using System.Collections.Generic;<br/>
-using System.Linq;<br/>
-using System.Web;<br/>
-using OpenQA.Selenium.Firefox;<br/>
-using OpenQA.Selenium;<br/>
-using NUnit.Framework;<br/>
+		<textarea readonly rows=20 cols=95>
+		using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium;
+using NUnit.Framework;
 
-namespace mySeleniumDisaster<br/>
-{<br/>
-    [TestFixture]<br/>
-    public class DisasterOne<br/>
-    {<br/>
-        IWebDriver driver;<br/>
+namespace mySeleniumDisaster
+{
+    [TestFixture]
+    public class DisasterOne
+    {
+        IWebDriver driver;
 
-        [TestFixtureSetUp]<br/>
-        public void TestSetUp()<br/>
-        {<br/>
-            // set up the driver to use a browser<br/>
-            driver = new FirefoxDriver();<br/>
-        }<br/>
+        [TestFixtureSetUp]
+        public void TestSetUp()
+        {
+            // set up the driver to use a browser
+            driver = new FirefoxDriver();
+        }
 
-        [Test]<br/>
-        public void TestDisaster()<br/>
-        {<br/>
-            driver.Navigate().GoToUrl("http://www.bing.com");<br/>
+        [Test]
+        public void TestDisaster()
+        {
+            driver.Navigate().GoToUrl("http://www.bing.com");
 
-            //on the page find the element that represent the search box<br/>
+            //on the page find the element that represent the search box
 
-            IWebElement searchBox = driver.FindElement(By.Id("sb_form_q"));<br/>
-            searchBox.SendKeys("ssc Napoli");<br/>
-            searchBox.Submit();<br/>
+            IWebElement searchBox = driver.FindElement(By.Id("sb_form_q"));
+            searchBox.SendKeys("ssc Napoli");
+            searchBox.Submit();
             
-            // wait for page to load<br/>
-            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));<br/>
+            // wait for page to load
+            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 30));
 
-            var textPresent = driver.FindElement(By.XPath("//*[contains(.,'Sito Ufficiale del Calcio…')]"));<br/>
-            Assert.IsNotNull(textPresent);<br/>
+            var textPresent = driver.FindElement(By.XPath("//*[contains(.,'Sito Ufficiale del Calcio…')]"));
+            Assert.IsNotNull(textPresent);
 
-        }<br/>
+        }
 
-        [TestFixtureTearDown]<br/>
-        public void FixtureTearDown()<br/>
-        {<br/>
-            // shut down driver and free memory<br/>
-            driver.Quit();<br/>
-        }<br/>
-    }<br/>
-}</code></pre><br/>
+        [TestFixtureTearDown]
+        public void FixtureTearDown()
+        {
+            // shut down driver and free memory
+            driver.Quit();
+        }
+    }
+}</textarea><br/>
 
 		Another part that to me was quite obscure is the use of XPath and find element to search for text on the page. So I went and found out that 
 		<cite> // Selects nodes in the document from the current node that match the selection no matter where they are </cite> taken from <a href="http://www.w3schools.com/xpath/xpath_syntax.asp">here,
@@ -101,9 +101,12 @@ namespace mySeleniumDisaster<br/>
 		I am debating with myself if explain everything that is on this page or not.... well it is 12:40am and I think it is time to sleep onit.
 		But we have success, and I have succesfully set up my project. Hurray!
 		
-		<div class="chapter"> <div class="prev"> <a href="misc.php"> Previous </a> </div> <div class="next"> <a href="pageTwoCs.php"> Next </a> </div></div>
+		<div class="chapter"> 
+			<div class="prev"> <a href="misc.php"> Previous </a> </div> 
+			<div class="next"> <a href="pageTwoCs.php"> Next </a> </div>
+		</div>
 	</div>
 	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>

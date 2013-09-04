@@ -5,10 +5,11 @@
 		<title> I Know Nothing </title>
 	</head>
 
-	<body>
-	<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> Page Two, lets start locating elements</a></strong>
 		<p>So I am all set up with my IDE, NUnit and webDriver, and now I am ready to start targeting my website.</p>
 		<p>
@@ -65,114 +66,113 @@
 		<strong> Note that this code does barely what it is supposed to do. There is no error handling, no abstraction for common functions,
 		and none of the other code practises. Also it is not formatted correctly as I am learning how to style the code properly</strong>
 		<br/><br/>
-		<pre><code>
-using System;<br/>
-using System.Collections.Generic;<br/>
-using System.Linq;<br/>
-using System.Web;<br/>
-using OpenQA.Selenium.Firefox;<br/>
-using OpenQA.Selenium;<br/>
-using NUnit.Framework;<br/>
+		<textarea readonly rows=20 cols=95><br/>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium;
+using NUnit.Framework;
 
-namespace mySeleniumDisaster<br/>
-{<br/>
-	[TestFixture]<br/>
-	public class PageTwo<br/>
-	{<br/>
-		IWebDriver driver;<br/>
-<br/>
-		[TestFixtureSetUp]<br/>
-		public void TestSetUp()<br/>
-		{<br/>
-			// set up the driver to use a browser<br/>
-			driver = new FirefoxDriver();<br/>
-		}<br/>
-<br/>
-		[Test]<br/>
-		public void TestPageTwo()<br/>
-		{<br/>
+namespace mySeleniumDisaster
+{
+	[TestFixture]
+	public class PageTwo
+	{
+		IWebDriver driver;
+
+		[TestFixtureSetUp]
+		public void TestSetUp()
+		{
+			// set up the driver to use a browser
+			driver = new FirefoxDriver();
+		}
+
+		[Test]
+		public void TestPageTwo()
+		{
 			System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["environment"];
 			driver.Navigate().GoToUrl(connectionString + "/c_sharp/pageTwoCs.php");
 			driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 15));
-<br/>
-			//on the page find the element that represent the search box<br/>
-<br/>
-			IWebElement findById = driver.FindElement(By.Id("FindMeById"));<br/>
-			findById.SendKeys("I have found you by Id!");<br/>
-<br/>
-			IWebElement findByname = driver.FindElement(By.Name("FindMeByName"));<br/>
-			findByname.SendKeys("I have found you by Name!");<br/>
-				<br/>
-			//this one did not work. Always caused element not found exception<br/>
-			//ERROR//IWebElement findByClass = driver.FindElement(By.ClassName("FindMeByClassName"));<br/>
-			//I then changed to this and the element was found<br/>
-			//I think this happens because a class can have multiple elements on a page, so a list is <br/>
-			//better suited to host all of them - Yes, No Maybe.<br/>
-			IList<IWebElement> findByClass = driver.FindElements(By.ClassName("FindMeByClassName"));<br/>
-			// code to be fixed //Assert.True (findByClass. Contains("Find me by class name")); <br/>
-<br/		//find a link element by the text of the link<br/>
-			IWebElement findMeByLinkText = driver.FindElement(By.LinkText("FindMeByLinkText"));<br/>
-			findMeByLinkText.Click();<br/>
-<br/>
-			driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));<br/>
-<br/>
-			IWebElement findGoBackLink = driver.FindElement(By.LinkText("link"));<br/>
-			findGoBackLink.Click();<br/>
-						<br/>
-			//find a link element using some of the text on the link<br/>
-			IWebElement findMeByPartialLinkText = driver.FindElement(By.PartialLinkText("FindMeByPartial"));<br/>
-			findMeByPartialLinkText.Click();<br/>
-<br/>
-			driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10)); //code repetition<br/>
-<br/>
-			findGoBackLink = driver.FindElement(By.LinkText("link"));//code repetition<br/>
-			findGoBackLink.Click();//code repetition<br/>
-<br/>
-			IList<IWebElement> findByCssSelector = driver.FindElements(By.CssSelector("ul li"));<br/>
+
+			//on the page find the element that represent the search box
+
+			IWebElement findById = driver.FindElement(By.Id("FindMeById"));
+			findById.SendKeys("I have found you by Id!");
+
+			IWebElement findByname = driver.FindElement(By.Name("FindMeByName"));
+			findByname.SendKeys("I have found you by Name!");
+				
+			//this one did not work. Always caused element not found exception
+			//ERROR//IWebElement findByClass = driver.FindElement(By.ClassName("FindMeByClassName"));
+			//I then changed to this and the element was found
+			//I think this happens because a class can have multiple elements on a page, so a list is 
+			//better suited to host all of them - Yes, No Maybe.
+			IList<IWebElement> findByClass = driver.FindElements(By.ClassName("FindMeByClassName"));
+			// code to be fixed //Assert.True (findByClass. Contains("Find me by class name")); 
+<br/		//find a link element by the text of the link
+			IWebElement findMeByLinkText = driver.FindElement(By.LinkText("FindMeByLinkText"));
+			findMeByLinkText.Click();
+
+			driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
+
+			IWebElement findGoBackLink = driver.FindElement(By.LinkText("link"));
+			findGoBackLink.Click();
+						
+			//find a link element using some of the text on the link
+			IWebElement findMeByPartialLinkText = driver.FindElement(By.PartialLinkText("FindMeByPartial"));
+			findMeByPartialLinkText.Click();
+
+			driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10)); //code repetition
+
+			findGoBackLink = driver.FindElement(By.LinkText("link"));//code repetition
+			findGoBackLink.Click();//code repetition
+
+			IList<IWebElement> findByCssSelector = driver.FindElements(By.CssSelector("ul li"));
 			foreach (IWebElement element in findByCssSelector) 
-			{<br/>
-				Console.WriteLine(element.Text);<br/>
-			}<br/>
-<br/>
-			IList<IWebElement> findCheckBox = driver.FindElements(By.Id("vehicle"));<br/>
-			foreach (IWebElement element in findCheckBox) //if I want to check all the boxes<br/>
-			{<br/>
-				if (!element.Selected)<br/>
-				{<br/>
-					element.Click(); //select the elements<br/>
-				}<br/>
-			}<br/>
-<br/>
-			//Using XPath is a slower method but allows to hand pick your elements from the page<br/>
-			//XPath is case sensitive - <br/>
-			IWebElement findThatCheckBox = driver.FindElement(By.XPath("//input[@type='checkbox'][@value='MotoBike']"));<br/>
-			if (!findThatCheckBox.Selected)<br/>
-			{<br/>
-				findThatCheckBox.Click();<br/>
-			}<br/>
-<br/>
-			IList<IWebElement> findRadioButtons = driver.FindElements(By.Name("feetFunction"));<br/>
+			{
+				Console.WriteLine(element.Text);
+			}
+
+			IList<IWebElement> findCheckBox = driver.FindElements(By.Id("vehicle"));
+			foreach (IWebElement element in findCheckBox) //if I want to check all the boxes
+			{
+				if (!element.Selected)
+				{
+					element.Click(); //select the elements
+				}
+			}
+
+			//Using XPath is a slower method but allows to hand pick your elements from the page
+			//XPath is case sensitive - 
+			IWebElement findThatCheckBox = driver.FindElement(By.XPath("//input[@type='checkbox'][@value='MotoBike']"));
+			if (!findThatCheckBox.Selected)
+			{
+				findThatCheckBox.Click();
+			}
+
+			IList<IWebElement> findRadioButtons = driver.FindElements(By.Name("feetFunction"));
 			foreach(IWebElement element in findRadioButtons)
-			{<br/>
+			{
 				if(element.GetAttribute("value").Equals("Run"))
-				{ //Equals is also case sensitive<br/>
+				{ //Equals is also case sensitive
 					if(!element.Selected)
-					{<br/>
-						element.Click();<br/>
-					}<br/>
-				}<br/>
-			}<br/>
-		}<br/>
+					{
+						element.Click();
+					}
+				}
+			}
+		}
 		
-		[TestFixtureTearDown]<br/>
-		public void FixtureTearDown()<br/>
-		{<br/>
-			// shut down driver and free memory<br/>
-			driver.Quit();<br/>
-		}<br/>
-	}<br/>
-}<br/></code>
-		</pre>
+		[TestFixtureTearDown]
+		public void FixtureTearDown()
+		{
+			// shut down driver and free memory
+			driver.Quit();
+		}
+	}
+}</textarea>
 		
 		<br/>
 		<br/>
@@ -184,7 +184,6 @@ namespace mySeleniumDisaster<br/>
 			<div class="next"> <a href="pageTwoCs.php"> Next </a> </div>
 		</div>
 	</div>		
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>

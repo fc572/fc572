@@ -5,10 +5,11 @@
 		<title> PHP Forms </title>
 	</head>
 
-	<body>
-		<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> Forms in PHP </strong>
 		<p>
 		So here we are with forms! Let's create one.
@@ -43,12 +44,10 @@
 		<br/>
 		The code below is the code behind the scene for the above form.
 		This code validates that the fields are not empty and that the characters accepted are only alphanumeric, spaces, the at sign '@' and the dot '.'
-
-<pre>
-<code>		
+</br>
+<textarea readonly rows=20 cols=95>
 &lt;?php
 //in here it should send the value of the form to a database
-
 if($_POST['name'])
 {
 	$name = $_POST['name'];
@@ -58,7 +57,6 @@ else
 {
 	echo "Please insert a valid name &lt;br/&gt;";
 }
-
 if($_POST['surname'])
 {
 	$surname = $_POST['surname'];
@@ -68,7 +66,6 @@ else
 {
 	echo "Please insert a valid surname &lt;br/&gt;";
 }
-
 if($_POST['key'])
 {
 	$key = $_POST['key'];
@@ -78,7 +75,6 @@ else
 {
 	echo "Please insert a valid key &lt;br/&gt;";
 }
-
 if($_POST['email'])
 {
 	$email = $_POST['email'];
@@ -88,7 +84,6 @@ else
 {
 	echo "Please insert a valid email &lt;br/&gt;";
 }
-
 if($_POST['comment'])
 {
 	$comment = $_POST['comment'];
@@ -98,7 +93,6 @@ else
 {
 	echo "Please insert a valid comment &lt;br/&gt;";
 }
-
 function validateField($validateMe)
 {
 	if (preg_match("/[^a-z,A-Z,0-9,' ','@','.']/", $validateMe, $matches)) 
@@ -107,9 +101,7 @@ function validateField($validateMe)
 	}
 }
 ?&gt;
-</code>
-</pre>
-
+</textarea></br>
 Although it seems a bit crappy that each check is on a separate line, it is done on purpose. I hate those forms that tell you one error at the time
 I prefer having all the errors at once so that I can correct them and then go on with my life.
 
@@ -117,9 +109,11 @@ Now that the form is done, let's go and create a mySql database to store the com
 
 		</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="pageOnePhp.php"> Previous </a> </div> <div class="next"> <a href="pageThreePhp.php"> Next </a> </div></div>
+		<div class="chapter"> <div class="prev"> 
+			<a href="pageOnePhp.php"> Previous </a> </div> <div class="next"> 
+			<a href="pageThreePhp.php"> Next </a> </div>
+		</div>
 	</div>
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>

@@ -1,14 +1,15 @@
-<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html>
 	<head>
 		<link href="../style.css" rel="stylesheet" type="text/css" >
 		<title> Experiencing webDriver in Java </title>
 	</head>
 
-	<body>
-	<div id="marginTop"><?php include "../menu.php";?></div>
-	<div id="leftColumn"></div>
-	<div id="centre">
+	<body id="blackColor">
+		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
+			
+		<div id="rightColumn" class="box"> </div>
+		<div id="centre" class="box">
 		<strong> Locating Elements on the page </strong>
 		<p>
 			Before starting locating the elements on the page, let's put some of them into a web page.... <br/>
@@ -58,42 +59,43 @@
 			</div>
 
 			The first thing I have done is to create a method called navigate() that opens the URL that I want to test.<br/>
-			In order to use this method everywhere, without having to instanciate a class every time, I am declaring the method static, so that I have
+			In order to use this method everywhere, without having to instantiate a class every time, I am declaring the method static, so that I have
 			to call the class name and the method. But a problem arises here. The WebDriver instance that I want to use in the NavigateToSite class is 
-			not the same one that I am using in the LocatingDomOnPage. So what happens here is that one driver is navigating to the right website, and 				the other one is just left in the dark about where to go. This is the faulty code and you'll see why.<br/>
-<pre><code>
-public class NavigateToSite {<br/>
+			not the same one that I am using in the LocatingDomOnPage. So what happens here is that one driver is navigating to the right website, and 
+			the other one is just left in the dark about where to go. This is the faulty code and you'll see why.<br/>
+<textarea readonly rows=10 cols=95>
+public class NavigateToSite {
 
-    @Test<br/>
-    public static void navigate(){<br/>
-        WebDriver driver =  new FirefoxDriver();<br/>
-        Properties prop = new Properties();<br/>
+    @Test
+    public static void navigate(){
+        WebDriver driver =  new FirefoxDriver();
+        Properties prop = new Properties();
 
-        //load a properties file<br/>
-        try {<br/>
-            prop.load(new FileInputStream("environment.config"));<br/>
-        } catch (IOException e) {<br/>
-            e.printStackTrace();<br/>
-        }<br/>
+        //load a properties file
+        try {
+            prop.load(new FileInputStream("environment.config"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        driver.navigate().to(prop.getProperty("environment_ON"));<br/>
-    }<br/>
-}<br/>
+        driver.navigate().to(prop.getProperty("environment_ON"));
+    }
+}
 
-public class LocatingDomOnPage {<br/>
+public class LocatingDomOnPage {
 
-    WebDriver driver = new FirefoxDriver();<br/>
+    WebDriver driver = new FirefoxDriver();
 
-    @Test<br/>
-    public void locateElements(){<br/>
-        NavigateToSite.navigate();<br/>
-        WebElement element = driver.findElement(By.id("FindMeById"));<br/>
-        element.sendKeys("I was found using my ID");<br/>
-    }<br/>
-}<br/>
+    @Test
+    public void locateElements(){
+        NavigateToSite.navigate();
+        WebElement element = driver.findElement(By.id("FindMeById"));
+        element.sendKeys("I was found using my ID");
+    }
+}
 
 
-</code></pre>
+<textarea><br/>
 At this point in order to use the same driver I have to declare it somewhere else and then make all the classes to use it.<br/>
 How do I do that? <br/>
 So I have my navigate method and my locateElements methods and I want them to work together. In order to do so, I cannot instantiate for each class
@@ -102,9 +104,11 @@ a new FirefoxDriver object otherwise each of the methods will work on its own, t
 
 		</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="./index.php"> Previous </a> </div> <div class="next"> <a href=""> Next </a> </div></div>
+		<div class="chapter">
+			<div class="prev"> <a href="./index.php"> Previous </a> </div>
+			<div class="next"> <a href=""> Next </a> </div>
+		</div>
 	</div>
-	<div id="rightColumn"></div>
-	<div id="footer"></div>
+	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
 	</body>
 </html>
