@@ -15,13 +15,10 @@
 		<script type="text/javascript">
 			document.write("How to declare variables in js");
 			document.write("<br/>");
-			document.write("var saySomething = I want to start from zero");
-			document.write("<br/>");
-			var saySomething = "I want to start from zero";
-			document.write("<br/>");
-			document.write(saySomething);
-			document.write("This is simply how to declare variables and how to use js directly into the body of the HTML code");
-			document.write("problem is that you do not want js and HTML in the same file. So from next page I'll split the two");
+			document.write("var saySomething = I want to start from zero;<br/>");
+			
+			document.write("This is simply how to declare variables and how to use js directly into the body of the HTML code<br/>");
+			document.write("The problem is that you do not want js and HTML in the same file. So from next page I'll split the two");
 		</script>
 		<p/>		
 		<div class="chapter"> 
