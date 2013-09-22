@@ -37,7 +37,18 @@
 			method that is over-engineered for my needs, but it mirrors what happens in real life<br/>
 			The configuration file gets added to the root of the project and it is read into the application using this code
 			<textarea readonly rows=10 cols=95>
-			MISSING CODE
+		public class Helper {
+
+		    protected static String getUrl(){
+			Properties prop = new Properties();
+			try {
+			    prop.load(new FileInputStream("environment.config"));
+			} catch (IOException e) {
+			    e.printStackTrace();
+			}
+			return prop.getProperty("environment_TEST");
+		    }
+		}
 			</textarea><br/>
 			Now that I have the environment set up, I can start with locating the DOM elements on the page using Java and webDriver.
 			</p>
