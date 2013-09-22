@@ -15,7 +15,7 @@
 }
 
 #blackColor{
-	background-color:black;
+	background-color:#FF6600;
 }
 
 
@@ -92,7 +92,7 @@ code {
 }
 
 form{
-	background-color: grey;
+	background-color:#CCFFCC;
 	border-style:ridge;
 	border-width:2px;
 	border-radius:25px;

@@ -16,8 +16,8 @@
 			The elements that I am looking for are enclosed in a dotted line<br/>
 			
 			<form>
-				Element By Id <input class="addBorder" type="text" size="35" id="FindMeById"/><br>
-				Element By name: <input class="addBorder" type="text" size="35" name="FindMeByName"/>
+				Find Element By Id <input class="addBorder" type="text" size="35" id="FindMeById"/><br>
+				Find Element By name: <input class="addBorder" type="text" size="35" name="FindMeByName"/>
 			</form>
 			
 			<br/>
@@ -28,9 +28,9 @@
 			<div class="addBorder" id="findMeByCssSelector"> Find me by Css Selector </div>
 			<br/>
 			<div class="addBorder">	
-				Also because Css Selectors are a lot, see <a href="http://www.w3schools.com/cssref/css_selectors.asp"> here <a/>
+				Also because Css Selectors are a lot, see <a href="http://www.w3schools.com/cssref/css_selectors.asp"> here in the W3schools website <a/>
 			
-				I am going to add a list and check boxes and radio buttons that are the most likely you'll find on a web page <br/>
+				I am going to add a list, check boxes and radio buttons that are the most likely you'll find on a web page <br/>
 				<ul>
 					<li> First element</li>
 					<li> Second element</li>
@@ -38,7 +38,7 @@
 				</ul>
 			</div>
 			<br/>
-			Also to be able to hand pick one check box only, I am going to use XPath in the second example for checkboxes, and I am going 
+			Also I am going to use XPath in the second example for check boxes and I am going 
 			to use only XPath for selecting a radio button. I think that XPath will deserve a better coverage than that, but for now it is going 
 			to be OK like that.
 			<br/>
