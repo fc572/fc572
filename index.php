@@ -11,7 +11,7 @@
 	</head>
 	
 	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='index.php'"><?php include "menuIndex.php";?></div>
+		<div id="marginTop" onclick="window.location.href='index.php'"><?php include "menuIndex.php";?></div>
 		<div id="rightColumn" class="box"> </div>
 		<div id="centre" class="box">
 			<strong> Every time I didn't understand something, I wrote a book about it.<br/> 
