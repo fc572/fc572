@@ -1,20 +1,23 @@
+#wrapper{
+	width: 1200px;
+}
 #marginTop{
-	height: 200px;
-	background-image: url(./images/NewLogoOpaqueRotate.png);
+	height: 220px;
+	background-image: url(./images/NewLogo.png);
 	background-repeat:no-repeat;
 	width:80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .box{
 	background-color:white;
-	margin-left: auto;
-	margin-right: auto;	
-	margin-top: 2.5%;
 	border-radius: 25px;
 	padding:25px;
+border:2px solid black;
 }
 
-#blackColor{
+#backgroundColor{
 	background-color:#3333CC;
 }
 
@@ -35,28 +38,29 @@
 	text-align: center;
 	padding-left: 1em;
 	padding-right: 1em;
-	margin-top:1.5em;
+	margin-top:70px;
 	margin-left: 2px;
 	font-size:15px;
 }
 
+.liMenuHeader a:link, a:visited, a:active, a:hover {color:#FFFFFF}
+
 #rightColumn{
 	float:right;
-	width: 15%;
-	margin-left: 0.5em;
-	margin-right: 6em;
+	width: 20%;
 }
 
 #centre{
 	float:left;
 	width: 60%;
-	margin-left:6em;
-	margin-bottom:2em;
+	margin-left:120px;
+	margin-bottom:30px;
 }
 
 #footer{
 	clear:both;
-	width:80%;
+	margin-left:120px;
+	width:85%;
 }
 
 			
@@ -92,17 +96,17 @@ code {
 }
 
 form{
-	background-color:#CCFFCC;
+	background-color:#3333CC;
 	border-style:ridge;
 	border-width:2px;
-	border-radius:25px;
+	border-radius:20px;
 }
 
 input{
 	border-style: solid;
-	color: #0000FF;
+	color: #000000;
 	border: 1px solid black;
-	border-radius:25px;
+	border-radius:20px;
 
 }
 label{
@@ -114,7 +118,7 @@ label{
 	display: block
 }
 textarea{
-	color: #0000FF;
+	color: #FFFFFF;
 	border: 1px solid #781351;
 	border-radius:25px;
 	text-align:centre;

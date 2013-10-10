@@ -9,18 +9,18 @@
 		
 		<title> Home page </title>
 	</head>
-	
-	<body id="blackColor">
+	<div id="wrapper">
+	<body id="backgroundColor">
 		<div id="marginTop" onclick="window.location.href='index.php'"><?php include "menuIndex.php";?></div>
-		<div id="rightColumn" class="box"> </div>
+		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> </div>
 		<div id="centre" class="box">
 			<strong> Every time I didn't understand something, I wrote a book about it.<br/> 
 				<cite><a href="http://www.geraldmweinberg.com/"> Jerry Weinberg </a></strong></cite>
 				<p>
 				This is one of the sentences that stuck in my head after having attended the PSL course in April 2013.<br/>
-				And it took me a while to understand what he meant. I though that you cannot write about something that you don't understand.
-				But I never stop and considered that if you want to write about something, you force yourself to master the subject you want 
-				to write about.</br>
+				And it took me a while to understand what he meant. I though that you cannot write about something that you don't understand,
+				until I stoped and considered that if you want to write about something, you force yourself to master the subject you want 
+				to write about.And this is why I finally got around to do this website...</br>
 				</p>
 				<div class="chapter"> 
 					<div class="next"> <a href="blog/pageOneBlog.php"> Next </a> </div>
@@ -30,4 +30,5 @@
 		<div id="footer" class="box"><?php include "commentsForm.php";?></div>		
 	
 	</body>
+</div> <!--wrapper-->
 </html>

@@ -25,7 +25,7 @@ $link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Co
 				echo '</table>';
 			} 
 			else{
-				echo 'Be the first to leave a comment <br>'; 
+				echo '<div text-align: center">Be the first to leave a comment</div> <br>'; 
 			}
 			mysqli_close($link);
 	
@@ -85,16 +85,16 @@ else
 
 	   <tr>  
 		  <td><div align="right">Username:   </div></td>  
-		   <td><input name="username" id="username" type="text" size="30" value=""></td> 
+		   <td><input name="username" id="username" type="text" size="40" value=""></td> 
 		   
 	   </tr> 
 		<tr>  
 			<td><div align="right">Contact:   </div></td> 
-			<td><input type="text" name="contact" id="contact" size="30" value=""> <i>(email or url - will not be shown)</i></td> 
+			<td><input type="text" name="contact" id="contact" size="40" value="email or url - will not be shown"></td> 
 		</tr> 
 		<tr>
 			<td><div align="right">Subject:   </div></td> 
-			<td><input type="text" name="subject" id="subject" size="30" value=""></td> 
+			<td><input type="text" name="subject" id="subject" size="40" value=""></td> 
 		</tr> 
 		<tr> 
 		    <td><div align="right">Comment:   </div></td> 
@@ -102,7 +102,7 @@ else
 		</tr> 
 		<tr>  
 		    <td></td> 
-		    <td colspan="2"><input type="reset" value="Reset Fields">      
+		   	 <td colspan="2"><input type="reset" value="Reset Fields">      
 			<input type="submit" name="submit" value="Add Comment"></td> 
 		</tr> 
 	  </table> 
