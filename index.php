@@ -12,7 +12,7 @@
 	<div id="wrapper">
 	<body id="backgroundColor">
 		<div id="marginTop" onclick="window.location.href='index.php'"><?php include "menuIndex.php";?></div>
-		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> </div>
+		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
 			<strong> Every time I didn't understand something, I wrote a book about it.<br/> 
 				<cite><a href="http://www.geraldmweinberg.com/"> Jerry Weinberg </a></strong></cite>
@@ -27,8 +27,7 @@
 				</div>
 		</div>
 		
-		<div id="footer" class="box"><?php include "commentsForm.php";?></div>		
-	
+		<div id="comment"><?php include "commentsForm.php";?></div>		
 	</body>
 </div> <!--wrapper-->
 </html>

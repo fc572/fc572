@@ -81,29 +81,24 @@ else
 ?>
 	<form name="comments" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 
 
-	<table width="80%" border="0" cellspacing="0" cellpadding="0"> 
+	<table width="100%" border="1" cellspacing="0" cellpadding="2"> 
 
-	   <tr>  
-		  <td><div align="right">Username:   </div></td>  
-		   <td><input name="username" id="username" type="text" size="40" value=""></td> 
+	   	<tr>  
+		 	<td><div align="right">Username:   </div></td>  
+		   	<td><input name="username" id="username" type="text" size="40" value=""></td> 
 		   
-	   </tr> 
-		<tr>  
 			<td><div align="right">Contact:   </div></td> 
 			<td><input type="text" name="contact" id="contact" size="40" value="email or url - will not be shown"></td> 
-		</tr> 
-		<tr>
+		
 			<td><div align="right">Subject:   </div></td> 
 			<td><input type="text" name="subject" id="subject" size="40" value=""></td> 
-		</tr> 
-		<tr> 
-		    <td><div align="right">Comment:   </div></td> 
-		    <td><textarea name="comment" id="comment" cols="45" rows="5" wrap="VIRTUAL"></textarea></td> 
-		</tr> 
-		<tr>  
-		    <td></td> 
+		</tr>
+		
+		    	<td><div align="right">Comment:   </div></td> 
+		    	<td><textarea name="comment" id="comment" cols="100" rows="5" wrap="VIRTUAL"></textarea></td> 
+
 		   	 <td colspan="2"><input type="reset" value="Reset Fields">      
-			<input type="submit" name="submit" value="Add Comment"></td> 
+			 <input type="submit" name="submit" value="Add Comment"></td> 
 		</tr> 
 	  </table> 
 	</form> 

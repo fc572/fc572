@@ -32,7 +32,7 @@ border:2px solid black;
 	line-height: 2em;
 	float: left;
 	width: auto;
-	border: 0.1em solid black;
+	border: 0.2px solid black;
 	border-radius:1em;
 	text-decoration: none;
 	text-align: center;
@@ -58,6 +58,12 @@ border:2px solid black;
 }
 
 #footer{
+	clear:both;
+	margin-left:120px;
+	width:85%;
+}
+
+#comment{
 	clear:both;
 	margin-left:120px;
 	width:85%;
@@ -103,12 +109,12 @@ form{
 }
 
 input{
-	border-style: solid;
-	color: #000000;
-	border: 1px solid black;
-	border-radius:20px;
-
+	color: #3333CC;
+	border: 5px solid white;
+	border-radius:10px;
+	width:100%;
 }
+
 label{
 	width: 4px;
 	float: left;
@@ -117,12 +123,7 @@ label{
 	margin-left: 15px;
 	display: block
 }
-textarea{
-	color: #FFFFFF;
-	border: 1px solid #781351;
-	border-radius:25px;
-	text-align:centre;
-}
+
 
 #submit
 {
