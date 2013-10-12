@@ -9,8 +9,9 @@
 		
 		<title> Home page </title>
 	</head>
-	<div id="wrapper">
+	
 	<body id="backgroundColor">
+		<div id="wrapper">
 		<div id="marginTop" onclick="window.location.href='index.php'"><?php include "menuIndex.php";?></div>
 		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
@@ -20,14 +21,13 @@
 				This is one of the sentences that stuck in my head after having attended the PSL course in April 2013.<br/>
 				And it took me a while to understand what he meant. I though that you cannot write about something that you don't understand,
 				until I stoped and considered that if you want to write about something, you force yourself to master the subject you want 
-				to write about.And this is why I finally got around to do this website...</br>
+				to write about. And this is why I finally got around to do this website...</br>
 				</p>
-				<div class="chapter"> 
-					<div class="next"> <a href="blog/pageOneBlog.php"> Next </a> </div>
-				</div>
+					<div class="linkButtonRight"> <a href="blog/pageOneBlog.php"> Next </a> </div>
 		</div>
 		
-		<div id="comment"><?php include "commentsForm.php";?></div>		
+		<div><?php include "commentsForm.php";?></div>
+		</div> <!--wrapper-->		
 	</body>
-</div> <!--wrapper-->
+
 </html>

@@ -24,9 +24,7 @@ $link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Co
 				
 				echo '</table>';
 			} 
-			else{
-				echo '<div text-align: center">Be the first to leave a comment</div> <br>'; 
-			}
+			
 			mysqli_close($link);
 	
 	if(isset($_POST['submit']))
@@ -79,29 +77,14 @@ $link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Co
 else
 {
 ?>
-	<form name="comments" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 
-
-	<table width="100%" border="1" cellspacing="0" cellpadding="2"> 
-
-	   	<tr>  
-		 	<td><div align="right">Username:   </div></td>  
-		   	<td><input name="username" id="username" type="text" size="40" value=""></td> 
-		   
-			<td><div align="right">Contact:   </div></td> 
-			<td><input type="text" name="contact" id="contact" size="40" value="email or url - will not be shown"></td> 
-		
-			<td><div align="right">Subject:   </div></td> 
-			<td><input type="text" name="subject" id="subject" size="40" value=""></td> 
-		</tr>
-		
-		    	<td><div align="right">Comment:   </div></td> 
-		    	<td><textarea name="comment" id="comment" cols="100" rows="5" wrap="VIRTUAL"></textarea></td> 
-
-		   	 <td colspan="2"><input type="reset" value="Reset Fields">      
-			 <input type="submit" name="submit" value="Add Comment"></td> 
-		</tr> 
-	  </table> 
-	</form> 
+			<form id="comment" class="box" name="comments" id="comments" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 
+			<label>Username:</label> <input id="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=1/></br>
+			<label>Subject:</label> <input id="formInputFormat" type="text" name="surname" id="surname" maxlength=25 size=25 tabindex=2 /></br>
+			<label>Email:</label> <input id="formInputFormat" type="text" name="contact" id="contact" maxlength=50 size=50 tabindex=3 /></br>
+			<label>Comment:</label> <textarea id="formInputFormat" name="comment" id="comment" maxlength=255 rows=2 cols=50 tabindex=4 ></textarea></br>
+			
+			<input type="submit" name="submit" id="submit" value="Send comment"  />
+		</form>
 
 <?php 
 }
