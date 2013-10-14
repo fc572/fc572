@@ -78,7 +78,7 @@ else
 {
 ?>
 			<form id="comment" class="box" name="comments" id="comments" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 
-			<label>Username:</label> <input id="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=1/></br>
+			<label>Name:</label> <input id="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=1/></br>
 			<label>Subject:</label> <input id="formInputFormat" type="text" name="surname" id="surname" maxlength=25 size=25 tabindex=2 /></br>
 			<label>Email:</label> <input id="formInputFormat" type="text" name="contact" id="contact" maxlength=50 size=50 tabindex=3 /></br>
 			<label>Comment:</label> <textarea id="formInputFormat" name="comment" id="comment" maxlength=255 rows=2 cols=50 tabindex=4 ></textarea></br>

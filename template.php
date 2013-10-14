@@ -6,7 +6,9 @@
 		<meta name="author" content="Francesco"/>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="style.css" rel="stylesheet" type="text/css" >
-		
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+
 		<title> Home page </title>
 	</head>
 	<div id="wrapper">
@@ -19,8 +21,10 @@
 			</p>
 				<div class="linkButtonLeft"> <a href="PREV_PAGE_GOES_HERE"> Prev </a> </div> 
 				<div class="linkButtonRight"> <a href="NEXT_PAGE_GOES_HERE"> Next </a> </div>
-		</div><!--centre-->	
-		<div><?php include "commentsForm.php";?></div>		
+		</div><!--centre-->
+		
+		 <input type="button" value="Click here to show comments" onclick="$('#showHide').toggle()"></input>
+		<div id="showHide"> <?php include "commentsForm.php";?> </div>		
 	</body>
 </div> <!--wrapper-->
 </html>
