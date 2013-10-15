@@ -1,18 +1,24 @@
 <!DOCTYPE html> 
 <html>
 	<head>
+		<meta name="description" content="My experience with webDriver">
+		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
+		<meta name="author" content="Francesco"/>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> I Know Nothing </title>
-	</head>
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../jsCommentHelper.js"></script>
 
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
+		<title> Configuration File</title>
+	</head>
+	
+	<body id="backgroundColor" onload(hideElement())>
+	<div id="wrapper">
+		<div id="marginTop" onclick="window.location.href='../index.php'"><?php include "../menuIndex.php";?></div>
+		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
-		<strong> Configuration File </strong>
-		
-		<p>
+		<h2> Configuration File</h2>
+			<p>
 			One of the first things that annoys me is the need to deploy to the live environmmet in order to test the code
 			that I have written. I need a test environmemnt! <br/>
 			What better place than localhost to place my test environment? So I have downloaded and deployed the XAMPP server
@@ -43,12 +49,14 @@
 			Now all I have to do is to comment/uncomment the environment that I want to use and this change will reflect all over the place.
 		</p>
 		
-		<div class="chapter"> 
-			<div class="prev"> <a href="../index.php"> Previous </a> </div> 
-			<div class="next"> <a href="pageOneCs.php"> Next </a> </div>
-		</div>
-	</div>
-	
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
+		</p>
+				<div class="linkButtonLeft"> <a href="../blog/pageOneBlog.php"> Prev </a> </div> 
+				<div class="linkButtonRight"> <a href="pageOneCs.php"> Next </a> </div>
+		</div><!--centre-->
+		
+		<!--input id="submit" type="button" value="Show comments" onclick="toggleElement()"></input-->
+		
+		<div id="showHide"> <?php include "../commentsForm.php";?> </div>	
+	</div> <!--wrapper-->	
 	</body>
 </html>

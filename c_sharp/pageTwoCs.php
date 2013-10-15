@@ -1,17 +1,24 @@
 <!DOCTYPE html> 
 <html>
 	<head>
+		<meta name="description" content="My experience with webDriver">
+		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
+		<meta name="author" content="Francesco"/>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> I Know Nothing </title>
-	</head>
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../jsCommentHelper.js"></script>
 
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
+		<title> Second page c# </title>
+	</head>
+	
+	<body id="backgroundColor" onload(hideElement())>
+	<div id="wrapper">
+		<div id="marginTop" onclick="window.location.href='../index.php'"><?php include "../menuIndex.php";?></div>
+		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
-		<strong> Page Two, lets start locating elements</a></strong>
-		<p>So I am all set up with my IDE, NUnit and webDriver, and now I am ready to start targeting my website.</p>
+		<h2> Page Two, lets start locating elements</h2>
+			<p>So I am all set up with my IDE, NUnit and webDriver, and now I am ready to start targeting my website.</p>
 		<p>
 			In order to use web automation, first thing we need to worry about is to find the DOM element that we want to act upon.
 			WebDriver offers various ways to locate an element on the page, and I am now going to create a list of fields in this page
@@ -179,11 +186,13 @@ namespace mySeleniumDisaster
 		Ok so if you run this code in NUnit it will be all nice and green, so it is doing what I want it to do. Later we are going to reformat this 
 		code to make it prettier and more functional, but for the time being I am happy with it as it is. 
 		</p>
-		<div class="chapter">
-			<div class="prev"> <a href="pageOneCs.php"> Previous </a> </div> 
-			<div class="next"> <a href="pageTwoCs.php"> Next </a> </div>
-		</div>
-	</div>		
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
+				<div class="linkButtonLeft"> <a href="pageOneCs.php"> Prev </a> </div> 
+				<div class="linkButtonRight"> <a href="pageTwoCs.php"> Next </a> </div>
+		</div><!--centre-->
+		
+		<!--input id="submit" type="button" value="Show comments" onclick="toggleElement()"></input-->
+		
+		<div id="showHide"> <?php include "../commentsForm.php";?> </div>	
+	</div> <!--wrapper-->	
 	</body>
 </html>

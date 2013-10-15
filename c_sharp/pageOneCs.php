@@ -1,16 +1,24 @@
 <!DOCTYPE html> 
 <html>
 	<head>
+		<meta name="description" content="My experience with webDriver">
+		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
+		<meta name="author" content="Francesco"/>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="../style.css" rel="stylesheet" type="text/css" >
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../jsCommentHelper.js"></script>
+
 		<title> WebDriver in C# </title>
 	</head>
-<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
+	
+	<body id="backgroundColor" onload(hideElement())>
+	<div id="wrapper">
+		<div id="marginTop" onclick="window.location.href='../index.php'"><?php include "../menuIndex.php";?></div>
+		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
-		<strong> So here I am. Let's start with installing and running IDE of choice </a></strong>
-		<p>
+		<h2> So here I am. Let's start with installing and running IDE of choice</h2>
+			<p>
 		Well I want to be able to do this in both c# and java, so I am going to do everything twice.<br/>
 		Let's start with C# for which we need to install <a href="http://www.microsoft.com/visualstudio/eng/downloads"> Visual studio Express </a>
 		where I choose Visual Studio Express 2012 for Web. Why this one? because it seems the most relevant since I am going to use selenium web driver.
@@ -100,13 +108,14 @@ namespace mySeleniumDisaster
 		
 		I am debating with myself if explain everything that is on this page or not.... well it is 12:40am and I think it is time to sleep onit.
 		But we have success, and I have succesfully set up my project. Hurray!
+		</p>
+				<div class="linkButtonLeft"> <a href="misc.php"> Prev </a> </div> 
+				<div class="linkButtonRight"> <a href="pageTwoCs.php"> Next </a> </div>
+		</div><!--centre-->
 		
-		<div class="chapter"> 
-			<div class="prev"> <a href="misc.php"> Previous </a> </div> 
-			<div class="next"> <a href="pageTwoCs.php"> Next </a> </div>
-		</div>
-	</div>
-	<div id="rightColumn"></div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
+		<!--input id="submit" type="button" value="Show comments" onclick="toggleElement()"></input-->
+		
+		<div id="showHide"> <?php include "../commentsForm.php";?> </div>	
+	</div> <!--wrapper-->	
 	</body>
 </html>

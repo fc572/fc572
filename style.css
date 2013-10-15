@@ -25,14 +25,13 @@
 #ulMenuHeader{
 	float: right;
 	list-style: none;
-	text-decoration:none;
 }
 
 .liMenuHeader{
 	line-height: 2em;
 	float: left;
 	width: auto;
-	border: 0.2px solid black;
+	border: 1px solid black;
 	border-radius:1em;
 	text-decoration: none;
 	text-align: center;
@@ -43,7 +42,7 @@
 	font-size:15px;
 }
 
-a {color:#FFFFFF} 
+.liMenuHeader a {color:#FFFFFF} 
 
 #rightColumn{
 	float:right;
@@ -86,6 +85,7 @@ body{
 	background: #3333CC;
 	border: 3px outset #FFFFFF;
 }
+.linkButtonLeft a {color:#FFFFFF}
 
 .linkButtonRight {
 	width:50px;
@@ -97,6 +97,7 @@ body{
 	background: #3333CC;
 	border: 3px outset #FFFFFF;	
 }
+.linkButtonRight a {color:#FFFFFF}
 
 code {
 	background-color: #e1e1e1;

@@ -1,24 +1,33 @@
 <!DOCTYPE html> 
 <html>
 	<head>
+		<meta name="description" content="My experience with webDriver">
+		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
+		<meta name="author" content="Francesco"/>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="../style.css" rel="stylesheet" type="text/css" >
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../jsCommentHelper.js"></script>
+
 		<title> Blogs will come! </title>
 	</head>
-
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
+	
+	<body id="backgroundColor" onload(hideElement())>
+	<div id="wrapper">
+		<div id="marginTop" onclick="window.location.href='../index.php'"><?php include "../menuIndex.php";?></div>
+		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
-		<strong> Page Template </strong>
-		<p>
-		</p>
+		<h2> Page Heading </h2>
+			<p>
+			I will put something here... just be patient!</br>
+			</p>
+				<div class="linkButtonLeft"> <a href="../index.php"> Prev </a> </div> 
+				<div class="linkButtonRight"> <a href="../c_sharp/pageOneCs.php"> Next </a> </div>
+		</div><!--centre-->
 		
-		<div class="chapter"> 
-			<div class="prev"> <a href="index.php"> Previous </a> </div>
-			<div class="next"> <a href="pageTwo.php"> Next </a> </div>
-		</div>
-	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
+		<!--input id="submit" type="button" value="Show comments" onclick="toggleElement()"></input-->
+		
+		<div id="showHide"> <?php include "../commentsForm.php";?> </div>	
+	</div> <!--wrapper-->	
 	</body>
 </html>
