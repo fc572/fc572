@@ -7,12 +7,13 @@
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="style.css" rel="stylesheet" type="text/css" >
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-
+		<script type="text/javascript" src="jsCommentHelper.js"></script>
 
 		<title> Home page </title>
 	</head>
+	
+	<body id="backgroundColor" onload(hideElement())>
 	<div id="wrapper">
-	<body id="backgroundColor">
 		<div id="marginTop" onclick="window.location.href='index.php'"><?php include "menuIndex.php";?></div>
 		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
 		<div id="centre" class="box">
@@ -23,8 +24,9 @@
 				<div class="linkButtonRight"> <a href="NEXT_PAGE_GOES_HERE"> Next </a> </div>
 		</div><!--centre-->
 		
-		 <input type="button" value="Click here to show comments" onclick="$('#showHide').toggle()"></input>
-		<div id="showHide"> <?php include "commentsForm.php";?> </div>		
+		<input id="submit" type="button" value="Click here to show comments" onclick="toggleElement()"></input>
+		
+		<div id="showHide"> <?php include "commentsForm.php";?> </div>	
+	</div> <!--wrapper-->	
 	</body>
-</div> <!--wrapper-->
 </html>
