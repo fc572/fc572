@@ -1,72 +1,75 @@
-<?php
+<?php include "../templates/top.php";?>
 
-	echo "API PHP <br/>";
+		<div id="centre" class="box">
+		<h2> APIs </h2>
+<p>
+<?php
 	if(!empty($_GET["your_key"]))
 	{
 		$inputKey = $_GET["your_key"];
 		if($inputKey == 'fc572')
 		{
 					$status_requested = $_GET["requestingStatus"];
-					$message = "The HTTP status requested means ";
+					$message = "";
 					switch($status_requested)
 					{
-						case 100: $message = $message."Continue"; break;
-						case 101: $message = $message."Switching Protocols"; break;
-						case 102: $message = $message."Processing";break;
-						case 200: $message = $message."OK";break;
-						case 201: $message = $message."Created";break;
-						case 202: $message = $message."Accepted";break;
-						case 203: $message = $message."Non-Authoritative Information";break;
-						case 204: $message = $message."No Content";break;
-						case 205: $message = $message."Reset Content";break;
-						case 206: $message = $message."Partial Content";break;
-						case 207: $message = $message."Multi-Status";break;
-						case 226: $message = $message."IM Used";break;
-						case 300: $message = $message."Multiple Choices";break;
-						case 301: $message = $message."Moved Permanently";break;
-						case 302: $message = $message."Found";break;
-						case 303: $message = $message."See Other";break;
-						case 304: $message = $message."Not Modified";break;
-						case 305: $message = $message."Use Proxy";break;
-						case 306: $message = $message."Reserved";break;
-						case 307: $message = $message."Temporary Redirect";break;
-						case 400: $message = $message."Bad Request";break;
-						case 401: $message = $message."Unauthorized";break;
-						case 402: $message = $message."Payment Required";break;
-						case 403: $message = $message."Forbidden";break;
-						case 404: $message = $message."Not Found";break;
-						case 405: $message = $message."Method Not Allowed";break;
-						case 406: $message = $message."Not Acceptable";break;
-						case 407: $message = $message."Proxy Authentication Required";break;
-						case 408: $message = $message."Request Timeout";break;
-						case 409: $message = $message."Conflict";break;
-						case 410: $message = $message."Gone";break;
-						case 411: $message = $message."Length Required";break;
-						case 412: $message = $message."Precondition Failed";break;
-						case 413: $message = $message."Request Entity Too Large";break;
-						case 414: $message = $message."Request-URI Too Long";break;
-						case 415: $message = $message."Unsupported Media Type";break;
-						case 416: $message = $message."Requested Range Not Satisfiable";break;
-						case 417: $message = $message."Expectation Failed";break;
-						case 422: $message = $message."Unprocessable Entity";break;
-						case 423: $message = $message."Locked";break;
-						case 424: $message = $message."Failed Dependency";break;
-						case 426: $message = $message."Upgrade Required";break;
-						case 500: $message = $message."Internal Server Error";break;
-						case 501: $message = $message."Not Implemented";break;
-						case 502: $message = $message."Bad Gateway";break;
-						case 503: $message = $message."Service Unavailable";break;
-						case 504: $message = $message."Gateway Timeout";break;
-						case 505: $message = $message."HTTP Version Not Supported";break;
-						case 506: $message = $message."Variant Also Negotiates";break;
-						case 507: $message = $message."Insufficient Storage";break;
-						case 510: $message = $message."Not Extended";break; 
-						default: $message = "ERROR this HTTP code you have request is not present in my list";
+						case 100: $message = "Continue"; break;
+						case 101: $message = "Switching Protocols"; break;
+						case 102: $message = "Processing";break;
+						case 200: $message = "OK";break;
+						case 201: $message = "Created";break;
+						case 202: $message = "Accepted";break;
+						case 203: $message = "Non-Authoritative Information";break;
+						case 204: $message = "No Content";break;
+						case 205: $message = "Reset Content";break;
+						case 206: $message = "Partial Content";break;
+						case 207: $message = "Multi-Status";break;
+						case 226: $message = "IM Used";break;
+						case 300: $message = "Multiple Choices";break;
+						case 301: $message = "Moved Permanently";break;
+						case 302: $message = "Found";break;
+						case 303: $message = "See Other";break;
+						case 304: $message = "Not Modified";break;
+						case 305: $message = "Use Proxy";break;
+						case 306: $message = "Reserved";break;
+						case 307: $message = "Temporary Redirect";break;
+						case 400: $message = "Bad Request";break;
+						case 401: $message = "Unauthorized";break;
+						case 402: $message = "Payment Required";break;
+						case 403: $message = "Forbidden";break;
+						case 404: $message = "Not Found";break;
+						case 405: $message = "Method Not Allowed";break;
+						case 406: $message = "Not Acceptable";break;
+						case 407: $message = "Proxy Authentication Required";break;
+						case 408: $message = "Request Timeout";break;
+						case 409: $message = "Conflict";break;
+						case 410: $message = "Gone";break;
+						case 411: $message = "Length Required";break;
+						case 412: $message = "Precondition Failed";break;
+						case 413: $message = "Request Entity Too Large";break;
+						case 414: $message = "Request-URI Too Long";break;
+						case 415: $message = "Unsupported Media Type";break;
+						case 416: $message = "Requested Range Not Satisfiable";break;
+						case 417: $message = "Expectation Failed";break;
+						case 422: $message = "Unprocessable Entity";break;
+						case 423: $message = "Locked";break;
+						case 424: $message = "Failed Dependency";break;
+						case 426: $message = "Upgrade Required";break;
+						case 500: $message = "Internal Server Error";break;
+						case 501: $message = "Not Implemented";break;
+						case 502: $message = "Bad Gateway";break;
+						case 503: $message = "Service Unavailable";break;
+						case 504: $message = "Gateway Timeout";break;
+						case 505: $message = "HTTP Version Not Supported";break;
+						case 506: $message = "Variant Also Negotiates";break;
+						case 507: $message = "Insufficient Storage";break;
+						case 510: $message = "Not Extended";break; 
+						default: "ERROR this HTTP code you have request is not present in my list";
 					}
 				echo "<br/><br/>";
 				echo "<table id=\"HTTP STATUSES\" border=2>";
 				echo "<tr bgcolor=#dadada>";
-				echo "<td width=\"15%\">Code</td><td width=\"15%\">Message</td></tr>";
+				echo "<td width=\"15%\">Code</td><td width=\"15%\">The HTTP status requested means</td></tr>";
 				echo"<tr> <td width=\"15%\">".$status_requested."</td> <td width=\"15%\">".$message."</td></tr>";
 				echo "</table>";  
 		}
@@ -127,3 +130,8 @@
 			mysqli_close($link);
 		}
 ?>
+</p>
+	<div class="linkButtonLeft"> <a href="PREV_PAGE_GOES_HERE"> Prev </a> </div> 
+	<div class="linkButtonRight"> <a href="NEXT_PAGE_GOES_HERE"> Next </a> </div>
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>
