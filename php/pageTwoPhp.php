@@ -1,15 +1,4 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> PHP Forms </title>
-	</head>
-
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
+<?php include "../templates/top.php";?>
 		<strong> Forms in PHP </strong>
 		<p>
 		So here we are with forms! Let's create one.
@@ -114,6 +103,4 @@ Now that the form is done, let's go and create a mySql database to store the com
 			<a href="pageThreePhp.php"> Next </a> </div>
 		</div>
 	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
-	</body>
-</html>
+<?php include "../templates/bottom.php" ?>

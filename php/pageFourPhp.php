@@ -1,15 +1,5 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> PHP API </title>
-	</head>
+<?php include "../templates/top.php" ?>
 
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
 		<strong> API in PHP </strong>
 		<p>
 		In this page I am going to write a RESTful API to retrieve the values inserted into the comments form.<br/>
@@ -173,6 +163,4 @@
 		
 		<div class="chapter"> <div class="prev"> <a href="pageThreePhp.php"> Previous </a> </div> <div class="next"> <a href=".php"> Next </a> </div></div>
 	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
-	</body>
-</html>
+<?php include "../templates/bottom.php" ?>

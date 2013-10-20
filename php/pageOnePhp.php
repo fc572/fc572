@@ -1,15 +1,5 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> Learning PHP </title>
-	</head>
+<?php include "../templates/top.php";?>
 
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
 			<strong> PHP </strong>
 			<p>
 			<?php
@@ -80,6 +70,4 @@
 				<div class="next"> <a href="pageTwoPhp.php"> Next </a> </div>
 			</div>
 		</div>
-		<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
-	</body>
-</html>
+<?php include "../templates/bottom.php" ?>

@@ -1,15 +1,4 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> PHP MySQL </title>
-	</head>
-
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
+<?php include "../templates/top.php";?>
 		<strong> MySQL in PHP </strong>
 		<p>
 		I have create a MySQL database and now I need to connect to it in order for the form to save the form details.
@@ -146,6 +135,4 @@ Now let's move to writing the API that will retrieve the comments from the datab
 		</div>
 	</div>
 	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
-	</body>
-</html>
+<?php include "../templates/bottom.php" ?>
