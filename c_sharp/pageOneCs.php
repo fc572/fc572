@@ -1,22 +1,5 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<meta name="description" content="My experience with webDriver">
-		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
-		<meta name="author" content="Francesco"/>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../jsCommentHelper.js"></script>
+<?php include "../templates/top.php"?>
 
-		<title> WebDriver in C# </title>
-	</head>
-	
-	<body id="backgroundColor" onload(hideElement())>
-	<div id="wrapper">
-		<div id="marginTop" onclick="window.location.href='../index.php'"><?php include "../menuIndex.php";?></div>
-		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
-		<div id="centre" class="box">
 		<h2> So here I am. Let's start with installing and running IDE of choice</h2>
 			<p>
 		Well I want to be able to do this in both c# and java, so I am going to do everything twice.<br/>
@@ -113,9 +96,4 @@ namespace mySeleniumDisaster
 				<div class="linkButtonRight"> <a href="pageTwoCs.php"> Next </a> </div>
 		</div><!--centre-->
 		
-		<!--input id="submit" type="button" value="Show comments" onclick="toggleElement()"></input-->
-		
-		<div id="showHide"> <?php include "../commentsForm.php";?> </div>	
-	</div> <!--wrapper-->	
-	</body>
-</html>
+<?php include "../templates/bottom.php"?>

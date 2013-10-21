@@ -1,8 +1,6 @@
 <?php include "../templates/top.php";?>
-
-		<div id="centre" class="box">
-		<h2> APIs </h2>
 <p>
+		<h2> APIs </h2>
 <?php
 	if(!empty($_GET["your_key"]))
 	{
@@ -131,7 +129,7 @@
 		}
 ?>
 </p>
-	<div class="linkButtonLeft"> <a href="PREV_PAGE_GOES_HERE"> Prev </a> </div> 
-	<div class="linkButtonRight"> <a href="NEXT_PAGE_GOES_HERE"> Next </a> </div>
+	<!--div class="linkButtonLeft"> <a href="pageOnePhp.php"> Prev </a> </div--> 
+	<div class="linkButtonRight"> <a href="pageOnePhp.php"> Next </a> </div>
 		</div><!--centre-->
 <?php include "../templates/bottom.php"?>

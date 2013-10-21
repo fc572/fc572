@@ -1,15 +1,5 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> Experiencing webDriver in Java</title>
-	</head>
+<?php include "../templates/top.php"?>
 
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
 		<strong> Let's get set up in an open source environment. </strong>
 			<p>
 			So the first thing I did to set open source is to download this <a href="https://www.virtualbox.org/wiki/Downloads"> virtualBox </a>
@@ -50,13 +40,12 @@
 		    }
 		}
 			</textarea><br/>
+
 			Now that I have the environment set up, I can start with locating the DOM elements on the page using Java and webDriver.
 			</p>
-		
-		<div class="chapter"> 
-			<div class="prev"> <a href="../index.php"> Previous </a> </div> 
-			<div class="next"> <a href="pageTwoJava.php"> Next </a> </div>
-		</div>
-	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>	</body>
-</html>
+
+			<!--div class="linkButtonLeft"> <a href="../index.php"> Previous </a> </div--> 
+			<div class="linkButtonRight"> <a href="pageTwoJava.php"> Next </a> </div>
+		</div><!--centre-->
+
+<?php include "../templates/bottom.php"?>

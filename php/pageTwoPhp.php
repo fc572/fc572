@@ -98,9 +98,7 @@ Now that the form is done, let's go and create a mySql database to store the com
 
 		</p>
 		
-		<div class="chapter"> <div class="prev"> 
-			<a href="pageOnePhp.php"> Previous </a> </div> <div class="next"> 
-			<a href="pageThreePhp.php"> Next </a> </div>
-		</div>
-	</div>
-<?php include "../templates/bottom.php" ?>
+	<div class="linkButtonLeft"> <a href="pageOnePhp.php"> Prev </a> </div> 
+	<div class="linkButtonRight"> <a href="pageThreePhp.php"> Next </a> </div>
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>

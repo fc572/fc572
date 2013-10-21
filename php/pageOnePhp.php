@@ -65,9 +65,7 @@
 			Next I am going to touch on Forms and since these are important and can be an interesting subject to use selenium webdriver on,
 			I am going to create a new page for it.
 			</p>
-			<div class="chapter"> 
-				<div class="prev"> <a href="../index.php"> Previous </a> </div>
-				<div class="next"> <a href="pageTwoPhp.php"> Next </a> </div>
-			</div>
-		</div>
-<?php include "../templates/bottom.php" ?>
+	<!--div class="linkButtonLeft"> <a href="PREV_PAGE_GOES_HERE"> Prev </a> </div--> 
+	<div class="linkButtonRight"> <a href="pageTwoPhp.php"> Next </a> </div>
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>

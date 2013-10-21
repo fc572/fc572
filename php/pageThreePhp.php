@@ -129,10 +129,7 @@ Then I need to close the connection to the db and to finish off I return the num
 Now let's move to writing the API that will retrieve the comments from the database.
 		</p>
 		
-		<div class="chapter"> 
-			<div class="prev"> <a href="pageTwoPhp.php"> Previous </a> </div> 
-			<div class="next"> <a href="pageFourPhp.php"> Next </a> </div>
-		</div>
-	</div>
-	</div>
-<?php include "../templates/bottom.php" ?>
+	<div class="linkButtonLeft"> <a href="pageTwoPhp.php"> Prev </a> </div> 
+	<div class="linkButtonRight"> <a href="pageFourPhp.php"> Next </a> </div>
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>

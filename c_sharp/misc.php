@@ -1,6 +1,5 @@
 <?php include "../templates/top.php"?>
 
-		<div id="centre" class="box">
 		<h2> Configuration File</h2>
 			<p>
 			One of the first things that annoys me is the need to deploy to the live environmmet in order to test the code
@@ -27,15 +26,15 @@
 			And this is how the code from within the app looks like <br/>
 			<textarea readonly rows=5 cols=95>
 	System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["environment"];
-		driver.Navigate().GoToUrl(connectionString + "/c_sharp/pageTwoCs.php");
+		
 			</textarea>
 			<br/>
 			Now all I have to do is to comment/uncomment the environment that I want to use and this change will reflect all over the place.
 		</p>
 		
 		</p>
-	<div class="linkButtonLeft"> <a href="PREV_PAGE_GOES_HERE"> Prev </a> </div> 
-	<div class="linkButtonRight"> <a href="NEXT_PAGE_GOES_HERE"> Next </a> </div>
+	<!--div class="linkButtonLeft"> <a href="PREV_PAGE_GOES_HERE"> Prev </a> </div--> 
+	<div class="linkButtonRight"> <a href="pageOneCs.php"> Next </a> </div>
 		</div><!--centre-->
 <?php include "../templates/bottom.php"?>
 

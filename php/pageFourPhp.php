@@ -161,6 +161,7 @@
 		I hope to comment on the code asap, also because otherwise I am going to forget..... ah ah!
 		</p>
 		
-		<div class="chapter"> <div class="prev"> <a href="pageThreePhp.php"> Previous </a> </div> <div class="next"> <a href=".php"> Next </a> </div></div>
-	</div>
-<?php include "../templates/bottom.php" ?>
+	<div class="linkButtonLeft"> <a href="pageThreePhp.php"> Prev </a> </div> 
+	<!--div class="linkButtonRight"> <a href="pageFivePhp.php"> Next </a> </div-->
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>

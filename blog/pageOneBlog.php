@@ -1,33 +1,10 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<meta name="description" content="My experience with webDriver">
-		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
-		<meta name="author" content="Francesco"/>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../jsCommentHelper.js"></script>
+<?php include "../templates/top.php"?>
 
-		<title> Blogs will come! </title>
-	</head>
-	
-	<body id="backgroundColor" onload(hideElement())>
-	<div id="wrapper">
-		<div id="marginTop" onclick="window.location.href='../index.php'"><?php include "../menuIndex.php";?></div>
-		<div id="rightColumn" class="box"><p> Twitter feed will go here </p> <div>Follow me on twitter @fc572</div></div>
-		<div id="centre" class="box">
-		<h2> Page Heading </h2>
+		<h2> The importance of mouse click... </h2>
 			<p>
 			I will put something here... just be patient!</br>
 			</p>
-				<div class="linkButtonLeft"> <a href="../index.php"> Prev </a> </div> 
+				<!--div class="linkButtonLeft"> <a href="../index.php"> Prev </a> </div--> 
 				<div class="linkButtonRight"> <a href="../c_sharp/pageOneCs.php"> Next </a> </div>
 		</div><!--centre-->
-		
-		<!--input id="submit" type="button" value="Show comments" onclick="toggleElement()"></input-->
-		
-		<div id="showHide"> <?php include "../commentsForm.php";?> </div>	
-	</div> <!--wrapper-->	
-	</body>
-</html>
+<?php include "../templates/bottom.php"?>

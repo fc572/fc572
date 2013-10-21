@@ -1,15 +1,4 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> Experiencing webDriver in Java </title>
-	</head>
-
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
+<?php include "../templates/top.php"?>
 		<strong> Locating Elements on the page </strong>
 		<p>
 			Before starting locating the elements on the page, let's put some of them into a web page.... <br/>
@@ -95,7 +84,7 @@ public class LocatingDomOnPage {
 }
 
 
-<textarea><br/>
+</textarea><br/>
 At this point in order to use the same driver I have to declare it somewhere else and then make all the classes to use it.<br/>
 How do I do that? <br/>
 So I have my navigate method and my locateElements methods and I want them to work together. In order to do so, I cannot instantiate for each class
@@ -104,11 +93,11 @@ a new FirefoxDriver object otherwise each of the methods will work on its own, t
 
 		</p>
 		
-		<div class="chapter">
-			<div class="prev"> <a href="./index.php"> Previous </a> </div>
-			<div class="next"> <a href=""> Next </a> </div>
-		</div>
-	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
-	</body>
-</html>
+			<div class="linkButtonLeft"> <a href="pageOneJava.php"> Previous </a> </div>
+			<!--div class="linkButtonRight"> <a href=""> Next </a> </div-->
+		</div><!--centre-->
+
+<?php include "../templates/bottom.php"?>
+
+
+

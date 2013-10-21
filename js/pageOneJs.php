@@ -1,15 +1,4 @@
-<!DOCTYPE html> 
-<html>
-	<head>
-		<link href="../style.css" rel="stylesheet" type="text/css" >
-		<title> Learning Javascript </title>
-	</head>
-
-	<body id="blackColor">
-		<div id="marginTop" class="box" onclick="window.location.href='../index.php'"><?php include "../menu.php";?></div>
-			
-		<div id="rightColumn" class="box"> </div>
-		<div id="centre" class="box">
+<?php include "../templates/top.php"?>
 		<strong> Javascript </strong>
 		<p>
 		<script type="text/javascript">
@@ -21,11 +10,8 @@
 			document.write("The problem is that you do not want js and HTML in the same file. So from next page I'll split the two");
 		</script>
 		<p/>		
-		<div class="chapter"> 
-			<div class="prev"> <a href="../index.php"> Previous </a> </div> 
-			<div class="next"> <a href="pageTwoJs.php"> Next </a> </div>
-		</div>
-	</div>
-	<div id="footer" class="box"><?php include "../commentsForm.php";?></div>
-	</body>
-</html>
+		
+				<!--div class="linkButtonLeft"> <a href="pageOneJs.php"> Prev </a> </div--> 
+				<div class="linkButtonRight"> <a href="pageTwoJs.php"> Next </a> </div>
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>
