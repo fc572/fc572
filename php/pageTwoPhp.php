@@ -12,11 +12,8 @@
 		<br/>
 	<br/>
 		<form name="pageTwophp" id="pageTwoPhpId" action="" method="post">
-			<label>Name:</label> <input id="formInputFormat" type="text" name="name" id="name"  maxlength=25 size=30 tabindex=1/></br>
-			<label>Surname:</label> <input id="formInputFormat" type="text" name="surname" id="surname" maxlength=25 size=30 tabindex=2 /></br>
-			<label>Your_Key:</label> <input v type="text" name="key" id="key" maxlength=25 size=30 tabindex=3 /></br>
-			<label>Email:</label> <input id="formInputFormat" type="text" name="email" id="email" maxlength=50 size=50 tabindex=4 /></br>
-			<label>Comment:</label> <textarea id="formInputFormat" name="comment" id="comment" maxlength=255 rows=5 cols=50 tabindex=5 ></textarea></br>
+			<label>Your_Key:</label> <input type="text" name="key" id="key" maxlength=25 size=30 tabindex=1 /></br>
+			<label>Your_text:</label> <textarea id="formInputFormat" name="comment" id="comment" maxlength=255 rows=5 cols=50 tabindex=2 ></textarea></br>
 			
 			<input type="submit" name="submit" id="submit" value="Send form"  />
 		</form>

@@ -1,31 +1,32 @@
 <?php
 
 $link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Comments");
-	if($link)
-	{
-		$inf = "SELECT * FROM `fc572UserComments` WHERE page = '".stripslashes($_SERVER['REQUEST_URI'])."' ORDER BY date ASC"; 
-			 $info = mysqli_query($link, $inf); 
-				 if(!$info) die(mysqli_error($link)); 
-	}
-	$info_rows = mysqli_num_rows($info); 
-			if($info_rows > 0) { 
-			   echo '<h4>Comments:</h4>'; 
-			   echo '<table width="80%">'; 
-					$count=1;
-					while($info2 = mysqli_fetch_object($info)) {  					
-						echo '<tr>';  						
-						echo '<td> '.$count.") ".stripslashes($info2->username).' 
-						<div align="left"> said on '.date('d/m/y @ H:i',strtotime($info2->date)).'</div></td>';					
-						echo '</tr><tr>'; 
-						echo '<td colspan="2">  '.stripslashes($info2->comment).' </td>'; 
-						echo '</tr>'; 
-						$count+=1;
-					}//end while 
-				
-				echo '</table>';
-			} 
-			
-			mysqli_close($link);
+    if($link){
+	$inf = "SELECT * FROM `fc572UserComments` WHERE page = '".stripslashes($_SERVER['REQUEST_URI'])."' ORDER BY date ASC"; 
+	$info = mysqli_query($link, $inf); 
+	if(!$info) die(mysqli_error($link)); 
+    }
+    $info_rows = mysqli_num_rows($info);
+echo "num rows is " .$info_rows;
+echo "row is " .$info->username;
+    if($info_rows > 0) { 
+
+       while($info2 = mysqli_fetch_object($info)){ ?>					
+
+	<form class="comment box" name="commentedForm" action="" method="">
+
+	<label>Name:</label> <input class="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=5 value="<?php stripslashes($info2->username) ?>"></input></br>
+	<label>said&nbsp;on:</label> <input class="formInputFormat" type="text" name="date" id="date" maxlength=25 size=25 tabindex=6 value="<?php date('d/m/y @ H:i',strtotime($info2->date))?>" /></br>
+	<label>Subject:</label> <input class="formInputFormat" type="text" name="subject" id="subject" maxlength=25 size=25 tabindex=7 value=" <?php stripslashes($info2->subject)?>"></input></br>
+	<label>Comment:</label> <textarea class="formInputFormat" name="comment" id="comment" maxlength=255 rows=2 cols=50 tabindex=8 value=" <?php stripslashes($info2->comment)?>"></textarea></br>
+	</form>
+
+<?php 
+
+	}//end while 
+
+    }
+    mysqli_close($link);
 	
 	if(isset($_POST['submit']))
 	{
@@ -51,40 +52,49 @@ $link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Co
 							}
 							else
 							{
-								echo "FAILURE";
+							?>
+								<div class="comment box"> "Failure to connect to DB" </div>
+							<?php
 							}
 						}
 						else
 						{
-							echo "Please insert a valid comment <br/>";
+						?>
+								<div class="comment box"> "Please insert a comment" </div>
+						<?php
 						}
 				}
 				else
 				{
-					echo "Please insert a valid subject <br/>";
+				?>
+				   <div class="comment box"> "Please insert a Subject" </div>
+				<?php
 				}
 			}
 			else
 			{
-				echo "Please insert a valid contact <br/>";
+				?>
+				<div class="comment box"> "Please insert a contact" </div>
+				<?php
 			}
 		}
 		else
 		{
-			echo "Please insert a valid username <br/>";
+			?>
+			<div class="comment box"> "Please insert a Username" </div>
+			<?php
 		}
 	}
 else
 {
 ?>
-			<form id="comment" class="box" name="comments" id="comments" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 
-			<label>Name:</label> <input id="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=1/></br>
-			<label>Subject:</label> <input id="formInputFormat" type="text" name="surname" id="surname" maxlength=25 size=25 tabindex=2 /></br>
-			<label>Email:</label> <input id="formInputFormat" type="text" name="contact" id="contact" maxlength=50 size=50 tabindex=3 /></br>
-			<label>Comment:</label> <textarea id="formInputFormat" name="comment" id="comment" maxlength=255 rows=2 cols=50 tabindex=4 ></textarea></br>
-			
-			<input type="submit" name="submit" id="submit" value="Send comment"  />
-		</form>
+	<form class="comment box" name="commentsForm" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"> 
+	<label>Name:</label> <input required class="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=1/></br>
+	<label>Subject:</label> <input required class="formInputFormat" type="text" name="subject" id="subject" maxlength=25 size=25 tabindex=2 /></br>
+	<label>Email:</label> <input required class="formInputFormat" type="text" name="contact" id="contact" maxlength=50 size=50 tabindex=3 /></br>
+	<label>Comment:</label> <textarea required class="formInputFormat" name="comment" id="comment" maxlength=255 rows=2 cols=50 tabindex=4 ></textarea></br>
+	<input type="submit" name="submit" id="submit" value="Send comment"  />
+	</form>
 
 <?php 
 }

@@ -62,7 +62,7 @@
 	width:85%;
 }
 
-#comment{
+.comment{
 	float:left;
 	width: 60%;;
 	margin-left:120px;
@@ -111,7 +111,7 @@ form{
 	border-radius:20px;
 }
 
-#formInputFormat{
+.formInputFormat{
 	color: #3333CC;
 	border: 1px solid #000000;
 	border-radius:10px;

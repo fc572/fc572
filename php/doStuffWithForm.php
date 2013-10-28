@@ -1,55 +1,32 @@
 <?php
 //in here it should send the value of the form to a database
 
-if(validateInput($_POST['name']))
-{
-	if(validateInput($_POST['surname']))
-	{
 		if(validateInput($_POST['key']))
 		{
-			if(validateInput($_POST['email']))
+			if(validateInput($_POST['comment']))
 			{
-				if(validateInput($_POST['comment']))
-				{
-					$name = $_POST['name'];
-					$surname = $_POST['surname'];
-					$your_key = $_POST['key'];
-					$email = $_POST['email'];
-					$comment = $_POST['comment'];
+				$your_key = $_POST['key'];
+				$comment = $_POST['comment'];
 					
-					if(connectAndAddToComments($name,$surname,$your_key,$email,$comment))
-					{
-						echo "The records have been inserted";
-					}
-					else
-					{
-						echo "FAILURE";
-					}
+				if(connectAndAddToComments($your_key,$comment))
+				{
+					echo "The records have been inserted";
 				}
 				else
 				{
-					echo "Please insert a valid comment <br/>";
+					echo "FAILURE";
 				}
+			}
+				
+			else
+			{
+				echo "Please insert a valid comment <br/>";
 			}
 			else
 			{
-				echo "Please insert a valid email <br/>";
+				echo "Please insert a valid key <br/>";
 			}
 		}
-		else
-		{
-			echo "Please insert a valid key <br/>";
-		}
-	}
-	else
-	{
-		echo "Please insert a valid surname <br/>";
-	}
-}
-else
-{
-	echo "Please insert a valid name <br/>";
-}
 
 function validateInput($validateMe)
 {
@@ -85,7 +62,7 @@ function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
 	$link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Comments");
 	if($link)
 		{
-			mysqli_query($link,"INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
+			mysqli_query($link,"INSERT INTO usercomments(your_key, comment) VALUES ('$your_key','$comment')");
 				
 			$insertedValueCount = mysqli_affected_rows($link);
 			echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
