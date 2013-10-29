@@ -2,30 +2,31 @@
 
 $link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Comments");
     if($link){
-	$inf = "SELECT * FROM `fc572UserComments` WHERE page = '".stripslashes($_SERVER['REQUEST_URI'])."' ORDER BY date ASC"; 
-	$info = mysqli_query($link, $inf); 
+	$selectQuery = "SELECT * FROM `fc572UserComments` WHERE page = '".stripslashes($_SERVER['REQUEST_URI'])."' ORDER BY date ASC"; 
+	$info = mysqli_query($link, $selectQuery); 
 	if(!$info) die(mysqli_error($link)); 
     }
     $info_rows = mysqli_num_rows($info);
-echo "num rows is " .$info_rows;
-echo "row is " .$info->username;
-    if($info_rows > 0) { 
 
-       while($info2 = mysqli_fetch_object($info)){ ?>					
+    if($info_rows > 0) { ?>
+<form class="comment box" name="commentedForm" action="" method="">
+<h4> Previous comments </h4>
+   <?php   while($info2 = mysqli_fetch_object($info)){ ?>					
 
-	<form class="comment box" name="commentedForm" action="" method="">
+	<label>Name:</label> <input class="formInputFormat" type="text" name="username" id="username" value="<?php echo "$info2->username"?>"></input></br>
+		
+	<label>said&nbsp;on:</label> <input class="formInputFormat" type="text" name="date" id="date" value="<?php echo "$info2->date"?>" /></br>
 
-	<label>Name:</label> <input class="formInputFormat" type="text" name="username" id="username"  maxlength=25 size=25 tabindex=5 value="<?php stripslashes($info2->username) ?>"></input></br>
-	<label>said&nbsp;on:</label> <input class="formInputFormat" type="text" name="date" id="date" maxlength=25 size=25 tabindex=6 value="<?php date('d/m/y @ H:i',strtotime($info2->date))?>" /></br>
-	<label>Subject:</label> <input class="formInputFormat" type="text" name="subject" id="subject" maxlength=25 size=25 tabindex=7 value=" <?php stripslashes($info2->subject)?>"></input></br>
-	<label>Comment:</label> <textarea class="formInputFormat" name="comment" id="comment" maxlength=255 rows=2 cols=50 tabindex=8 value=" <?php stripslashes($info2->comment)?>"></textarea></br>
-	</form>
+	<label>Subject:</label> <input class="formInputFormat" type="text" name="subject" id="subject"value=" <?php echo "$info2->subject"?>"></input></br>
+
+	<label>Comment:</label> <textarea class="formInputFormat" name="comment" id="comment"><?php echo trim($info2->comment)?></textarea></br></br>
 
 <?php 
 
-	}//end while 
-
-    }
+	}//end while ?>
+</form>
+ <?php
+   }
     mysqli_close($link);
 	
 	if(isset($_POST['submit']))

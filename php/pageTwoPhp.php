@@ -12,8 +12,8 @@
 		<br/>
 	<br/>
 		<form name="pageTwophp" id="pageTwoPhpId" action="" method="post">
-			<label>Your_Key:</label> <input type="text" name="key" id="key" maxlength=25 size=30 tabindex=1 /></br>
-			<label>Your_text:</label> <textarea id="formInputFormat" name="comment" id="comment" maxlength=255 rows=5 cols=50 tabindex=2 ></textarea></br>
+			<label>Your_Key:</label> <input required type="text" name="key" id="key" maxlength=25 size=30 tabindex=1 /></br>
+			<label>Your_text:</label> <textarea required id="formInputFormat" name="comment" id="comment" maxlength=255 rows=5 cols=50 tabindex=2 ></textarea></br>
 			
 			<input type="submit" name="submit" id="submit" value="Send form"  />
 		</form>

@@ -3,29 +3,29 @@
 
 		if(validateInput($_POST['key']))
 		{
-			if(validateInput($_POST['comment']))
-			{
-				$your_key = $_POST['key'];
-				$comment = $_POST['comment'];
+				if(validateInput($_POST['comment']))
+				{
+					$your_key = $_POST['key'];
+					$comment = $_POST['comment'];
 					
-				if(connectAndAddToComments($your_key,$comment))
-				{
-					echo "The records have been inserted";
+					if(connectAndAddToComments($your_key,$comment))
+					{
+						?><div class="comment box"> "The record has been inserted" </div> <?php
+					}
+					else
+					{
+						echo "FAILURE";
+					}
 				}
-				else
-				{
-					echo "FAILURE";
-				}
-			}
 				
-			else
-			{
-				echo "Please insert a valid comment <br/>";
-			}
-			else
-			{
-				echo "Please insert a valid key <br/>";
-			}
+				else 
+				{
+					?><div class="comment box"> "Please insert a valid comment" </div> <?php
+				}
+		}
+		else
+		{
+			?><div class="comment box"> "Please insert a valid key" </div> <?php
 		}
 
 function validateInput($validateMe)
@@ -57,7 +57,7 @@ function validateField($validateMe)
 	}
 }
 
-function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
+function connectAndAddToComments($your_key,$comment)
 {
 	$link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Comments");
 	if($link)
@@ -65,7 +65,7 @@ function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
 			mysqli_query($link,"INSERT INTO usercomments(your_key, comment) VALUES ('$your_key','$comment')");
 				
 			$insertedValueCount = mysqli_affected_rows($link);
-			echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
+			//echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
 			
 			mysqli_close($link);
 			if($insertedValueCount >= 1)
