@@ -99,11 +99,6 @@ body{
 }
 .linkButtonRight a {color:#FFFFFF}
 
-code {
-	background-color: #e1e1e1;
-	padding :0px;
-}
-
 form{
 	background-color:#3333CC;
 	border-style:ridge;
@@ -138,3 +133,9 @@ label{
 	text-align:center;
 } 
 
+textarea
+{
+	padding: 0;
+	width: 100%;
+	background-color:#87AFC7;
+}

@@ -3,11 +3,11 @@
 	<head>
 		<meta name="description" content="My experience with webDriver">
 		<meta name="keywords" content="webDriver, C#, Java, selenium, fc572" />
-		<meta name="author" content="Francesco"/>
+		<meta name="author" content="Francesco, fc572"/>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link href="../style.css" rel="stylesheet" type="text/css" >
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../jsCommentHelper.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 
 		<title> fc572 </title>
 	</head>

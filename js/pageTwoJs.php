@@ -5,15 +5,16 @@
 		So I have at the top of this file declared that the source for the javascript is a file called script.js (I know
 		I have imagination!). The syntax is as follows: 
 		<br/>
-		<textarea readonly rows=3 cols=95>
+		<textarea readonly rows=1 cols=95>
 		&lt;script type="text/javascript" src="myScript.js"&gt;&lt;/script&gt;
 		</textarea><br/>
 		So from now on all the js that you'll see on this page will come from the external file myScript.js referenced above<br/><br/>
 		
 			<div id="insertJsHere"> This text will change </div><br/>
 			
-			<button id="buttonJsToPress" onclick="externalFunc()">Press me to call content from myScript.js file</button><br/>
-						
+			<!--button id="buttonJsToPress" onclick="externalFunc()">Press me to call content from myScript.js file</button><br/-->
+			<button id="buttonJsToPress">Press me to call content from myScript.js file</button>
+			
 			The button and the text above are displayed using this code<br/>
 			<textarea readonly rows=3 cols=95>
 &lt;button id="buttonJsToPress" onclick="externalFunc()"&gt;Press me to call content from myScript.js file&lt;/button&gt;
