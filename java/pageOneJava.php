@@ -1,6 +1,6 @@
-<?php include "../templates/top.php"?>
+﻿<?php include "../templates/top.php"?>
 
-		<strong> Let's get set up in an open source environment. </strong>
+		<strong> Setting up webdriver in a Java environment. </strong>
 			<p>
 			So the first thing I did to set open source is to download this <a href="https://www.virtualbox.org/wiki/Downloads"> virtualBox </a>
 			from Oracle in order to then set up Linux Mint on my windows machine. It can be found <a href="http://www.linuxmint.com/download.php">here</a>

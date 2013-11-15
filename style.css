@@ -99,12 +99,6 @@ body{
 }
 .linkButtonRight a {color:#FFFFFF}
 
-form{
-	background-color:#3333CC;
-	border-style:ridge;
-	border-width:2px;
-	border-radius:20px;
-}
 
 .formInputFormat{
 	color: #3333CC;

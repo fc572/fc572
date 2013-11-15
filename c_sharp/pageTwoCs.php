@@ -1,29 +1,24 @@
-<?php include "../templates/top.php"?>
+﻿<?php include "../templates/top.php"?>
 
-		<h2> Page Two, lets start locating elements</h2>
-			<p>So I am all set up with my IDE, NUnit and webDriver, and now I am ready to start targeting my website.</p>
-		<p>
-			In order to use web automation, first thing we need to worry about is to find the DOM element that we want to act upon.
-			WebDriver offers various ways to locate an element on the page, and I am now going to create a list of fields in this page
-			where I can easily demonstrate the use of FindElement and FindElements methods. <br/>
-			The elements that I am looking for are enclosed in a dotted line<br/>
-			
-			<form>
-				Element By Id <input class="addBorder" type="text" size="35" id="FindMeById"/><br>
-				Element By name: <input class="addBorder" type="text" size="35" name="FindMeByName"/>
-			</form>
-			
-			<br/>
-			
-			<div class="findMeByClassName addBorder"> Find me by class name </div><br/>
-			<div><a class="addBorder" href="../pagetestLink.php">FindMeByLinkText</a> This links to a test page </div><br/>
-			<div><a class="addBorder" href="../pagetestLink.php">FindMeByPartialLinkText</a> This links to a test page, again </div><br/>
-			<div class="addBorder" id="findMeByCssSelector"> Find me by Css Selector </div>
-			<br/>
-			<div class="addBorder">	
-				Also because Css Selectors are a lot, see <a href="http://www.w3schools.com/cssref/css_selectors.asp"> here <a/>
-			
-				I am going to add a list and check boxes and radio buttons that are the most likely you'll find on a web page <br/>
+		<h2> Let's start locating elements</h2>
+<p>So I am all set up with my IDE, NUnit and webDriver, and now I am ready to start targeting my website.</p>
+<p>
+In order to use web automation, first thing we need to worry about is to find the DOM element that we want to act upon.	WebDriver offers various ways to locate an element on the page, and I am now going to create a list of fields in this page where I can easily demonstrate the use of FindElement and FindElements methods. <br/>
+The elements that I am looking for are enclosed in a dotted line<br/>
+<form class=”noFormat”>
+Element By Id <input class="addBorder" type="text" size="35" id="FindMeById"/><br>
+Element By name: <input class="addBorder" type="text" size="35" name="FindMeByName"/>
+</form>
+<br/>
+<div class="findMeByClassName addBorder"> Find me by class name </div><br/>
+<div><a class="addBorder" href="../pagetestLink.php">FindMeByLinkText</a> This links to a test page </div><br/>
+<div><a class="addBorder" href="../pagetestLink.php">FindMeByPartialLinkText</a> This links to a test page, again </div><br/>
+<div class="addBorder" id="findMeByCssSelector"> Find me by Css Selector </div>
+<br/>
+<div class="addBorder">	
+Also because Css Selectors are a lot, see 
+<a href="http://www.w3schools.com/cssref/css_selectors.asp"> here <a/>
+I am going to add a list and check boxes and radio buttons that are the most likely you'll find on a web page <br/>
 				<ul>
 					<li> First element</li>
 					<li> Second element</li>
@@ -170,7 +165,7 @@ namespace mySeleniumDisaster
 		code to make it prettier and more functional, but for the time being I am happy with it as it is. 
 		</p>
 				<div class="linkButtonLeft"> <a href="pageOneCs.php"> Prev </a> </div> 
-				<div class="linkButtonRight"> <a href="pageTwoCs.php"> Next </a> </div>
+				<div class="linkButtonRight"> <a href="pageThreeCs.php"> Next </a> </div>
 		</div><!--centre-->
 		
 <?php include "../templates/bottom.php"?>

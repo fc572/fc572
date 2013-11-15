@@ -1,28 +1,30 @@
-<?php include "../templates/top.php"?>  		
-<h2> The possible number of test that can be run is infinite. Really?</h2> 
+<?php include "../templates/top.php"?>
 
-<p> 		
---------	Intro 		--------------------- 
+		<h2> Test your assumptions (and get lost!)</h2>
+			<p>
+	I am reading "How to make better decision in life and work" by Chip & Dan Heath and one of the chapters they write is about making a deliberate mistake in order to 
+	test that the decisions that you hold as correct indeed are.</br>
+	That has prompt me to think about assumptions that we take while testing. </br></br>
+	An assumption is something that we believe to be true and that we think will hold true in light of certain condition. This is a dangerous thing in testing expecially if after a while the 	assumption will become an habit, something that you no longer know to be an assumption but you hold it as truth.	
+	What is the risk in doing so? Well first and foremost if an assumption becomes normality we'll start to build upon it and the fall will be more painful and second, you will become blind to that assumption and you'll not be able to see it any longer for what really is.	
+	Think of the times when you assume that your computer will work as before when you perform an update, only to find out that updating the OS from Lion to Maverick messes up your 	 java installation and that JDK runs all your automated tests... </br></br>
+	So what can we do to minimize the impact of our assumption? The book suggests that we test them from time to time; and how we do that? We test our
+	assumption by doing the opposite of what makes that assumption hold true. For example, part of my commute consist of riding a bike from point A to point B.
+	I assume, giving my knowledge of the area, my past experience and the map that I looked at before doing the first journey that route X1 is the quickest because it is shorter.
+	Time is something that I do not have the luxury of, especially in the morning when I have to leave my son at nursery to then get to the office, so the quickest way for me 		it is important. But from time to time, I do not run via route X1 but I choose to go via route X2 or X3. Why do I do that? I do it so that
+	I can test if my initial assumption is correct. It may be that route X2 is longer but quicker, because has less traffic lights to go trough, or it 
+	has more cycle able ways that route X1. Or it may be that the maps do not show a short cut, and you can only find out by riding the 
+	bike via that different route. Most of the time though testing your assumption will only cause you to waste time and effort and you'll end up getting lost and then 
+	late, but in the process you'll have gained two important insights. First, my initial assumption was correct, route X1 is quickest. Second I'll
+	have learned a new way to go from point A to point B that it might be useful in the future. And third, a different route means that I am zooming out 
+	from your usual routine and therefore tomorrow when I'll go trough the same most efficient old way, I'll look at it with different eyes. </br></br>
+So even if sometimes testing your assumptions means making a deliberate mistake, it is a necessary thing to do, to make sure that you are not 
+doing something out of habit but that you are choosing to do things that way because you want to and because there is a reason to it. Stay sharp by making some mistake here and there, in order to go out of the path that you have build yourself to check that that path
+	is still the most valid and relevant to you.
 
-In my experience, when talking to a fellow tester we would happily agree that the number of possible tests that can be run is infinite. The most recurrent example is the calculator and the debate that you cannot test all the possible additions that can be made as nobody in his right mind will pass its time to add 1+1, 1+2, 1+3 …. 1 + 1001… 1 + 987689 …. and then 2 + 1, 2+2, 2+3 …. 2 + 1001 and so on.  I hope you get the idea.		 
-
-		  		--------	centre		-------------------- 
-When we test we need to examine the constrain of the text, the time and the 
-
-But this made me thinking. Is 1+1 really different from 2+ 2?  In my eyes they are not. I am adding two numbers of one digiti only. 
-
-The value in the test changes, not the test in itself. Addning 1 + 1 or 1 + 3 is  adding .. adding and multiplyin are two different tests.... 		What about common sense? would you really try all the numbers or a sample would suffice? 		How about CRUD? will you choose or try infinite times? what about time? 		
-
-
---------	conclusion  	-------------------- 		Tests are limited by the capacity of discerning and the time to run them 		
-
-
-
---------	summary 	-------------------- 		Choose wisely which tests to run, try to catch all possible bugs, be aware that some will always skip the net 		so do not say I'll run all the tests in the world because you cannot do that. 			
-
-
-
-
-
-</p> 				<!--div class="linkButtonLeft"> <a href="../index.php"> Prev </a> </div-->  				<div class="linkButtonRight"> <a href="../c_sharp/pageOneCs.php"> Next </a> </div> 		</div><!--centre--> <?php include "../templates/bottom.php"?>
+			</p>
+				<!--div class="linkButtonLeft"> <a href="../index.php"> Prev </a> </div--> 
+				<div class="linkButtonRight"> <a href="../index.php"> Next </a> </div>
+		</div><!--centre-->
+<?php include "../templates/bottom.php"?>
 
