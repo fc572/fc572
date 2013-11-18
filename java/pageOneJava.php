@@ -2,14 +2,14 @@
 
 		<strong> Setting up webdriver in a Java environment. </strong>
 			<p>
-			So the first thing I did to set open source is to download this <a href="https://www.virtualbox.org/wiki/Downloads"> virtualBox </a>
-			from Oracle in order to then set up Linux Mint on my windows machine. It can be found <a href="http://www.linuxmint.com/download.php">here</a>
+			The first thing I did to set up my environment it was to download  <a href="https://www.virtualbox.org/wiki/Downloads"> virtualBox </a>
+			from Oracle in order to set up Linux Mint on my windows machine on a virtual machine. Mint can be found <a href="http://www.linuxmint.com/download.php">here</a>
 			I have download the 13.04 version (32 bit)<br/>
-			After I have set up my Virtual machine running Mint, I have to install Maven2, IntelliJ, JUnit on that machine.<br/>
-			Once the set up is completed....
+			After I have set up my Virtual machine running Mint, I had to install Maven2, Intellij and JUnit.<br/>
+			Once the set up is completed.... (about 3 hours in...)
 			I have not installed JUnit as it can be added to the project using maven.
-			There is one thing to know about maven and it is the POM.xml file. This file will hold all the references to the 
-			dependencies of your project. So for JUnit it will be something like ...<br/>
+			The most important thing to know about maven is the POM.xml file. This file will hold all the references to the 
+			dependencies of your project and for JUnit it will be something like ...<br/>
 			<textarea readonly rows=10 cols=95>
 &lt;dependencies&gt;
 	&lt;dependency&gt;

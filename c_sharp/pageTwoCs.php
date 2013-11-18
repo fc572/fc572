@@ -77,7 +77,7 @@ namespace mySeleniumDisaster
 		[Test]
 		public void TestPageTwo()
 		{
-			System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["environment"];
+			System.Configuration.ConnectionStringSettings connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["test"];
 			driver.Navigate().GoToUrl(connectionString + "/c_sharp/pageTwoCs.php");
 			driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 15));
 
@@ -89,7 +89,7 @@ namespace mySeleniumDisaster
 			IWebElement findByname = driver.FindElement(By.Name("FindMeByName"));
 			findByname.SendKeys("I have found you by Name!");
 				
-			//this one did not work. Always caused element not found exception
+			//the line above did not work. Always caused element not found exception
 			//ERROR//IWebElement findByClass = driver.FindElement(By.ClassName("FindMeByClassName"));
 			//I then changed to this and the element was found
 			//I think this happens because a class can have multiple elements on a page, so a list is 
@@ -165,7 +165,7 @@ namespace mySeleniumDisaster
 		code to make it prettier and more functional, but for the time being I am happy with it as it is. 
 		</p>
 				<div class="linkButtonLeft"> <a href="pageOneCs.php"> Prev </a> </div> 
-				<div class="linkButtonRight"> <a href="pageThreeCs.php"> Next </a> </div>
+				<!--div class="linkButtonRight"> <a href="pageThreeCs.php"> Next </a> </div-->
 		</div><!--centre-->
 		
 <?php include "../templates/bottom.php"?>
