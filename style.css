@@ -1,0 +1,135 @@
+#wrapper{
+	width: 1200px;
+}
+#marginTop{
+	height: 220px;
+	background-image: url(./images/NewLogo.png);
+	background-repeat:no-repeat;
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box{
+	background-color:white;
+	border-radius: 25px;
+	padding:25px;
+	border:2px solid black;
+}
+
+#backgroundColor{
+	background-color:#3333CC;
+}
+
+
+#ulMenuHeader{
+	float: right;
+	list-style: none;
+}
+
+.liMenuHeader{
+	line-height: 2em;
+	float: left;
+	width: auto;
+	border: 1px solid black;
+	border-radius:1em;
+	text-decoration: none;
+	text-align: center;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-top:70px;
+	margin-left: 2px;
+	font-size:15px;
+}
+
+.liMenuHeader a {color:#FFFFFF} 
+
+#rightColumn{
+	float:right;
+	width: 20%;
+}
+
+#centre{
+	float:left;
+	width: 60%;
+	margin-left:120px;
+	margin-bottom:30px;
+}
+
+#footer{
+	clear:both;
+	margin-left:120px;
+	width:85%;
+}
+
+.comment{
+	float:left;
+	width: 60%;;
+	margin-left:120px;
+}
+
+			
+body{
+	font-size: 18px;
+	line-height:25px;
+	clear:both;
+}	
+
+.linkButtonLeft {
+	width:50px;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	line-height:15px;
+	color:#FFFFFF;
+	background: #3333CC;
+	border: 3px outset #FFFFFF;
+}
+.linkButtonLeft a {color:#FFFFFF}
+
+.linkButtonRight {
+	width:50px;
+	float: right;
+	text-align: center;
+	font-size: 12px;
+	line-height:15px;
+	color:#FFFFFF;
+	background: #3333CC;
+	border: 3px outset #FFFFFF;	
+}
+.linkButtonRight a {color:#FFFFFF}
+
+
+.formInputFormat{
+	color: #3333CC;
+	border: 1px solid #000000;
+	border-radius:10px;
+	width:80%;
+}
+
+label{
+	width: 4px;
+	float: left;
+	text-align: right;
+	margin-right: 111px;
+	margin-left: 15px;
+	display: block;
+}
+
+
+#submit
+{
+	color:#FFFFFF;
+	background: #3333CC;
+	border: 3px outset #FFFFFF;
+	margin-left:43%;
+	width:150px;
+	text-align:center;
+} 
+
+textarea
+{
+	padding: 0;
+	width: 100%;
+	background-color:#87AFC7;
+}
