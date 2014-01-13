@@ -4,9 +4,58 @@
 <p>So I am all set up with my IDE, NUnit and webDriver, and now I am ready to start targeting my website.</p>
 <p>
 In order to use web automation, first thing we need to worry about is to find the DOM element that we want to act upon.	WebDriver offers various ways to locate an element on the page, and I am now going to create a list of fields in this page where I can easily demonstrate the use of FindElement and FindElements methods. <br/>
+<<<<<<< HEAD
 
 		<strong> Note that this code does barely what it is supposed to do. There is no error handling, no abstraction for common functions,
 		and none of the other code practises.</strong>
+=======
+The elements that I am looking for are enclosed in a dotted line<br/>
+<form class=”noFormat”>
+Element By Id <input class="addBorder" type="text" size="35" id="FindMeById"/><br>
+Element By name: <input class="addBorder" type="text" size="35" name="FindMeByName"/>
+</form>
+<br/>
+<div class="findMeByClassName addBorder"> Find me by class name </div><br/>
+<div><a class="addBorder" href="../pagetestLink.php">FindMeByLinkText</a> This links to a test page </div><br/>
+<div><a class="addBorder" href="../pagetestLink.php">FindMeByPartialLinkText</a> This links to a test page, again </div><br/>
+<div class="addBorder" id="findMeByCssSelector"> Find me by Css Selector </div>
+<br/>
+<div class="addBorder">	
+Also because Css Selectors are a lot, see 
+<a href="http://www.w3schools.com/cssref/css_selectors.asp"> here <a/>
+I am going to add a list and check boxes and radio buttons that are the most likely you'll find on a web page <br/>
+				<ul>
+					<li> First element</li>
+					<li> Second element</li>
+					<li> Third element</li>
+				</ul>
+			</div>
+			<br/>
+			Also to be able to hand pick one check box only, I am going to use XPath in the second example for checkboxes, and I am going 
+			to use only XPath for selecting a radio button. I think that XPath will deserve a better coverage than that, but for now it is going 
+			to be OK like that.
+			<br/>
+			<div class="addBorder">
+				Check box: 
+				<form>
+					<input type="checkbox" id="vehicle" value="MotoBike"> My Bike is the fastest <br/>
+					<input type="checkbox" id="vehicle" value="Car"> My Car is the slowest <br/>
+				</form>
+			</div>	
+			<br/>
+			<div class="addBorder">
+				 Radio buttons: 
+				<form>	
+					<input type="radio" name="feetFunction" value="Walk"> I like to walk <br/>
+					<input type="radio" name="feetFunction" value="Run">  I like to run <br/>
+				</form>
+			</div>
+		</p>	
+		<p>
+		Now that the form is done, I need to generate the code in my project to find the elements on the page and to act on them.<br/>
+		<strong> Note that this code does barely what it is supposed to do. There is no error handling, no abstraction for common functions,
+		and none of the other code practises. Also it is not formatted correctly as I am learning how to style the code properly</strong>
+>>>>>>> 7873fc49227505423c1d88f8f421b3925ecc25f1
 		<br/><br/>
 		<textarea readonly rows=20 cols=95><br/>
 using System;
