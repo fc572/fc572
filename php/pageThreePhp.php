@@ -7,56 +7,34 @@
 </br>
 <textarea readonly rows=20 cols=95>
 &lt;?php
+//in here it should send the value of the form to a database
 
-if(validateInput($_POST['name']))
-{
-	if(validateInput($_POST['surname']))
-	{
 		if(validateInput($_POST['key']))
 		{
-			if(validateInput($_POST['email']))
-			{
 				if(validateInput($_POST['comment']))
 				{
-					$name = $_POST['name'];
-					$surname = $_POST['surname'];
 					$your_key = $_POST['key'];
-					$email = $_POST['email'];
 					$comment = $_POST['comment'];
 					
-					if(connectAndAddToComments($name,$surname,$your_key,$email,$comment))
+					if(connectAndAddToComments($your_key,$comment))
 					{
-						echo "The records have been inserted";
+						?&gt;<div class="comment box"> "The record has been inserted" </div> &lt;?php
 					}
 					else
 					{
 						echo "FAILURE";
 					}
 				}
-				else
+				
+				else 
 				{
-					echo "Please insert a valid comment &lt;br/&gt;";
+					?&gt;<div class="comment box"> "Please insert a valid comment" </div>&lt;?php
 				}
-			}
-			else
-			{
-				echo "Please insert a valid email &lt;br/&gt;";
-			}
 		}
 		else
 		{
-			echo "Please insert a valid key &lt;br/&gt;";
+			?&gt;<div class="comment box"> "Please insert a valid key" </div> &lt;?php
 		}
-	}
-	else
-	{
-		echo "Please insert a valid surname &lt;br/&gt;";
-	}
-}
-else
-{
-	echo "Please insert a valid name &lt;br/&gt;";
-}
 
 function validateInput($validateMe)
 {
@@ -87,15 +65,15 @@ function validateField($validateMe)
 	}
 }
 
-function connectAndAddToComments($name,$surname,$your_key,$email,$comment)
+function connectAndAddToComments($your_key,$comment)
 {
-	$link = mysqli_connect("localhost", "userName", "password", "databaseName");
+	$link = mysqli_connect("localhost", "fc572Comments", "Zarathustra1111", "fc572Comments");
 	if($link)
 		{
-			mysqli_query($link,"INSERT INTO usercomments(name,surname, your_key, email, comment) VALUES ('$name','$surname','$your_key','$email','$comment')");
+			mysqli_query($link,"INSERT INTO usercomments(your_key, comment) VALUES ('$your_key','$comment')");
 				
 			$insertedValueCount = mysqli_affected_rows($link);
-			echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
+			//echo "The total amount of rows affected was " .$insertedValueCount ."<br/>";
 			
 			mysqli_close($link);
 			if($insertedValueCount >= 1)
