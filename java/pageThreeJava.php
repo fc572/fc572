@@ -1,6 +1,6 @@
 <?php include "../templates/top.php"?>
 		<strong> A simple test </strong>
-		<p> What I want to do here is to insert a comment into the database using the form on this page <a href="http://www.fc572.com/php/pageTwoPhp.php">http://www.fc572.com/php/pageTwoPhp.php</a>, and then I am going to make a call
+		<p> What I want to do here is to insert a comment into the database using the form on this page <a href="http://www.fc572.me/php/pageTwoPhp.php">http://www.fc572.me/php/pageTwoPhp.php</a>, and then I am going to make a call
 			to my API to retrieve it and check that the table has been populated.<br/>
 
 <textarea readonly rows=120 cols=95>package com.fc572.webTest;
@@ -126,7 +126,7 @@ The third one verifies that the comment inserted in the database can be retrieve
 		</p>
 		
 			<div class="linkButtonLeft"> <a href="pageTwoJava.php"> Previous </a> </div>
-			<!--div class="linkButtonRight"> <a href=""> Next </a> </div-->
+			<div class="linkButtonRight"> <a href="pageThreeJava.php"> Next </a> </div>
 		</div><!--centre-->
 
 <?php include "../templates/bottom.php"?>

@@ -69,6 +69,7 @@
 					case 510: $message = "Not Extended";break; 
 					default: $message = "ERROR this HTTP code you have request is not present in my list";
 				}
+				header($message, true, $status_requested);
 				echo "<br/><br/>";
 				echo "<table id=\"HTTP STATUSES\" border=2>";
 				echo "<tr bgcolor=#dadada>";
