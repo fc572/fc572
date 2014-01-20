@@ -13,8 +13,8 @@
 		<br/>
 	<br/>
 		<form name="pageTwophp" id="pageTwoPhpId" action="" method="post">
-			<label>Your Key:</label> <input required type="text" name="key" id="key" maxlength=25 size=30 tabindex=1 /></br></br>
-			<label>Comment:</label> <textarea required id="formInputFormat" name="comment" id="comment" maxlength=255 rows=5 cols=50 tabindex=2 ></textarea></br>
+			<label>Your&nbsp;Key:</label> <input required type="text" name="key" id="key" maxlength=25 size=30 tabindex=1 /></br></br>
+			<label>Comment:</label> <textarea required id="formInputFormat" name="comment" id="comment" maxlength=255 rows=5 cols=40 tabindex=2 ></textarea></br>
 			
 			<input type="submit" name="submitForm" id="submitForm" value="Send form"  />
 		</form>
@@ -26,7 +26,7 @@
 		?>
 		<br/><br/>
 		This form now looks ok, but before it was really ugly. In order to make it pretty, you need to style each element; then the browser will
-		combine them for you. So I have styled the form itself, then the label (name, surname, email and comment) and then I have applied some
+		combine them for you. So I have styled the form itself, then the labels Your key and comment and then I have applied some
 		more style to the input fields. In this way the forms looks a bit nicer than just few fields put together.
 		<br/>
 		The code below is the code behind the scene for the above form.
@@ -69,7 +69,7 @@ I prefer having all the errors at once so that I can correct them and then go on
 Now that the form is done, let's go and create a mySql database to store the comment.
 		</p>
 		
-	<div class="linkButtonLeft"> <a href="pageFourPhp.php"> Prev </a> </div> 
-	<!--div class="linkButtonRight"> <a href="pageSixPhp.php"> Next </a> </div-->
+	<div class="linkButtonLeft"> <a href="pageOnePhp.php"> Prev </a> </div> 
+	<div class="linkButtonRight"> <a href="pageThreePhp.php"> Next </a> </div>
 		</div><!--centre-->
 <?php include "../templates/bottom.php"?>

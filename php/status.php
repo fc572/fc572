@@ -1,3 +1,4 @@
+<?php ob_start(); ?> 
 <?php include "../templates/top.php";?>
 <p>
 		<h2> APIs </h2>
@@ -63,7 +64,15 @@
 					default: $message = "ERROR this HTTP code you have request is not present in my list";
 				}
 				if(is_numeric($status_requested)){
-				   header($message, true, $status_requested);
+				   if($status_requested == 301 || $status_requested == 303 || $status_requested == 307){
+				     header("Location: http://www.fc572.me/php/pageFourPhp.php"); 
+				   }
+				   elseif($status_requested >= 100 && $status_requested <=102){
+				      header('HTTP/1.0 200 OK', true, 200);
+				   }
+				   else{
+				      header('HTTP/1.0 '.$status_requested.' '.$message, true, $status_requested);
+				   }
 				}
 				echo "<br/><br/>";
 				echo "<table id=\"HTTP STATUSES\" border=2>";
@@ -83,3 +92,5 @@
 	<div class="linkButtonRight"> <a href="pageOnePhp.php"> Next </a> </div>
 		</div><!--centre-->
 <?php include "../templates/bottom.php"?>
+<?php ob_get_flush(); ?>
+
