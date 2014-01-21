@@ -2,6 +2,9 @@
 		<strong> A simple test </strong>
 		<p> What I want to do here is to insert a comment into the database using the form on this page <a href="http://www.fc572.me/php/pageTwoPhp.php">http://www.fc572.me/php/pageTwoPhp.php</a>, and then I am going to make a call
 			to my API to retrieve it and check that the table has been populated.<br/>
+The form asks to fill in two fields, one is a key that will be used as a primary index to retrieve the comment inserted and the other field is the comment. 
+The code below, calls two functions, the first sc.goSetComment(randomKey) insert a record into the database, while the second call retrieves the comment and 
+
 
 <textarea readonly rows=120 cols=95>package com.fc572.webTest;
 
@@ -11,23 +14,27 @@ import org.junit.*;
 
 public class TestRunner {
 
-    protected final WebDriver driver = new FirefoxDriver();
+   protected final WebDriver driver = new FirefoxDriver();
 
-    @Test
-    public void runTheTests(){
+   @Test
+   public void runTheTests(){
         
-        StatusPageTest spt = new StatusPageTest(driver);
-        SetComment sc = new SetComment(driver);
-        
-        sc.goSetComment();
-        spt.statusTest();
-    }
+     double randomKey;
 
-    @After
-    public void tearDown()
-    {
-        driver.close();
-    }
+     StatusPageTest spt = new StatusPageTest(driver);
+     SetComment sc = new SetComment(driver);
+
+     randomKey = Math.random();
+        
+     sc.goSetComment(randomKey);
+     spt.statusTest(randomKey);
+   }
+
+   @After
+   public void tearDown()
+   {
+      driver.close();
+   }
 }
 
 //The classes called are below this line
@@ -45,33 +52,33 @@ import static org.junit.Assert.*;
 
 public class SetComment extends Page {
 
-    public SetComment(WebDriver driver){
-        super(driver);
-    }
+  public SetComment(WebDriver driver){
+  super(driver);
+  }
 
-    public void goSetComment(){
+  public void goSetComment(double randomKey){
 
-        //go to the page containing the form
-        driver.navigate().to(Helper.getUrl() + "/php/pageTwoPhp.php");
-        //wait for the page to load
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.titleContains("fc572"));
-        //find the elements to populate with the text
-        WebElement element = driver.findElement(By.id("key"));
-        element.sendKeys("123Key");
+  //go to the page containing the form
+  driver.navigate().to(Helper.getUrl() + "/php/pageTwoPhp.php");
+  //wait for the page to load
+  WebDriverWait wait = new WebDriverWait(driver, 10);
+  wait.until(ExpectedConditions.titleContains("fc572"));
+  //find the elements to populate with the text
+  WebElement element = driver.findElement(By.id("key"));
+  element.sendKeys(Double.toString(randomKey));
 
-        element = driver.findElement(By.id("formInputFormat"));
-        element.sendKeys("Hello Selenium");
-        //find the button to click
-        element = driver.findElement(By.id("submitForm"));
-        element.click();
-        //wait for the confirmation message to come up
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        //check that the record has been inserted
-        element = driver.findElement(By.className("comment"));
-        assertEquals("\"The record has been inserted\"", element.getText());
+  element = driver.findElement(By.id("formInputFormat"));
+  element.sendKeys("Hello Selenium" + Double.toString(randomKey));
+  //find the button to click
+  element = driver.findElement(By.id("submitForm"));
+  element.click();
+  //wait for the confirmation message to come up
+  driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+  //check that the record has been inserted
+  element = driver.findElement(By.className("comment"));
+  assertEquals("\"The record has been inserted\"", element.getText());
 
-    }
+  }
 }
 
 
@@ -90,30 +97,27 @@ import java.util.List;
 
 public class StatusPageTest extends Page {
 
-    public StatusPageTest(WebDriver driver){
-        super(driver);
-    }
+  public StatusPageTest(WebDriver driver){
+      super(driver);
+  }
 
-    public void statusTest(){
-	//Navigate to site
-        driver.navigate().to(Helper.getUrl() + "/php/api.php?your_key=12345Key");
+  public void statusTest(double randomKey){
 	
-	//wait for the page to load
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.titleContains("fc572"));
-	
-	//find elements on the table
-        WebElement element = driver.findElement(By.id("getApiTable"));
-        List<WebElement> rows = element.findElements(By.tagName("tr"));
-        assertEquals(2, rows.size());
-	
-	//find the text within the table
-        for(WebElement row : rows){
-            if(row.getText() == "Hello Selenium"){
-                assertTrue(true);
-            }
-        }
-    }
+  driver.navigate().to(Helper.getUrl() + "/php/api.php?your_key=" + Double.toString(randomKey));
+
+  WebDriverWait wait = new WebDriverWait(driver, 10);
+  wait.until(ExpectedConditions.titleContains("fc572"));
+
+  WebElement element = driver.findElement(By.id("getApiTable"));
+  List<WebElement> rows = element.findElements(By.tagName("tr"));
+  assertEquals(2, rows.size());
+
+  for(WebElement row : rows){
+    if(row.getText() == ("Hello Selenium" + Double.toString(randomKey))){
+        assertTrue(true);
+  }
+ }
+ }
 }
 
 </textarea><br/>

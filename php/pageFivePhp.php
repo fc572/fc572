@@ -70,9 +70,14 @@
 	default: $message = "ERROR this HTTP code you have request is not present in my list";
    }
 	if(is_numeric($status_requested)){
+		
+		// 301, 303 and 307 redirect the input so the status sode returned will be a 200 otherwise the test will fail
+
 	   if($status_requested == 301 || $status_requested == 303 || $status_requested == 307){
 	     header("Location: http://www.fc572.me/php/pageFivePhp.php"); 
 	   }
+		// 100, 101 and 102 are statuses that are not supposed to return an header, so I have to make them return a 200 otherwise
+		// the page will fail
 	   elseif($status_requested >= 100 && $status_requested <=102){
 	      header('HTTP/1.0 200 OK', true, 200);
 	   }
@@ -95,10 +100,9 @@ else
 ?&gt;
 &lt;?php ob_get_flush(); ?&gt;
 </textarea></br>
-		I hope to comment on the code asap, also because otherwise I am going to forget..... ah ah!
 		</p>
 		
 	<div class="linkButtonLeft"> <a href="pageFourPhp.php"> Prev </a> </div> 
-	<div class="linkButtonRight"> <a href="pageSixPhp.php"> Next </a> </div>
+	<!--div class="linkButtonRight"> <a href="pageSixPhp.php"> Next </a> </div-->
 		</div><!--centre-->
 <?php include "../templates/bottom.php"?>

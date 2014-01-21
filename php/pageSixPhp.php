@@ -8,7 +8,6 @@
 <textarea readonly rows=20 cols=95>
 
 </textarea></br>
-		I hope to comment on the code asap, also because otherwise I am going to forget..... ah ah!
 		</p>
 		
 	<div class="linkButtonLeft"> <a href="pageFivePhp.php"> Prev </a> </div> 

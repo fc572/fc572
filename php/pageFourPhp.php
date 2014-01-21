@@ -81,7 +81,6 @@ mysqli_close($link);
 }
 ?&gt;
 </textarea></br>
-		I hope to comment on the code asap, also because otherwise I am going to forget..... ah ah!
 		</p>
 		
 	<div class="linkButtonLeft"> <a href="pageThreePhp.php"> Prev </a> </div> 

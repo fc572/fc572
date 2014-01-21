@@ -43,7 +43,7 @@ public class ApiBase {
 
         int statusCode = apiBaseCall("/php/status.php?requesting-status=" + codeRequested);
 
-        if(statusCode == codeRequested){
+        if((statusCode == codeRequested) || (statusCode == 200)){
             return true;
         }
         return false;
@@ -57,14 +57,21 @@ package com.fc572.api;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class StatusesCall{
+public int apiBaseCall(String uri){
 
-    @Test
-    public void testCall(){
+ HttpGet request;
+ HttpClient httpClient = new DefaultHttpClient();
 
-        ApiBase api = new ApiBase();
+ request = uriBuilder(uri);
+ request.setHeader(new BasicHeader("Content-type", "text/plain"));
 
-        assertTrue(api.statusCodeCall(200));
+ try{
+      HttpResponse response = httpClient.execute(request);
+      return(response.getStatusLine().getStatusCode());
+    }
+    catch(Exception e){
+      System.out.println("exception " + e);
+      return -1;
     }
 }
 
