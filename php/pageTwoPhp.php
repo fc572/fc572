@@ -61,7 +61,7 @@ function validateField($validateMe)
 		return "Special chars such as " .$matches[0] ." are not allowed";
 	}
 }
-?&lt;
+?&gt;
 </textarea></br>
 Although it seems a bit crappy that each check is on a separate line, it is done on purpose. I hate those forms that tell you one error at the time
 I prefer having all the errors at once so that I can correct them and then go on with my life.

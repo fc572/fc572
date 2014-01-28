@@ -8,13 +8,14 @@
 		<link href="../style.css" rel="stylesheet" type="text/css" >
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="script.js"></script>
-                <script> $(document).ready(function(){
-$('textarea').each(function(){
-$(this).val($(this).val().replace(/   /g,' '));
-$(this).attr('rows',$(this).val().split("\n").length);
-$(this).attr('cols',80);
-$(this).attr('readonly', true);
-})
+                <script> 
+$(document).ready(function(){
+	$('textarea').each(function(){
+		$(this).val($(this).val().replace(/   /g,' '));
+		$(this).attr('rows',$(this).val().split("\n").length); 
+		$(this).attr('cols',80);
+		$(this).attr('readonly', true);
+	})
 });</script>
 
 		<title> fc572 </title>
