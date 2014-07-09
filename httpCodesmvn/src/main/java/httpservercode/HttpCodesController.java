@@ -18,26 +18,38 @@ public class HttpCodesController
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String defaultHandler(ModelMap model)
     {
-        model.addAttribute("message", "Please insert an http code numeric value");
+        model.addAttribute("message", "Please insert the HTTP code");
         return "firstpage";
     }
 
     @RequestMapping(value="/form", method = RequestMethod.POST)
-    public String handleForm(@RequestParam(value="numericValue", required=true) int numericValue,
+    public String handleForm(@RequestParam(value="codeInput", required=true) String codeInput,
                              Model model)
     {
 
-        model.addAttribute("messageCode", numericValue);
+        int codeInputAsInt;
 
         try
         {
-            response = codesAreHere.getMessage(numericValue);
-            model.addAttribute("messageToAHuman", response);
-            return "codefoundpage";
+            codeInputAsInt = Integer.parseInt(codeInput);
+            try
+            {
+                response = codesAreHere.getMessage(codeInputAsInt);
+                model.addAttribute("messageCode", codeInputAsInt);
+                model.addAttribute("messageToAHuman", response);
+                return "codefoundpage";
+            }
+            catch(Exception ex)
+            {
+                model.addAttribute("message", ex.getMessage());
+                model.addAttribute("messageCode", codeInputAsInt);
+                return "codenotfoundpage";
+            }
         }
-        catch(Exception ex)
+        catch (NumberFormatException ex)
         {
-            model.addAttribute("message", ex.getMessage());
+            model.addAttribute("message", "The input is not valid, please insert only numbers");
+            model.addAttribute("messageCode", codeInput);
             return "codenotfoundpage";
         }
         //The controller only returns the view, not the content of the view or any logic
