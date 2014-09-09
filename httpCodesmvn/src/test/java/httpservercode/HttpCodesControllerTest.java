@@ -36,11 +36,8 @@ public class HttpCodesControllerTest
     @Before
     public void setUp()
     {
- //       Mockito.reset(this);
-
         mockMvcController =
                 MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-
     }
 
     @Test
@@ -99,6 +96,4 @@ public class HttpCodesControllerTest
                 .andExpect(model().attribute("message", containsString("The input is not valid, please insert only numbers")))
                 .andExpect(model().attribute("messageCode", containsString("*&^2")));
     }
-
-
 }

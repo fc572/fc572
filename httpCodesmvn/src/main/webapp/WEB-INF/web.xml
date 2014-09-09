@@ -11,7 +11,7 @@
 
     <servlet>
         <servlet-name>httpcodes</servlet-name> <!--  Hello app, I am telling you that there will be a servlet -->
-        <servlet-class> <!-- use web.servlet.DispatcherServlet class as a clueprint for this object -->
+        <servlet-class> <!-- use web.servlet.DispatcherServlet class as a blueprint for this object -->
             org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
         <init-param>
@@ -22,7 +22,7 @@
     </servlet>
 
     <servlet-mapping> <!-- The servlet-mapping declared which requests by which servlet.-->
-        <servlet-name>httpcodes</servlet-name> <!-- a servlet named helloworld will handle -->
+        <servlet-name>httpcodes</servlet-name> <!-- a servlet named httpcodes will handle -->
         <url-pattern>/</url-pattern> <!--all the requests will be handled by DispatcherServlet.-->
     </servlet-mapping>
 

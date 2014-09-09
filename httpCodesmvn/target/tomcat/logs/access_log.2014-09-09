@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:41:50 +0100] "GET / HTTP/1.1" 200 937 http-bio-8080-exec-1 1197
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:41:51 +0100] "GET /resources/static/style.css HTTP/1.1" 200 2008 http-bio-8080-exec-2 5
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:41:51 +0100] "GET /resources/images/NewLogo.png HTTP/1.1" 200 25502 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:41:56 +0100] "POST /form HTTP/1.1" 200 1231 http-bio-8080-exec-4 131
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:42:00 +0100] "POST /form HTTP/1.1" 200 1169 http-bio-8080-exec-5 124
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:42:04 +0100] "POST /form HTTP/1.1" 200 1133 http-bio-8080-exec-6 4
+0:0:0:0:0:0:0:1 - - [09/Sep/2014:15:42:08 +0100] "POST /form HTTP/1.1" 200 1250 http-bio-8080-exec-7 3
