@@ -55,4 +55,16 @@ public class HttpCodesController
         //The controller only returns the view, not the content of the view or any logic
         //that has to do with the view
     }
+
+    @RequestMapping(value="/testPage", method = RequestMethod.GET)
+    public String testPageHandler()
+    {
+        return "testpage";
+    }
+
+    @RequestMapping(value="/testPageLinkBack", method = RequestMethod.GET)
+    public String testpagelinkbackHandler()
+    {
+        return "testpagelinkback";
+    }
 }

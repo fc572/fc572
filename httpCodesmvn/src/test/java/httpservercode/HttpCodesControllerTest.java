@@ -96,4 +96,19 @@ public class HttpCodesControllerTest
                 .andExpect(model().attribute("message", containsString("The input is not valid, please insert only numbers")))
                 .andExpect(model().attribute("messageCode", containsString("*&^2")));
     }
+
+    @Test
+    public void testPageTest() throws Exception
+    {
+        mockMvcController.perform(get("/testPage"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void testPageLinkBackTest() throws Exception
+    {
+        mockMvcController.perform(get("/testPageLinkBack"))
+                .andExpect(status().isOk());
+                //.andExpect(content(containsString("I have clicked a link and I have landed here")));
+    }
 }
