@@ -2,7 +2,7 @@
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
-         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" xmlns:jdbc="http://www.w3.org/1999/xhtml">
 
     <display-name> Http Codes </display-name>    
     <welcome-file-list>
@@ -37,7 +37,7 @@
         </listener-class>
     </listener>
 
-</web-app>
+ </web-app>
     
 <!-- this is a project of type web hence I need a welcome page. Then I want to tell the application
 that there will be a servlet to handle the requests, and what type of requests this servlet will handle.

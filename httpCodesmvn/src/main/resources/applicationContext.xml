@@ -9,7 +9,10 @@
 
     <mvc:annotation-driven/>
 
-    <import resource="classpath:httpcodes-servlet.xml"/>
+    <context:annotation-config/>
+    <import resource="classpath:persistenceContext.xml"/>
+    <import resource="classpath:httpcodesServlet.xml"/>
+
 
     <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:default-servlet-handler/>
