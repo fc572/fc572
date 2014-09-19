@@ -16,7 +16,7 @@
 
          <div id="centre" class="box">
              <p>
-                <h3> Need another code? Insert it below </h3>
+                <h4> Need another code? Insert it below </h4>
                  <form action="/form" method="post">
                      <label for="Code">Code Numeric Value</label><input type="text" name="codeInput" id="codeInput"></input><br/>
                      <input id="submit" type="submit">

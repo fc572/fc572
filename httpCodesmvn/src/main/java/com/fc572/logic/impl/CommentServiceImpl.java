@@ -34,7 +34,22 @@ public class CommentServiceImpl implements CommentService
         }
         catch (Exception ofex)
         {
+            ofex.printStackTrace();
             throw new OperationFailedException("It was not possible to save your comment", ofex);
+        }
+    }
+
+    @Override
+    public void deleteComment(String userId, String userKey) throws OperationFailedException
+    {
+        try
+        {
+            this.userCommentRepo.deleteComment(userId, userKey);
+        }
+        catch(Exception ofex)
+        {
+            ofex.printStackTrace();
+            throw new OperationFailedException("It was not possible to delete your comment", ofex);
         }
     }
 }

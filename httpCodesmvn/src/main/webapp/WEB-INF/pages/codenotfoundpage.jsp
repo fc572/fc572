@@ -10,14 +10,14 @@
 
           <h2>${message}</h2>
              <p>
-                <h3> The value ${messageCode} that you have requested is not a valid HTTP Code
+                <h4> The value ${messageCode} that you have requested is not a valid HTTP Code</h4>
              </p>
             </div>
 
            <div id="centre" class="box">
              <p>
                 <br/>
-                <h3> Need another code? Insert it below </h3>
+                <h4> Need another code? Insert it below </h4>
                  <form action="/form" method="post">
                      <label for="Code">Code Numeric Value</label><input type="text" name="codeInput" id="codeInput"></input><br/>
                      <input id="submit" type="submit">

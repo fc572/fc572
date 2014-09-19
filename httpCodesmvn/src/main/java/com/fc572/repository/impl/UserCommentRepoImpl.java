@@ -23,7 +23,7 @@ public class UserCommentRepoImpl implements UserCommentRepo
     @Override
     public void writeUserComment(String userId, String userKey, String comment)
     {
-        String query = "INSERT INTO usercomment VALUES(" + userId + ", " + userKey + ", " + comment + ")\"";
+        String query = "INSERT INTO usercomment VALUES(\"" + userId + "\", \"" + userKey + "\", \"" + comment + "\")";
 
         jdbcTemplate.execute(query);
 
@@ -41,5 +41,13 @@ public class UserCommentRepoImpl implements UserCommentRepo
 
         return (UserComment) userComment; //cast object to expected type.
 
+    }
+
+    @Override
+    public void deleteComment(String userId, String userKey)
+    {
+        String query = "DELETE from usercomment WHERE userId= \"" + userId + "\" AND userKey= \"" + userKey + "\"";
+
+        jdbcTemplate.execute(query);
     }
 }

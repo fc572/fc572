@@ -51,10 +51,10 @@ public class HttpCodesControllerTest
 
 
         // 2 - check that the parameters are correct
-        mockMvcController.perform(get("/"))
+        mockMvcController.perform(get("/httpCodes/"))
                     .andExpect(status().isOk())
-                    .andExpect(view().name("firstpage"))
-                    .andExpect(forwardedUrl("/WEB-INF/pages/firstpage.jsp"))
+                    .andExpect(view().name("codepage"))
+                    .andExpect(forwardedUrl("/WEB-INF/pages/codepage.jsp"))
                     .andExpect(model().attribute("message", containsString("Please insert the HTTP code")));
 
         // 3 - verify that the calls are in order and
@@ -63,7 +63,7 @@ public class HttpCodesControllerTest
     @Test
     public void testFoundPage() throws Exception
     {
-        mockMvcController.perform(post("/form")
+        mockMvcController.perform(post("/httpCodes/form")
                 .param("codeInput", "200")
         )
                 .andExpect(status().isOk())
@@ -76,7 +76,7 @@ public class HttpCodesControllerTest
     @Test
     public void testNotFoundPage() throws Exception
     {
-        mockMvcController.perform(post("/form")
+        mockMvcController.perform(post("/httpCodes/form")
                         .param("codeInput", "999")
         )
                 .andExpect(status().isOk())
@@ -89,7 +89,7 @@ public class HttpCodesControllerTest
     @Test
     public void testInputOfChars() throws Exception
     {
-        mockMvcController.perform(post("/form")
+        mockMvcController.perform(post("/httpCodes/form")
                 .param("codeInput", "*&^2")
         )
                 .andExpect(status().isOk())
@@ -97,20 +97,5 @@ public class HttpCodesControllerTest
                 .andExpect(forwardedUrl("/WEB-INF/pages/codenotfoundpage.jsp"))
                 .andExpect(model().attribute("message", containsString("The input is not valid, please insert only numbers")))
                 .andExpect(model().attribute("messageCode", containsString("*&^2")));
-    }
-
-    @Test
-    public void testPageTest() throws Exception
-    {
-        mockMvcController.perform(get("/testPage"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    public void testPageLinkBackTest() throws Exception
-    {
-        mockMvcController.perform(get("/testPageLinkBack"))
-                .andExpect(status().isOk());
-                //.andExpect(content(containsString("I have clicked a link and I have landed here")));
     }
 }

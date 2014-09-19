@@ -8,4 +8,6 @@ public interface CommentService
     public UserComment readComment(String userId, String userKey) throws OperationFailedException;
 
     public void writeComment(String userId, String userKey, String comment) throws OperationFailedException;
+
+    public void deleteComment(String userId, String userKey) throws OperationFailedException;
 }

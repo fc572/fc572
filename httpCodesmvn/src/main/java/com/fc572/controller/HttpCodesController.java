@@ -9,22 +9,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/httpCodes")
 public class HttpCodesController
 {
+
+    private CodesAreHere codesAreHere;
+    private String response;
+
     public HttpCodesController(CodesAreHere codesAreHere, String response)
     {
         this.codesAreHere = codesAreHere;
         this.response = response;
     }
 
-    private CodesAreHere codesAreHere;
-    private String response;
-
     @RequestMapping(value="/", method = RequestMethod.GET)
-    public String defaultHandler(ModelMap model)
+    public String codeHandler(ModelMap model)
     {
         model.addAttribute("message", "Please insert the HTTP code");
-        return "firstpage";
+        return "codepage";
     }
 
     @RequestMapping(value="/form", method = RequestMethod.POST)
@@ -59,17 +61,5 @@ public class HttpCodesController
         }
         //The controller only returns the view, not the content of the view or any logic
         //that has to do with the view
-    }
-
-    @RequestMapping(value="/testPage", method = RequestMethod.GET)
-    public String testPageHandler()
-    {
-        return "testpage";
-    }
-
-    @RequestMapping(value="/testPageLinkBack", method = RequestMethod.GET)
-    public String testpagelinkbackHandler()
-    {
-        return "testpagelinkback";
     }
 }

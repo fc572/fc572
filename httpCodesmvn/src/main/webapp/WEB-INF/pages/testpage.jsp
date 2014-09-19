@@ -16,9 +16,9 @@
        <br/>
        <div class="findMeByClassName addBorder"> Find me by class name </div>
        <br/>
-       <div><a class="addBorder" href="<spring:url value="testPageLinkBack"/>">FindMeByLinkText</a> This links to a test page </div>
+       <div><a class="addBorder" href="<spring:url value="testpagelinkback"/>">FindMeByLinkText</a> This links to a test page </div>
        <br/>
-       <div><a class="addBorder" href="<spring:url value="testPageLinkBack"/>">FindMeByPartialLinkText</a> This links to a test page, again </div>
+       <div><a class="addBorder" href="<spring:url value="testpagelinkback"/>">FindMeByPartialLinkText</a> This links to a test page, again </div>
        <br/>
        <div class="addBorder" id="findMeByCssSelector"> Find me by Css Selector </div>
        <br/>

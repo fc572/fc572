@@ -6,18 +6,25 @@
 
 <%@ include file="../templates/topofthepage.jsp"%>
 
-<h2>${message}</h2>
+<h3>${message}</h3>
 
-<form class="comment box" name="commentsForm" action="/comment" method="post">
+<form class="comment box" name="commentsForm" action="/writeComment" method="post">
 
-	<label>Name:</label> <input class="formInputFormat" type="text" name="userId" id="userId" value=${userId}></input></br>
+	<label>User Id:</label> <input class="formInputFormat" type="text" name="writeUserId" id="writeUserId" value=${writeUserId}></input></br>
 
-	<label>Subject:</label> <input class="formInputFormat" type="text" name="userKey" id="userKey" value=${userKey}></input></br>
+	<label>User Key:</label> <input class="formInputFormat" type="text" name="writeUserKey" id="writeUserKey" value=${writeUserKey}></input></br>
 
-	<label>Comment:</label> <textarea class="formInputFormat" name="comment" id="comment" value=${comment}></textarea></br></br>
+	<label>Comment:</label> <textarea class="formInputFormat" name="writeComment" id="writeComment" value=${writeComment}></textarea></br></br>
 
     <input type="submit" name="submit" id="submit" value="Send comment"  />
 
 </form>
+
+    <form class="comment box" name="commentsForm">
+        <label>User Id:</label> <label>${userId}</td></label>
+        <label>User Key:</label> <label>${userKey}</td></label>
+        <label>Comment:</label> <label>${comment}</td></label>
+    </form>
+
 
 </html>

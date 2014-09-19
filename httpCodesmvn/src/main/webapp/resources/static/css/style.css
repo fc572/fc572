@@ -21,6 +21,12 @@ h2 {
     color: #3333CC;
     text-align: center;
 }
+h3{
+    color:#FFFFFF;
+    text-align: center;
+}
+
+
 
 #backgroundColor{
 	background-color:#3333CC;
@@ -109,15 +115,15 @@ body{
 	color: #3333CC;
 	border: 1px solid #000000;
 	border-radius:10px;
-	width:80%;
+	width:75%;
 }
 
 label{
 	float: left;
 	text-align: centre;
 	text-color: #3333CC;
-	margin-right: 15px;
-	margin-left: 15px;
+	margin-right: 5px;
+	margin-left: 5px;
 	display: block;
 }
 

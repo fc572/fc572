@@ -22,6 +22,8 @@
         <constructor-arg value=""/>
     </bean>
 
+    <bean id="homePageController" class="com.fc572.controller.HomePageController"/>
+
     <bean id="httpCodeController" class="com.fc572.controller.HttpCodesController">
         <constructor-arg ref="codesAreHereBean" index="0"/>
         <constructor-arg ref="stringBean" index="1"/>
@@ -33,9 +35,11 @@
         <constructor-arg ref="stringBean" index="2"/>
     </bean>
 
+    <bean id="commentServiceBean" class="com.fc572.logic.impl.CommentServiceImpl"/>
+
     <bean id="userCommentController" class="com.fc572.controller.UserCommentController">
         <constructor-arg ref="userCommentBean" index="0"/>
-        <constructor-arg ref="userCommentRepoImpl" index="1"/>
+        <constructor-arg ref="commentServiceBean" index="1"/>
     </bean>
 
 </beans>

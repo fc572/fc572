@@ -8,13 +8,10 @@
 <%@ include file="../templates/topofthepage.jsp"%>
 
 <div id="centre" class="box">
-
-<div id="centre" class="box">
         <strong> I have clicked a link and I have landed here. </a></strong>
         <p>
-            Now I want to click this <a href="<spring:url value="/testPage"/>" link </a> to go back on the page from where I coming from
+            Now I want to click this <a href="<spring:url value="/testpage"/>"> link </a> to go back on the page from where I coming from
         </p>
-    </div>
 </div>
 </body>
 </html>
