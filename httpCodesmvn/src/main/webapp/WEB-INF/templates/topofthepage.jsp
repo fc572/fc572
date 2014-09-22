@@ -1,3 +1,4 @@
+          <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
           <head>
              <link href='<c:url value="../../resources/static/css/style.css"/>' rel="stylesheet">
              <title> fc572 </title>
@@ -5,7 +6,15 @@
 
           <body id="backgroundColor">
             <div id="wrapper">
-                <div id="marginTop" onclick="window.location.href='/'"></div>
+                <div id="marginTop" onclick="window.location.href='/'">
+
+                <ul id="ulMenuHeader">
+                    <li class="liMenuHeader"> <a href="<spring:url value="testpagelinkback"/>"> This links to a test page </a> </li>
+                    <li class="liMenuHeader"> <a href="<spring:url value="comment/"/>"> This links to a test comment page</a> </li>
+                    <li class="liMenuHeader"> <a href="<spring:url value="httpCodes/"/>">This links to a page where HTTP codes can be requested </a> </li>
+                    <li class="liMenuHeader"> <a href="<spring:url value="/blog/pageOneBlog"/>"> Blog </a> </li>
+                </ul>
+            </div>
 
                 <div id="rightColumn" class="box">
                     <p>
