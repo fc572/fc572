@@ -19,6 +19,7 @@ public class TestThePage
     public void setUp()
     {
         webDriver.navigate().to("http://fc572.me/testpages/pagewithelements.php");
+        webDriver.manage().window().maximize();
         WebElement waitForMe = (new WebDriverWait(webDriver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("FindMeById")));
     }
@@ -38,13 +39,18 @@ public class TestThePage
         WebElement findMeByLinkText = webDriver.findElement(By.linkText("FindMeByLinkText"));
         WebElement findMeByPartialLinkText = webDriver.findElement(By.partialLinkText("FindMeByPartia"));
         WebElement findMeByCssSelector = webDriver.findElement(By.cssSelector("#leftcolumn ul:first-child > li:first-child"));
+        WebElement findMeByCssSelector2 = webDriver.findElement(By.cssSelector("#leftcolumn ul:nth-child(2) > li:first-child"));
+        WebElement findMeByCssSelector3 = webDriver.findElement(By.cssSelector("#leftcolumn ul:nth-child(4) li:last-child"));
+        //WebElement findMeByCssSelectorCheckbox = webDriver.findElement(By.cssSelector(""));
 
-
-        findMeById.sendKeys("LEONARDO");
-        findMeByName.sendKeys("LEONARDO LEONARDO LEONARDO");
+        findMeById.sendKeys("Found By.id");
+        findMeByName.sendKeys("Found By.Name");
         findMeByClassName.click();
         findMeByLinkText.getText().equalsIgnoreCase("FindMeByLinkText");
         findMeByPartialLinkText.getText().equalsIgnoreCase("FindMeByPartialLinkText");
         findMeByCssSelector.getText().equalsIgnoreCase("Item 1");
+        findMeByCssSelector2.getText().equalsIgnoreCase("Sub Item 1.1");
+        findMeByCssSelector3.getText().equalsIgnoreCase("Sub Item 2.3");
+
     }
 }
