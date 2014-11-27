@@ -27,7 +27,7 @@ public class TestThePage
     @After
     public void destroyTest()
     {
-        //webDriver.close();
+        webDriver.close();
     }
 
     @Test
@@ -41,7 +41,8 @@ public class TestThePage
         WebElement findMeByCssSelector = webDriver.findElement(By.cssSelector("#leftcolumn ul:first-child > li:first-child"));
         WebElement findMeByCssSelector2 = webDriver.findElement(By.cssSelector("#leftcolumn ul:nth-child(2) > li:first-child"));
         WebElement findMeByCssSelector3 = webDriver.findElement(By.cssSelector("#leftcolumn ul:nth-child(4) li:last-child"));
-        //WebElement findMeByCssSelectorCheckbox = webDriver.findElement(By.cssSelector(""));
+        WebElement findMeByXPath = webDriver.findElement(By.xpath("//input[@type='checkbox' and @value='HappyTesting']"));
+        WebElement findMeByXPath2 = webDriver.findElement(By.xpath("//input[@name='pickMe' and @value='HappyTesting']"));
 
         findMeById.sendKeys("Found By.id");
         findMeByName.sendKeys("Found By.Name");
@@ -51,6 +52,8 @@ public class TestThePage
         findMeByCssSelector.getText().equalsIgnoreCase("Item 1");
         findMeByCssSelector2.getText().equalsIgnoreCase("Sub Item 1.1");
         findMeByCssSelector3.getText().equalsIgnoreCase("Sub Item 2.3");
+        findMeByXPath.click();
+        findMeByXPath2.click();
 
     }
 }
