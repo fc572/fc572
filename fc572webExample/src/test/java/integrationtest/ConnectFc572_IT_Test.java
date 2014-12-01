@@ -24,10 +24,10 @@ public class ConnectFc572_IT_Test
     public void connectToDbTest()
     {
         Connection connect;
-        String host = "fc572Comments.db.11418243.hostedresource.com";
-        String datab = "fc572Comments";
-        String password = "Z@rathustra111";
-        String userName = "fc572Comments";
+        String host = "******";
+        String datab = "******";
+        String password = "******";
+        String userName = "******";
 
         try {
             Class.forName ("com.mysql.jdbc.Driver").newInstance();
