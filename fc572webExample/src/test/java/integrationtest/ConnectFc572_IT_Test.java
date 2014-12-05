@@ -1,5 +1,6 @@
 package integrationtest;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -24,10 +25,10 @@ public class ConnectFc572_IT_Test
     public void connectToDbTest()
     {
         Connection connect;
-        String host = "******";
-        String datab = "******";
-        String password = "******";
-        String userName = "******";
+        String host = "fc572Comments.db.11418243.hostedresource.com";
+        String datab = "fc572Comments";
+        String password = "Z@rathustra111";
+        String userName = "fc572Comments";
 
         try {
             Class.forName ("com.mysql.jdbc.Driver").newInstance();
@@ -49,7 +50,7 @@ public class ConnectFc572_IT_Test
             connect.close();
         } catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            Assert.fail("There was an error " + e.getMessage());
         }
     }
 }

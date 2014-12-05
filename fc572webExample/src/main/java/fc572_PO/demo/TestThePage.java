@@ -22,7 +22,7 @@ public class TestThePage
     @Before
     public void setUp()
     {
-        webDriver.navigate().to("http://fc572_PO.me/testpages/pagewithelements.php");
+        webDriver.navigate().to("http://fc572.me/testpages/pagewithelements.php");
         WebElement waitForMe = (new WebDriverWait(webDriver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("FindMeById")));
         homePage = new HomePage(webDriver);
@@ -31,9 +31,8 @@ public class TestThePage
     @Test
     public void thisIsATest()
     {
-        assertTrue(homePage.title.getText().equalsIgnoreCase("fc572_PO"));
-
-        homePage.findMeById.sendKeys("You have found my using find(By.id)");
-
+        WebElement findMeById = webDriver.findElement(By.id("FindMeById"));
+        assertTrue(findMeById != null);
+        webDriver.close();
     }
 }
