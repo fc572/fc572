@@ -40,15 +40,14 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Create index.html
+      - name: Replace placeholders
         env:
           LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
           LAMBDA_API_KEY: ${{ secrets.LAMBDA_API_KEY }}
         run: |
-          echo "Current directory: $(pwd)"
-          echo "Files before:"
-          ls -l frontend/
-          envsubst < frontend/index.html.template > frontend/index.html
+          sed -e "s|LAMBDA_URL|$LAMBDA_URL|g" \
+              -e "s|LAMBDA_API_KEY|$LAMBDA_API_KEY|g" \
+              frontend/index.html.template > frontend/index.html
           echo "Files after:"
           ls -l frontend/
           cat frontend/index.html
