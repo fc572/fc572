@@ -25,5 +25,3 @@ function dramatically(httpCode){
         }
     }
  }
-
- module.exports = {dramatically};
