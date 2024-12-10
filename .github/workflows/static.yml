@@ -35,12 +35,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
           
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-          
       - name: Replace Lambda URL and API Key
         env:
           LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
@@ -54,6 +48,12 @@ jobs:
           echo $LAMBDA_API_KEY
           echo ${LAMBDA_API_KEY}
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
