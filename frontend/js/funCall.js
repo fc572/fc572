@@ -1,9 +1,6 @@
-function dramatically(httpCode){
-   const lambdaUrl = "LAMBDA_URL_HTML";
-   const lambdaApiKey = "LAMBDA_API_KEY_HTML";
-
-    // Function to call the Lambda function
-    async function callLambda(httpCode) {
+export async function callLambda(httpCode) {
+        const lambdaUrl = "LAMBDA_URL_HTML";
+        const lambdaApiKey = "LAMBDA_API_KEY_HTML";
         const apiUrl = `${lambdaUrl}/httpcodes/${httpCode}`;
 
         try {
