@@ -43,9 +43,12 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      - name: print working dir
+        run: |
+          echo "PWD: ${PWD}"
       - name: Replace placeholders with secrets
         run: |
-          sed -i "s|LAMBDA_API_KEY|${{ secrets.LAMBDA_API_KEY }}|g" "../frontend/index.html"
+          sed -i "s|LAMBDA_API_KEY|${{ secrets.LAMBDA_API_KEY }}|g" "../../frontend/index.html"
           sed -i "s|LAMBDA_URL|${{ secrets.LAMBDA_URL }}|g" "../frontend/index.html"
 
       - name: Deploy to GitHub Pages
