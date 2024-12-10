@@ -48,7 +48,10 @@ jobs:
         run: |
           sed -i "s|LAMBDA_URL_HTML|$LAMBDA_URL|g" frontend/index.html
           sed -i "s|LAMBDA_API_KEY_HTML|${LAMBDA_API_KEY}|g" frontend/index.html
-          
+          cat frontend/index.html  # Verify the contents
+          echo $LAMBDA_URL
+          echo "SSSS"
+          echo ${{ secrets.LAMBDA_URL }}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
