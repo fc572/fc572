@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <title>Simple Map</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <script>
+
+  </script>
+  <script src="/js/displayOnMap.js"></script>
+  <script src="/js/tubeLocations.js"></script>
+  <script src="/js/riverThamesCoordinates.js"></script>
+  <script src="/js/getRequest.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+
+<body id="centre">
+  <div id="marginTop"></div>
+  <div class="box">
+    <h3>Uneven distribution of TFL tube stations and Santander bike docks across London</h3>
+    <div id="map"></div>
+    <div id="legend"></div>
+    <h5>There are a combined <span id="countnorth"></span> bikes and tubes in the north but only <span id="countsouth"></span> in the South</h5>
+  </div>
+</body>
+
+</html>

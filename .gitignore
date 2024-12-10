@@ -1,0 +1,10 @@
+.DS_Store
+.idea/
+handler.js
+handler.test.js
+jest.setup.js
+node_modules/
+package-lock.json
+package.json
+public/
+serverless.yaml					
