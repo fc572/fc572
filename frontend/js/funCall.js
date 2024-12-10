@@ -1,4 +1,4 @@
-export function callmylambda(){
+function dramatically(httpCode){
    const lambdaUrl = "LAMBDA_URL_HTML";
    const lambdaApiKey = "LAMBDA_API_KEY_HTML";
 
@@ -25,3 +25,5 @@ export function callmylambda(){
         }
     }
  }
+
+ module.exports = {dramatically};
