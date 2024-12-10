@@ -17,6 +17,8 @@
    <div class="box">
        <div id="maincontainer">
            <button onclick="callLambda(100)">100 - Continue</button><br/><br/>
+           document.querySelector('button').addEventListener('click', () => callLambda(100));
+
            <button onclick="callLambda(101)">101 - Switching Protocols</button><br/><br/>
            <button onclick="callLambda(102)">102 - Processing</button><br/><br/>
            <button onclick="callLambda(200)">200 - OK</button><br/><br/>
