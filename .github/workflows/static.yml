@@ -30,17 +30,20 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LAMBDA_API_KEY: ${{ secrets.LAMBDA_API_KEY }}
-      LAMBDA_URL: ${{ env.LAMBDA_URL }}
+      LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
