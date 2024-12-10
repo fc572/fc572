@@ -40,12 +40,12 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Create index.html with environment variables
+      - name: Replace placeholders
         env:
-           LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
-           LAMBDA_API_KEY: ${{ secrets.LAMBDA_API_KEY }}
+          LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
+          LAMBDA_API_KEY: ${{ secrets.LAMBDA_API_KEY }}
         run: |
-           envsubst < frontend/index.html.template > frontend/index.html
+          envsubst < frontend/index.html.template | tr -d '\n' > frontend/index.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
