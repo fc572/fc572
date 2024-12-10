@@ -4,16 +4,18 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 	<title>Repository of Thoughts</title>
 	<script>
-		// Function to call the Lambda function
+		const lambdaUrl = "LAMBDA_URL";
+        const lambdaApiKey = "LAMBDA_API_KEY";
+
+        // Function to call the Lambda function
         async function callLambda(httpCode) {
-            const apiUrl = `vars.LAMBDA_URL`;
-            const apiKey = 'secrets.LAMBDA_API_KEY';
+            const apiUrl = `${lambdaUrl}/httpcodes/${httpCode}`;
 
             try {
                 const response = await fetch(apiUrl, {
                     method: 'GET',
                     headers: {
-                        'x-api-key': apiKey
+                        'x-api-key': lambdaApiKey
                     }
                 });
 
@@ -28,6 +30,7 @@
             }
         }
 	</script>
+
 </head>
 
 <body id="centre">
