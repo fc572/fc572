@@ -46,6 +46,11 @@ jobs:
       - name: print working dir
         run: |
           echo "PWD: ${PWD}"
+          ls
+          echo " _____________"
+          ls ..
+          echo " _____________"
+          ls ../..
       - name: Replace placeholders with secrets
         run: |
           sed -i "s|LAMBDA_API_KEY|${{ secrets.LAMBDA_API_KEY }}|g" "../../frontend/index.html"
