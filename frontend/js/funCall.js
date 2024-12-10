@@ -21,3 +21,4 @@ export async function callLambda(httpCode) {
         alert(`Failed to call Lambda function: ${error.message}`);
     }
 }
+window.callLambda = callLambda;
