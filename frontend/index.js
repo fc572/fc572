@@ -31,5 +31,5 @@ app.get('/js', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Website is running at http://localhost:${PORT}`);
+    console.log(`Website is running at process.env.url:process.env.PORT`);
 });
