@@ -1,11 +1,8 @@
 export async function callLambda(httpCode) {
-const proxyUrl = `${secret_url}/httpcodes/${httpCode}`;
+const proxyUrl = `https://gx8bg6w2b9.execute-api.eu-west-2.amazonaws.com/dev/httpcodes/${httpCode}`;
     try {
         const response = await fetch(proxyUrl, {
-            method: 'GET',
-            headers: {
-                'x-api-key': apiKey // Include API key in headers
-            },
+            method: 'GET'
         });
 
        if (response.ok) {
