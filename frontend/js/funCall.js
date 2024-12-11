@@ -1,18 +1,24 @@
 export async function callLambda(httpCode) {
-   const proxyUrl = `https://gx8bg6w2b9.execute-api.eu-west-2.amazonaws.com/dev/httpcodes/${httpCode}`;
-   try {
-       const response = await fetch(proxyUrl, {
-           method: 'GET',
-       });
+const url = process.env.SECRET_URL;
+const apiKey = process.env.SECRET_API_KEY;
 
-       if (response.ok) {
-           const data = await response.text();
-           alert(`Response from Lambda: ${data}`);
-       } else {
-           alert(`Error: ${response.status} ${response.statusText}`);
-       }
-   } catch (error) {
-       alert(`Failed to call Lambda function: ${error.message}`);
-   }
+const proxyUrl = `${url}/httpcodes/${httpCode}`;
+    try {
+        const response = await fetch(proxyUrl, {
+            method: 'GET',
+            headers: {
+                'x-api-key': apiKey // Include API key in headers
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error fetching data:', error.message);
+    }
 }
 window.callLambda = callLambda;
