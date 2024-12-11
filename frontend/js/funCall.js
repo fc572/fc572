@@ -11,14 +11,14 @@ const proxyUrl = `${url}/httpcodes/${httpCode}`;
             },
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.error('Error fetching data:', error.message);
-    }
+       if (response.ok) {
+           const data = await response.text();
+           alert(`Response from Lambda: ${data}`);
+       } else {
+           alert(`Error: ${response.status} ${response.statusText}`);
+       }
+   } catch (error) {
+       alert(`Failed to call Lambda function: ${error.message}`);
+   }
 }
 window.callLambda = callLambda;
