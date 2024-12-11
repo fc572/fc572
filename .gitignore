@@ -1,10 +1,10 @@
 .DS_Store
 .idea/
-handler.js
-handler.test.js
-jest.setup.js
+backend/handler.js
+backend/handler.test.js
+backend/jest.setup.js
 node_modules/
 package-lock.json
 package.json
 public/
-serverless.yaml					
+backend/serverless.yaml
