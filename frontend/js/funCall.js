@@ -1,13 +1,4 @@
 export async function callLambda(httpCode) {
-
-fetch('/config')
-    .then(response => response.json())
-    .then(config => {
-        const secret_url = config.secret_url
-        const apiKey = config.apiKey
-    })
-    .catch(error => console.error('Error fetching config:', error));
-
 const proxyUrl = `${secret_url}/httpcodes/${httpCode}`;
     try {
         const response = await fetch(proxyUrl, {

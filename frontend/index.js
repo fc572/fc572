@@ -30,14 +30,6 @@ app.get('/js', (req, res) => {
     });
 });
 
-app.get('/config', (req, res) => {
-    res.json({ secret_url: SECRET_URL });
-});
-
-app.get('/config', (req, res) => {
-    res.json({ apiKey: SECRET_API_KEY });
-});
-
 // Start the server
 app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`)
