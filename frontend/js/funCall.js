@@ -1,5 +1,5 @@
 export async function callLambda(httpCode) {
-   const proxyUrl = `https://xmsvivmycj.execute-api.eu-west-2.amazonaws.com/${httpCode}`;
+   const proxyUrl = `https://xmsvivmycj.execute-api.eu-west-2.amazonaws.com/httpcodes/${httpCode}`;
    try {
        const response = await fetch(proxyUrl, {
            method: 'GET',
