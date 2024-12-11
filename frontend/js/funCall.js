@@ -1,13 +1,12 @@
 export async function callLambda(httpCode) {
 
-app.get('/config', (req, res) => {
-    res.json({ secret_url: SECRET_URL });
-});
-
-app.get('/config', (req, res) => {
-    res.json({ apiKey: SECRET_API_KEY });
-});
-
+fetch('/config')
+    .then(response => response.json())
+    .then(config => {
+        const secret_url = config.secret_url
+        const apiKey = config.apiKey
+    })
+    .catch(error => console.error('Error fetching config:', error));
 
 const proxyUrl = `${secret_url}/httpcodes/${httpCode}`;
     try {

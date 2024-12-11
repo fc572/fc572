@@ -7,7 +7,8 @@ const glob = require('glob');
 const app = express();
 const dirPath = path.resolve(__dirname); // Root directory
 
-// Enable CORS
+// Set the port to listen on
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 // Serve static files from the root directory and its subdirectories
@@ -27,4 +28,17 @@ app.get('/js', (req, res) => {
         }
         res.json(files);
     });
+});
+
+app.get('/config', (req, res) => {
+    res.json({ secret_url: SECRET_URL });
+});
+
+app.get('/config', (req, res) => {
+    res.json({ apiKey: SECRET_API_KEY });
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${port}`)
 });
