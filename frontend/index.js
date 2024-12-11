@@ -28,8 +28,3 @@ app.get('/js', (req, res) => {
         res.json(files);
     });
 });
-
-// Start the server
-app.listen(process.env.PORT, () => {
-    console.log(`Website is running at process.env.url:process.env.PORT`);
-});

@@ -1,8 +1,15 @@
 export async function callLambda(httpCode) {
-const url = process.env.SECRET_URL;
-const apiKey = process.env.SECRET_API_KEY;
 
-const proxyUrl = `${url}/httpcodes/${httpCode}`;
+app.get('/config', (req, res) => {
+    res.json({ secret_url: SECRET_URL });
+});
+
+app.get('/config', (req, res) => {
+    res.json({ apiKey: SECRET_API_KEY });
+});
+
+
+const proxyUrl = `${secret_url}/httpcodes/${httpCode}`;
     try {
         const response = await fetch(proxyUrl, {
             method: 'GET',
