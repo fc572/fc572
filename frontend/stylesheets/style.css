@@ -1,116 +1,115 @@
-#marginTop{
-	height: 220px;
-	width:80%;
-	margin-left: auto;
-	margin-right: auto;
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
-#rightColumn{
-	float:right;
-	width: 20%;
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-#ulMenuHeader{
-	float: right;
-	list-style: inline;
+/* Main Content Styling */
+main {
+    margin: 20px auto;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#map {
-	width: 100%;
-	height: 500px;
+/* Article and Text Content Styling */
+article, p {
+    padding: 20px;
+    margin: 0;
+    font-size: 1rem;
 }
 
-  #legend {
-    background: white;
-    padding: 10px;
-  }
-
-#centre{
-	float:right;
-	position: relative;
-  	left: -20%; /* or right 50% */
-  	text-align: left;
-	width: 60%;
-	background-color:#6b6b71;
+/* Blockquote Styling */
+blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-left: 5px solid #fecb04;
 }
 
-body{
-	font-size: 18px;
-	line-height:25px;
-	clear:both;
+/* List Styling */
+ul, ol {
+    margin: 20px 0;
+    padding-left: 20px;
 }
 
-.box{
-	background-color:#000000;
-	color: #c3b4ac;
-	border-radius: 25px;
-	padding:25px;
-	border:2px solid;
-	text-align: left;
-	font:20px 'Times new roman', serif; 
+li {
+    margin: 5px 0;
 }
 
-.box_text{
-	background-color:#000000;
-	color: #c3b4ac;
-	border-radius: 25px;
-	padding:25px;
-	border:2px solid;
-	text-align: centre;
-	font:20px 'Times new roman', serif;
+/* Form Input Styling */
+.formInputFormat {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-#maincontainer{
-	background-color:#000000;
-	color: #b9a8a0;
-	border-radius: 25px;
-	padding:25px;
-	border:2px solid;
-	font:20px 'Times new roman', serif; 
-	text-align: left;
+/* Button Styling */
+button.btnStyle {
+    background-color: #fecb04;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-
-		
-body{
-	font-size: 20px;
-	line-height:25px;
-	clear:both;
+button.btnStyle:hover {
+    background-color: #f0b400;
 }
 
-.formInputFormat{
-	border: 1px solid #fecb04;
-	border-radius:10px;
-	width:50%;
-	min-height: 40px;
-	background-color:#fecb04;
-	align-self: center;
+/* Link Styling */
+a {
+    color: #fecb04;
+    text-decoration: none;
 }
 
-.btnStyle{
-	border: 1px solid #fecb04;
-	border-radius:10px;
-	background-color:#000000;
-	text-align: center;
-	font:20px 'Times new roman', serif; 
-	color: #FF691F;
-}
-
-a:link {
-    color: red;
-}
-
-/* visited link */
-a:visited {
-    color: orange;
-}
-
-/* mouse over link */
 a:hover {
-    color: yellow;
+    text-decoration: underline;
 }
 
-/* selected link */
-a:active {
-    color: blue;
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f9f9f9;
+}
+
+/* Timer and Demo Section Styling */
+#demo, #timer {
+    color: #fecb04;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Container Styling */
+.main_container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
 }
