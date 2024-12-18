@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+.vscode
 backend/handler.js
 backend/handler.test.js
 backend/jest.setup.js
