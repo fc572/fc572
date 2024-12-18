@@ -11,12 +11,14 @@ let map;
         lat: 51.5334,
         lng: -0.2089
       };
+      
       map = new google.maps.Map(document.getElementById('map'), {
         center: london,
         zoom: 11,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapId: "TFL_MAP"
       });
+
       var bikeGeoLocationAndName = [];
       getApiRequest("https://api.tfl.gov.uk/BikePoint", function locationApi(response) {
         for (var i = 0; i < response.length; i++) {

@@ -74,25 +74,19 @@ function arrangeAndDisplay(map, bikeGeoLocationAndName) {
     });
   });
 
-  console.log("countBikesSouth",countBikesSouth)
-  console.log("countTubeNorth",countTubeNorth)
-
   map.countBikesNorth = countBikesNorth;
   map.countTubeNorth = countTubeNorth;
   map.countBikesSouth = countBikesSouth;
   map.countTubeSouth = countTubeSouth;
 
-  var legend = document.getElementById('legend');
-  var div = document.createElement('div');
-  div.innerHTML = "<img src=\"http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=Bn|1D13EC|000000\">  Bikes North of river " + map.countBikesNorth + "<br/>";
-  div.innerHTML += "<img src=\"http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=T|2292E9|000000\">  Tube North of river " + map.countTubeNorth + "<br/>";
-  div.innerHTML += "<img src=\"http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=Bs|34BE07|000000\">  Bikes South of river " + map.countBikesSouth + "<br/>";
-  div.innerHTML += "<img src=\"http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=Ts|D4FD9D|000000\">  Tube South of river " + map.countTubeSouth;
-  legend.appendChild(div);
   document.getElementById("countnorth").innerHTML = map.countTubeNorth + map.countBikesNorth;
   document.getElementById("countsouth").innerHTML = map.countTubeSouth + map.countBikesSouth;
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
-    document.getElementById('legend'));
+
+  document.getElementById("bikeNorth").innerHTML = countBikesNorth;
+  document.getElementById("bikeSouth").innerHTML = countBikesSouth;
+
+  document.getElementById("tubeNorth").innerHTML = countTubeNorth;
+  document.getElementById("tubeSouth").innerHTML = countTubeSouth;
 
   return map;
 }
