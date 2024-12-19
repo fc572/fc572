@@ -14,7 +14,7 @@ let map;
       
       map = new google.maps.Map(document.getElementById('map'), {
         center: london,
-        zoom: 11,
+        zoom: 10,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapId: "TFL_MAP"
       });

@@ -119,6 +119,32 @@ footer {
 }
 
 #map {
-    height: 400px; /* The height is 400 pixels */
-    width: 100%; /* The width is the width of the web page */
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+#legend {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.statistics h5, .charts p {
+    margin: 10px 0;
+}
+
+.charts img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
 }
