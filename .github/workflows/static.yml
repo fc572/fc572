@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-start:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +31,27 @@ jobs:
           sed -i "s|LAMBDA_URL_HTML|$LAMBDA_URL|g" frontend/js/funCall.js
           sed -i "s|LAMBDA_API_KEY_HTML|${LAMBDA_API_KEY}|g" frontend/js/funCall.js
           
-  playwright-tests:
-    needs: build-and-start
-    uses: ./.github/workflows/playwright.yml
+      - name: Start Frontend
+        run: |
+          cd frontend
+          npm start & # The '&' makes it run in background
+          npx wait-on http://localhost:3000 # Adjust the URL to match your frontend port
+          
+      - name: Install Playwright Dependencies
+        run: |
+          cd tests
+          npm install
+          npx playwright install --with-deps
+
+      - name: Run Playwright Tests
+        run: |
+          cd tests
+          npx playwright test
+          
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: tests/playwright-report/
+          retention-days: 30
