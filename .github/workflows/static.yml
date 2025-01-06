@@ -31,12 +31,6 @@ jobs:
           sed -i "s|LAMBDA_URL_HTML|$LAMBDA_URL|g" frontend/js/funCall.js
           sed -i "s|LAMBDA_API_KEY_HTML|${LAMBDA_API_KEY}|g" frontend/js/funCall.js
           
-      - name: Start Frontend
-        run: |
-          cd frontend
-          npm start & # The '&' makes it run in background
-          npx wait-on http://localhost:3000 # Adjust the URL to match your frontend port
-
   playwright-tests:
     needs: build-and-start
     uses: ./.github/workflows/playwright.yml

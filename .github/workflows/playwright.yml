@@ -11,6 +11,15 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
+    - name: Start Frontend
+      run: |
+        cd frontend
+        npm start & # The '&' makes it run in background
+        npx wait-on http://localhost:3000
+    - name: Start Frontend
+      run: |
+        cd tests
     - name: Install dependencies
       run: cd tests && npm ci
     - name: Install Playwright Browsers
