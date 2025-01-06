@@ -40,7 +40,7 @@ jobs:
       - name: Run Playwright Tests
         run: |
           cd tests
-          uses: tests/.github/workflows/playwright.yml
+          uses: ../../tests/.github/workflows/playwright.yml
           
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
