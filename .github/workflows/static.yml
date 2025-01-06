@@ -31,11 +31,6 @@ jobs:
           sed -i "s|LAMBDA_URL_HTML|$LAMBDA_URL|g" frontend/js/funCall.js
           sed -i "s|LAMBDA_API_KEY_HTML|${LAMBDA_API_KEY}|g" frontend/js/funCall.js
           
-      - name: Build Frontend
-        run: |
-          cd frontend
-          npm run build
-          
       - name: Start Frontend
         run: |
           cd frontend
