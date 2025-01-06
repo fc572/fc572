@@ -38,7 +38,7 @@ jobs:
           npx wait-on http://localhost:3000 # Adjust the URL to match your frontend port
 
       - name: Run Playwright Tests
-        uses: ./tests/.github/workflows/playwright.yml
+        uses: ./.github/workflows/playwright.yml
           
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
