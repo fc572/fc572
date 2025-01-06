@@ -39,4 +39,4 @@ jobs:
 
   playwright-tests:
     needs: build-and-start
-    uses: ./.github/workflows/playwright.yml@main
+    uses: ./.github/workflows/playwright.yml
