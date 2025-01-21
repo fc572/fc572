@@ -188,3 +188,31 @@ footer {
     font-weight: bold;
     color: #333;
 }
+.api-docs {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.api-docs h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.api-docs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.api-docs li {
+    margin-bottom: 10px;
+}
+
+.api-docs code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+}

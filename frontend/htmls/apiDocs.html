@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <title>API Documentation</title>
+</head>
+
+<body class="main_container">
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+        <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li aria-current="page">API Documentation</li>
+        </ol>
+    </nav>
+    <header>
+        <h1>API Documentation</h1>
+    </header>
+    <main>
+
+        <section class="api-docs">
+            <h3>API Documentation</h3>
+            <p>The following endpoints allow interaction with the resource:</p>
+            <ul>
+                <li>
+                    <strong>POST /api/resource</strong>: Creates a new resource. Returns a fixed ID of
+                    <code>12345</code> with a 201 status code.
+                </li>
+                <li>
+                    <strong>GET /api/resource/:id</strong>: Retrieves a resource by its ID.
+                    <ul>
+                        <li>Returns a 200 and the resource data if <code>:id</code> is <code>12345</code>.</li>
+                        <li>Returns a 404 if the resource with the specified ID does not exist.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

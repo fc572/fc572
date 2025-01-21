@@ -10,6 +10,7 @@ const dirPath = path.resolve(__dirname); // Root directory
 // Set the port to listen on
 const PORT = process.env.PORT || 3000;
 app.use(cors());
+app.use(express.json()); 
 
 // Serve static files from the root directory and its subdirectories
 app.use(express.static(dirPath));
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 
 // Route to get a list of all files in the root directory
 app.get('/js', (req, res) => {
-    glob(`${dirPath}/**/*`, { nodir: true }, (err, files) => {
+    glob(`${dirPath}/**/*`,{ nodir: true }, (err, files) => {
         if (err) {
             res.status(500).send({ error: err.message });
             return;
@@ -30,7 +31,36 @@ app.get('/js', (req, res) => {
     });
 });
 
-// Start the server
+// In-memory store for simplicity
+const database = {
+    '12345': {
+        id: '12345',
+        message: 'Sample data associated with ID 12345',
+    },
+};
+
+// POST Endpoint
+app.post('/api/resource', (req, res) => {
+    // Always respond with the same ID
+    const resourceId = '12345';
+
+    // Send a 201 response with the fixed ID
+    res.status(201).json({ id: resourceId });
+});
+
+// GET Endpoint
+app.get('/api/resource/:id', (req, res) => {
+    const { id } = req.params;
+
+    // Check if the ID exists in the "database"
+    if (database[id]) {
+        res.status(200).json(database[id]);
+    } else {
+        res.status(404).json({ error: `Resource with ID ${id} not found` });
+    }
+});
+
+// Start the server (if not already running elsewhere)
 app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`)
+    console.log(`Server running on port ${PORT}`);
 });
