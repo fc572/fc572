@@ -26,10 +26,8 @@ jobs:
       - name: Replace Lambda URL and API Key
         env:
           LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
-          LAMBDA_API_KEY: ${{ secrets.LAMBDA_API_KEY }}
         run: |
           sed -i "s|LAMBDA_URL_HTML|$LAMBDA_URL|g" frontend/public/js/funCall.js
-          sed -i "s|LAMBDA_API_KEY_HTML|${LAMBDA_API_KEY}|g" frontend/public/js/funCall.js
           
       - name: Start Frontend
         run: |

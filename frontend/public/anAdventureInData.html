@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <title>First Encounter with Data in the Wild</title>
+</head>
+<body class="main_container">
+
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+    <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">An Adventure in Data</li>
+    </ol>
+</nav>
+
+<!-- Header Section -->
+<header>
+    <h1>First Encounter with Data in the Wild</h1>
+</header>
+
+<!-- Main Content -->
+<main>
+    <article class="content">
+        <p>
+            A friend of mine came asking for help visualizing some data that he needed to attach to a presentation. 
+            Of course, I was happy to help! Upon opening the file, I was presented with this:
+        </p>
+        <div class="image-container">
+            <img src="images/data_adventure/start_data.png" alt="Screenshot of initial data, anonymized" width="700" height="400">
+        </div>
+        <p>
+            And before you wonder — yes, of course, the data has been anonymized.
+        </p>
+        <h3>Handling Multiline Data and Visualizing Trends in Onboarding</h3>
+        <p>
+            In data analysis, it's common to encounter complex datasets where cells contain multiple lines of information. 
+            This post outlines how to clean, transform, and visualize such data using Python, focusing on onboarding statistics over time.
+        </p>
+        <h4>1. Loading and Cleaning Data</h4>
+        <p>
+            The process begins by loading the data from a CSV file and converting all values to strings. 
+            This step ensures that mixed data types (e.g., numbers and text) are handled consistently.
+        </p>
+        <h4>2. Splitting Multiline Cells</h4>
+        <p>
+            Since each cell contains multiple lines of information, we split the cells by newline characters 
+            and expand them into new rows. This results in a flattened dataset where each line becomes a separate row, 
+            making further analysis possible.
+        </p>
+        <h4>3. Extrapolating Key Information</h4>
+        <p>
+            Next, we extract critical details, such as the year and specific onboarding counts, by slicing and transforming strings. 
+            Columns are renamed, and irrelevant parts of the strings are discarded.
+        </p>
+        <h4>4. Filling Missing Values</h4>
+        <p>
+            Missing values in the "Answer options" column are filled by propagating the last known valid value. 
+            Additionally, the answers are trimmed for clarity by removing any extraneous text in parentheses.
+        </p>
+        <h4>5. Summarizing the Data</h4>
+        <p>
+            A pivot table is created to summarize the onboarding data by year and answer option. 
+            This table aggregates the counts of onboarded students and those who engaged in specific activities.
+        </p>
+        <h4>6. Visualizing the Results</h4>
+        <p>
+            Finally, a grouped bar chart is plotted to visualize the trends in onboarding and related activities over the years. 
+            The chart clearly shows the distribution of responses, making it easy to interpret patterns at a glance.
+        </p>
+        <div class="image-container">
+            <img src="images/data_adventure/chart_visualisation.png" alt="Screenshot of bar chart" width="700" height="400">
+        </div>
+        <p>
+            This structured approach, using Python’s powerful libraries like <code>pandas</code> and <code>matplotlib</code>, 
+            offers a replicable framework for handling and visualizing complex datasets.
+        </p>
+    </article>
+</main>
+
+<!-- Footer Section -->
+<footer>
+    <p>© 2024 FC572</p>
+    <p>
+        'Powered by TfL Open Data' <br>
+        'Contains OS data © Crown copyright and database rights 2016' and Geomni UK Map data © and database rights [2019]
+    </p>
+</footer>
+
+</body>
+</html>

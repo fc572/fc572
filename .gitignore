@@ -6,7 +6,6 @@ backend/handler.js
 backend/handler.test.js
 backend/jest.setup.js
 backend/node_modules/
-public/
 backend/serverless.yaml
 .serverless/
 frontend/node_modules

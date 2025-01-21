@@ -1,0 +1,218 @@
+/* General Body Styling */
+html,
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main Content Styling */
+main {
+    margin: 20px auto;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Article and Text Content Styling */
+article, p {
+    padding: 20px;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Blockquote Styling */
+blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-left: 5px solid #fecb04;
+}
+
+/* List Styling */
+ul, ol {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+/* Form Input Styling */
+.formInputFormat {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+button.btnStyle {
+    background-color: #fecb04;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btnStyle:hover {
+    background-color: #f0b400;
+}
+
+/* Link Styling */
+a {
+    color: #fecb04;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f9f9f9;
+}
+
+/* Timer and Demo Section Styling */
+#demo, #timer {
+    color: #fecb04;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Container Styling */
+.main_container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+#legend {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.statistics h5, .charts p {
+    margin: 10px 0;
+}
+
+.charts img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.breadcrumbs {
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li::after {
+    content: ">";
+    margin: 0 5px;
+    color: #aaa;
+}
+
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs li[aria-current="page"] {
+    font-weight: bold;
+    color: #333;
+}
+.api-docs {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.api-docs h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.api-docs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.api-docs li {
+    margin-bottom: 10px;
+}
+
+.api-docs code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+}
