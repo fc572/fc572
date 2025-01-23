@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <title>Appium Mobile Testing Project Documentation</title>
+</head>
+
+<body class="main_container">
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+        <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li aria-current="page">Appium Testing Documentation</li>
+        </ol>
+    </nav>
+
+    <header>
+        <h1>Appium Mobile Testing Project Documentation</h1>
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <h2>Project Overview</h2>
+                <p>
+                    This project implements automated testing for a mobile application's login functionality using Appium, following the Page Object Model (POM) design pattern. This documentation covers the setup process, architectural decisions, and key troubleshooting steps encountered during development.
+                </p>
+            </section>
+
+            <section>
+                <h2>Environment Setup</h2>
+
+                <h3>Prerequisites</h3>
+                <p>Before beginning the setup, I had the following set up:</p>
+                <ul>
+                    <li>Java JDK 17 or higher</li>
+                    <li>Node.js and npm</li>
+                    <li>Android SDK</li>
+                    <li>Appium Command Line Tools</li>
+                    <li>Android Studio (for device emulator management)</li>
+                </ul>
+
+                <h3>Development Environment Configuration</h3>
+                <ol>
+                    <li>
+                        Configure <code>JAVA_HOME</code> environment variable:
+                        <pre><code>export JAVA_HOME=/path/to/your/java/installation
+export PATH=$JAVA_HOME/bin:$PATH</code></pre>
+                    </li>
+                    <li>
+                        Configure <code>ANDROID_HOME</code> environment variable:
+                        <pre><code>export ANDROID_HOME=/path/to/your/android/sdk
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH</code></pre>
+                    </li>
+                    <li>
+                        Install Appium and verify installation:
+                        <pre><code>npm install -g appium
+appium --version</code></pre>
+                    </li>
+                </ol>
+
+                <h3>Project Dependencies</h3>
+                <p>Add these to your <code>build.gradle</code> file:</p>
+                <pre><code>dependencies {
+    implementation 'io.appium:java-client:8.5.1'
+    testImplementation 'org.testng:testng:7.7.1'
+}</code></pre>
+            </section>
+
+            <section>
+                <h2>Page Object Model Implementation</h2>
+
+                <h3>Design Philosophy</h3>
+                <p>
+                    The implementation follows the Page Object Model pattern, which separates test logic from page-specific operations. This separation provides several benefits:
+                </p>
+                <ul>
+                    <li>Improved maintainability: When the UI changes, we only need to update the relevant page object</li>
+                    <li>Better code reusability: Page methods can be reused across multiple test cases</li>
+                    <li>Enhanced readability: Test cases become more declarative and easier to understand</li>
+                </ul>
+
+                <h3>Structure</h3>
+                <pre><code>src/
+├── main/
+│   └── java/
+│       ├── pages/
+│       │   ├── LoginScreen.java
+│       │   └── BasePage.java
+│       ├── utils/
+│       │   └── DriverManager.java
+│       └── config/
+│           └── AppiumConfig.java
+└── test/
+    └── java/
+        └── tests/
+            └── LoginTest.java</code></pre>
+
+                <h3>Page Object Implementation</h3>
+                <p>The <code>LoginScreen</code> class demonstrates our POM implementation:</p>
+                <pre><code>public class LoginScreen extends BasePage {
+    @AndroidFindBy(id = "field_uname")
+    private WebElement usernameField;
+
+    @AndroidFindBy(id = "field_pwd")
+    private WebElement passwordField;
+
+    @AndroidFindBy(id = "loginBtn")
+    private WebElement loginButton;
+
+    public LoginScreen(AppiumDriver driver) {
+        super(driver);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    }
+
+    public void login(String username, String password) {
+        usernameField.sendKeys(username);
+        passwordField.sendKeys(password);
+        loginButton.click();
+    }
+}</code></pre>
+            </section>
+
+            <section>
+                <h2>ChromeDriver Version Resolution</h2>
+                <h3>Issue Identification</h3>
+                <p>
+                    When running the tests, I encountered a compatibility issue between ChromeDriver and the Chrome version installed on my machine. The error manifested as:
+                </p>
+                <blockquote>
+                    <code>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: Chrome version must be between 70 and 73</code>
+                </blockquote>
+                <h3>Root Cause Analysis</h3>
+                <p>
+                    The issue stemmed from a version mismatch between:
+                </p>
+                <ol>
+                    <li>The Chrome browser version installed</li>
+                    <li>The ChromeDriver version being used by Appium</li>
+                    <li>The Appium server version</li>
+                </ol>
+
+                <h3>Resolution Steps</h3>
+                <ol>
+                    <li>Identify the Chrome version on the test device:
+                        <pre><code>adb shell dumpsys package com.android.chrome | grep versionName</code></pre>
+                    </li>
+                    <li>Update the ChromeDriver version in Appium configuration:
+                        <pre><code>capabilities.setCapability("chromedriverExecutable", 
+    "/path/to/matching/chromedriver");</code></pre>
+                    </li>
+                    <li>Create a ChromeDriver version manager utility:
+                        <pre><code>public class ChromeDriverManager {
+    public static String getMatchingDriverPath(String chromeVersion) {
+        return getDriverPath(chromeVersion);
+    }
+}</code></pre>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Running Tests</h2>
+                <p>To execute the tests:</p>
+                <ol>
+                    <li>Start the Appium server:
+                        <pre><code>appium</code></pre>
+                    </li>
+                    <li>Run tests using Gradle:
+                        <pre><code>./gradlew test</code></pre>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Next Steps and Recommendations</h2>
+                <ul>
+                    <li>Implement parallel test execution</li>
+                    <li>Add reporting functionality</li>
+                    <li>Create test data management system</li>
+                    <li>Set up continuous integration pipeline</li>
+                    <li>Implement screenshot capture on test failure</li>
+                </ul>
+                <p>
+                    Time permitting I will go on and implement the above, one step at the time.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2024 FC572</p>
+    </footer>
+</body>
+
+</html>
