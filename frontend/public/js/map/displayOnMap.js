@@ -74,13 +74,21 @@ function arrangeAndDisplay(map, bikeGeoLocationAndName) {
     });
   });
 
+  map.countTotal = countBikesNorth + countTubeNorth + countBikesSouth + countTubeSouth;
+  map.countTotalBikes = countBikesNorth + countBikesSouth
+  map.countTotalTubes = countTubeNorth + countTubeSouth
+
   map.countBikesNorth = countBikesNorth;
   map.countTubeNorth = countTubeNorth;
   map.countBikesSouth = countBikesSouth;
   map.countTubeSouth = countTubeSouth;
 
-  document.getElementById("countnorth").innerHTML = map.countTubeNorth + map.countBikesNorth;
-  document.getElementById("countsouth").innerHTML = map.countTubeSouth + map.countBikesSouth;
+  document.getElementById("countTotal").innerHTML = map.countTotal;
+  document.getElementById("countTotalBikes").innerHTML = map.countTotalBikes;
+  document.getElementById("countTotalTubes").innerHTML = map.countTotalTubes;
+
+  document.getElementById("countNorth").innerHTML = map.countTubeNorth + map.countBikesNorth;
+  document.getElementById("countSouth").innerHTML = map.countTubeSouth + map.countBikesSouth;
 
   document.getElementById("bikeNorth").innerHTML = countBikesNorth;
   document.getElementById("bikeSouth").innerHTML = countBikesSouth;
