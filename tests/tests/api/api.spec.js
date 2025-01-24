@@ -29,24 +29,3 @@ test('endpoint test get', async ({ page }) => {
     expect(jsonResponse.message).toBe('Sample data associated with ID 12345');
 });
 
-// test('api test two', async ({ page }) => {
-//   await page.route('**/api/resource', route => {
-//     if (route.request().method() === 'POST') {
-//       route.fulfill({
-//         status: 201, 
-//         body: '12345'
-//       });
-//     }
-//   });
-
-//   // Correct way to handle the response
-//   const responseText = await page.evaluate(async () => {
-//     const response = await fetch('http://localhost:3000/api/resource', {
-//       method: 'POST',
-//       body: JSON.stringify({ someData: 'test' })
-//     });
-//     return await response.text();
-//   });
-
-//   expect(responseText).toBe('12345');
-// });

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script type="module" src="js/funCall.js"></script>
+    <script type="text/javascript" src="js/httpCodesGenerators.js" defer></script>
+    <title>HTTP Status Call</title>
+</head>
+<body class="main_container" onload="generateButtonsWithCodes()">
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+    <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">HTTP Status Call</li>
+    </ol>
+</nav>
+<header>
+    <h1>HTTP Status Call</h1>
+</header>
+<main>
+    <section class="main_container">
+        <p>
+            Insert the HTTP status code that you'd like to test. Once the HTTP Call button is pressed, the HTTP status code and message will be delivered to this page.<br><br>
+            <label for="httpcode">HTTP CODE:</label>
+            <input class="formInputFormat" type="text" id="httpcode" required minlength="3" maxlength="3" size="3" />
+        </p>
+        <p>
+            <button class="btnStyle" onclick="callLambda(httpcode.value)">HTTP Call</button>
+        </p>
+    </section>
+
+    <section class="status_section"></section>
+</main>
+<footer>
+    <p>© 2024 FC572</p>
+</footer>
+</body>
+</html>
