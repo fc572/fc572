@@ -9,3 +9,7 @@ backend/node_modules/
 backend/serverless.yaml
 .serverless/
 frontend/node_modules
+tests/node_modules
+tests/playwright-report
+tests/test-results
+

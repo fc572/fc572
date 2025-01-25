@@ -11,7 +11,7 @@ test.describe('HTTP Status Tests', () => {
     testCases.forEach(({ code, expectedResponse }) => {
         test(`Status code ${code} test`, async ({ page }) => {
             await page.goto('http://localhost:3000/httpResponsePage.html');
-            await expect(page).toHaveTitle("HTTP Status Call");
+            await expect(page).toHaveTitle("HTTP Status Response page");
             await page.locator('#httpcode').fill(code);
             await page.locator('.btnStyle').click();
             await expect(page.locator('.status_section'))
