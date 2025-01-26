@@ -5,42 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
    <title>Fake Login Page</title>
-   <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          const demo = document.getElementById("demo");
-          const timer = document.getElementById('timer');
-
-          document.getElementById('loginBtn').addEventListener('click', function (e) {
-              e.preventDefault();
-              const uname = document.getElementById('field_uname').value.trim();
-              const pwd = document.getElementById('field_pwd').value.trim();
-
-              if (uname === 'Neo' && pwd === 'redpill') {
-                  demo.innerHTML = `You are now logged into the Matrix! You'll be redirected to the Matrix wiki page, then back here in <span id="timeLeft">5</span> seconds.`;
-                  let secondsLeft = 5;
-
-                  const interval = setInterval(() => {
-                      document.getElementById('timeLeft').innerText = --secondsLeft;
-                      if (secondsLeft <= 0) {
-                          clearInterval(interval);
-                          const myWindow = window.open("https://en.wikipedia.org/wiki/The_Matrix", '_blank');
-                          setTimeout(() => myWindow.close(), 5000);
-                      }
-                  }, 1000);
-              } else if (uname === 'Neo') {
-                  alert("You have chosen the blue pill");
-              } else {
-                  alert("Invalid UserID");
-              }
-          });
-
-          document.getElementById('resetBtn').addEventListener('click', function () {
-              document.getElementById("loginForm").reset();
-              demo.innerHTML = '';
-              timer.innerHTML = '';
-          });
-      });
-   </script>
+   <script src="js/login.js" defer></script>
 </head>
 <body class="main_container">
 <nav aria-label="Breadcrumb" class="breadcrumbs">
@@ -65,13 +30,12 @@
             <input class="formInputFormat" type="text" size="35" id="field_uname" aria-label="Username" required /><br /><br />
             <label for="field_pwd">Password:</label>
             <input class="formInputFormat" type="password" size="35" id="field_pwd" aria-label="Password" required /><br /><br />
-            <button id="loginBtn" class="btnStyle">Log into the Matrix</button>
+            <button id="loginBtn" name="SignIn" class="btnStyle">Log into the Matrix</button>
          </fieldset>
       </form>
    </section>
    <section class="main_container">
       <h4 id="demo" class="highlighted-text" aria-live="polite"></h4>
-      <h4 id="timer" class="highlighted-text" aria-live="polite"></h4>
    </section>
 </main>
 <footer>

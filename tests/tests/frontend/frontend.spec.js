@@ -14,3 +14,15 @@ test('map page', async ({ page }) => {
   await page.goto('http://localhost:3000/ProperMapPage.html');
   await expect(page).toHaveTitle("The Map Page");
 });
+
+test("Basic auth", async ({ page, browser }) => {
+    await page.goto("http://localhost:3000/loginPage.html")
+    await page.getByLabel("Username").fill("Neo")
+    await page.getByLabel("Password").fill("redpill")
+    await page.locator('#loginBtn').click();
+    
+    await page.goto("http://localhost:3000/loggedInPage.html")
+    await expect(page).toHaveTitle("The Matrix");
+
+});
+
