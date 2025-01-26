@@ -26,3 +26,12 @@ test("Basic auth", async ({ page, browser }) => {
 
 });
 
+test("Failed auth", async ({ page }) => {
+  await page.goto("http://localhost:3000/loginPage.html")
+  await page.getByLabel("Username").fill("Neo")
+  await page.getByLabel("Password").fill("bluepill")
+  await page.locator('#loginBtn').click();
+  
+  const errorMessage = page.locator('#demo')
+  await expect(errorMessage).toHaveText("Please enter the correct user name and password");
+});
